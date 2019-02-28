@@ -1,4 +1,0 @@
- table.cpp
-
-
-table.o:		table.cpp					table.hpp
