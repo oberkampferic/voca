@@ -1,0 +1,20 @@
+müssen/muss/musste/gemusst
+
+PRÄSENS INDIKATIV	KONJUNKTIV I
+
+Ich muss		Ich müsse
+du musst		du müssest
+ese muss		ese müsse
+wir müssen		wir müssen
+ihr müsst		ihr müsset
+sie müssen		sie müssen
+
+INDIKATIV PRÄTERITUM	KONJUNKTIV II
+Ich musste		Ich müsste
+du musstest		du müsstest
+ese musste		ihr müsste
+wir mussten		wir müssten
+ihr musstet		ihr müsstet
+sie mussten		sie müssten
+
+

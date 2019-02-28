@@ -1,0 +1,244 @@
+#STRING	KEY				SHOT	MEMO
+fangen		attraper				NULL	ä,i,a
+an/fangen	commencer				NULL	ä,i,a
+empfangen	acceuillir, recevoir			NULL	ä,i,a
+hängen		pendre, être suspendu			NULL	ä,i,a
+
+schlafen	dormir					NULL	ä,ie,a
+ein/schlafen	s’endormir				NULL	ä,ie,a
+fallen		tomber					NULL	ä,ie,a
+gefallen	plaire					NULL	ä,ie,a
+halten		tenir					NULL	ä,ie,a
+erhalten	obtenir					NULL	ä,ie,a
+unterhalten	entretenir				NULL	ä,ie,a
+blasen		souffler (très fort)			NULL	ä,ie,a
+lassen		laisser					NULL	ä,ie,a
+verlassen	quitter, abandonner			NULL	ä,ie,a
+braten		faire rôtir				NULL	ä,ie,a
+
+graben		creuser					NULL	ä,u,a
+backen		cuire au four				NULL	ä,u,a
+ein/laden	inviter					NULL	ä,u,a
+laden		charger					NULL	ä,u,a
+schlagen	frapper					NULL	ä,u,a
+vor/schlagen	proposer				NULL	ä,u,a
+tragen		porter					NULL	ä,u,a
+ertragen	supporter				NULL	ä,u,a
+fahren		aller (en véhicule)			NULL	ä,u,a
+_______________________________________________
+
+geben		donner					NULL	i,a,e
+aus/geben	dépenser				NULL	i,a,e
+lesen		lire					NULL	i,a,e
+essen		manger					NULL	i,a,e
+vergessen	oublier					NULL	i,a,e
+fressen		dévorer					NULL	i,a,e
+bitten		prier qn				NULL	i,a,e
+
+brechen		casser,briser				NULL	i,a,o
+sprechen	parler					NULL	i,a,o
+versprechen	promettre				NULL	i,a,o
+stechen		piquer					NULL	i,a,o
+erschrecken	s'effrayer				NULL	i,a,o
+treffen		rencontrer, atteindre			NULL	i,a,o
+nehmen		prendre					NULL	i,a,o
+benehmen	se conduire 				NULL	i,a,o
+mit/nehmen	emporter				NULL	i,a,o
+helfen		aider					NULL	i,a,o
+mit/helfen	donner un coup de main			NULL	i,a,o
+gelten		valoir, passer pour			NULL	i,a,o
+schelten	injurier				NULL	i,a,o
+werben		recruter, briguer, faire la pub		NULL	i,a,o
+bewerben	poser sa candidature			NULL	i,a,o
+verderben	pourrir					NULL	i,a,o
+verderben	gâter, gacer				NULL	i,a,o
+sterben		mourir					NULL	i,a,o
+werfen		jeter					NULL	i,a,o
+bergen		se cacher				NULL	i,a,o
+bersten		éclater					NULL	i,a,o
+
+binden		lier					NULL	i,a,u
+finden		trouver					NULL	i,a,u
+verschwinden	disparaître				NULL	i,a,u
+schwinden	disparaître				NULL	i,a,u
+stinken		empester				NULL	i,a,u
+winden		tordre, tresser				NULL	i,a,u
+dringen		pénétrer				NULL	i,a,u
+dingen		soudoyer, louer				NULL	i,a,u
+singen		chanter					NULL	i,a,u
+zwingen		forcer, obliger				NULL	i,a,u
+gelingen	réussir					NULL	i,a,u
+klingen		tinter, sonner				NULL	i,a,u
+ringen		lutter					NULL	i,a,u
+schwingen	brandir, balancer			NULL	i,a,u
+sinken		sombrer					NULL	i,a,u
+wringen		tordre, essorer				NULL	i,a,u
+trinken		boire					NULL	i,a,u
+springen	sauter					NULL	i,a,u
+
+beginnen	commencer				NULL	i,a,o
+gewinnen	gagner					NULL	i,a,o
+spinnen		filer					NULL	i,a,o
+sinnen		réfléchir				NULL	i,a,o
+rinnen		couler					NULL	i,a,o
+schwimmen	nager					NULL	i,a,o
+
+klimmen		grimper					NULL	i,o,o
+glimmen		jeter une faible lueur			NULL	i,o,o
+schwellen	enfler, gonfler				NULL	i,o,o
+quellen		sourdre, jaillir			NULL	i,o,o
+schmelzen	fondre					NULL	i,o,o
+dreschen	battre au fléau				NULL	i,o,o
+____________________________________________
+
+speien		cracher					NULL	ei,ie,ie
+schreien	crier					NULL	ei,ie,ie
+treiben		pratiquer, pousser			NULL	ei,ie,ie
+übertreiben	exagérer				NULL	ei,ie,ie
+schreiben	écrire					NULL	ei,ie,ie
+beschreiben	décrire					NULL	ei,ie,ie
+bleiben		rester					NULL	ei,ie,ie
+scheiden	séparer					NULL	ei,ie,ie
+entscheiden	décider					NULL	ei,ie,ie
+unterscheiden	distinguer, différencier		NULL	ei,ie,ie
+meiden		éviter					NULL	ei,ie,ie
+schweigen	se taire				NULL	ei,ie,ie
+steigen		monter					NULL	ei,ie,ie
+gedeihen	prospérer				NULL	ei,ie,ie
+leihen		prêter					NULL	ei,ie,ie
+verleihen	perdre					NULL	ei,ie,ie
+verzeihen	pardonner				NULL	ei,ie,ie
+scheinen	sembler, briller			NULL	ei,ie,ie
+erscheinen	apparaître, paraître			NULL	ei,ie,ie
+weisen		montrer					NULL	ei,ie,ie
+preisen		vanter					NULL	ei,ie,ie
+
+streichen	rayer					NULL	ei,i,i
+weichen		céder le pas				NULL	ei,i,i
+schleichen	se glisser				NULL	ei,i,i
+vergleichen	comparer				NULL	ei,i,i
+gleichen	ressembler				NULL	ei,i,i
+pfeifen		siffler					NULL	ei,i,i
+schleifen	aiguiser				NULL	ei,i,i
+kneifen		pincer					NULL	ei,i,i
+greifen		saisir					NULL	ei,i,i
+begreifen	comprendre, saisir			NULL	ei,i,i
+schneiden	couper					NULL	ei,i,i
+reiten		aller à cheval				NULL	ei,i,i
+schreiten	marcher					NULL	ei,i,i
+sich streiten	se disputer				NULL	ei,i,i
+gleiten		glisser					NULL	ei,i,i
+sich befleißen	s'appliquer				NULL	ei,i,i
+beißen		mordre					NULL	ei,i,i
+schmeißen	lancer					NULL	ei,i,i
+spleißen	fendre					NULL	ei,i,i
+verschleißen	s'user prématurément			NULL	ei,i,i
+verschleißen	user prématurément			NULL	ei,i,i
+_____________________________________________
+
+sehen		voir					NULL	ie,a,e
+aus/sehen	avoir l’air, sembler			NULL	ie,a,e
+fern/sehen	regarder la télé			NULL	ie,a,e
+geschehen	se passer				NULL	ie,a,e
+liegen		être couché				NULL	ie,a,e
+
+befehlen	ordonner				NULL	ie,a,o
+empfehlen	recommander				NULL	ie,a,o
+stieben		voler en poussière			NULL	ie,o,o
+schieben	pousser, déplacer			NULL	ie,o,o
+kriechen	ramper					NULL	ie,o,o
+riechen		sentir(odeur)				NULL	ie,o,o
+sieden		bouillir				NULL	ie,o,o
+biegen		plier					NULL	ie,o,o
+fliegen		voler					NULL	ie,o,o
+wiegen		peser					NULL	ie,o,o
+ziehen		tirer					NULL	ie,o,o
+ziehen		partir en groupde			NULL	ie,o,o
+fliehen		fuir					NULL	ie,o,o
+verlieren	perdre					NULL	ie,o,o
+frieren		frire					NULL	ie,o,o
+verdrießen	contrarier				NULL	ie,o,o
+sprießen	germer, éclore				NULL	ie,o,o
+schießen	tirer(arme)				NULL	ie,o,o
+fließen		couler					NULL	ie,o,o
+schließen	fermer					NULL	ie,o,o
+beschließen	décider					NULL	ie,o,o
+gießen		verser					NULL	ie,o,o
+genessen	jouir de				NULL	ie,o,o
+(an)bieten	offrir, proposer			NULL	ie,o,o
+_______________________________________________
+
+(er)wägen	peser, considérer			NULL	ä,o,o
+gären		fermenter				NULL	ä,o,o
+erlöschen	s'éteindre				NULL	i,o,o
+(be)trügen	tromper					NULL	ü,o,o
+lügen		mentir					NULL	ü,o,o
+küren		élire					NULL	ü,o,o
+lügen		mentir					NULL	ü,o,o
+
+(er)schallen	résonner, retentir			NULL	a,o,o
+heben		soulever  				NULL	e,o,o
+gebären		mettre au monde				NULL	ie,a,o
+hauen		frapper					NULL	äu,ie,au
+schnauben	s'ébrouer, haleter			NULL	au,o,o
+saufen		boire(animaux)				NULL	äu,o,o
+saugen		sucer					NULL	au,o,o
+
+wachsen		croître					NULL	ä,u,a
+aufwachsen	grandir					NULL	ä,u,a
+schaffen	créer					NULL	a,u,a
+raten		conseiller				NULL	ä,ie,a
+schlafen	dormir					NULL	ä,ie,a
+waschen		laver					NULL	ä,u,a
+laufen		courir					NULL	äu,ie,au
+weben		tisser					NULL	e,o,o
+bewegen		inciter à				NULL	e,o,o
+melken		er hat gemolken				NULL	e,o,o
+pflegen		avoir coutume de			NULL	e,o,o
+scheren		tondre					NULL	e,o,o
+fechten		se battre en duel			NULL	i,ot,o
+flechten	tresser					NULL	i,o,o
+gehen		aller					NULL	e,i,a
+vergehen	passer					NULL	e,i,a
+
+senden		envoyer					NULL	e,a,a
+denken		penser					NULL	e,a,a
+stehen		être debout				NULL	e,a,a
+verstehen	comprendre				NULL	e,a,a
+nennen		appeler					NULL	e,a,a
+kennen		connaître				NULL	e,a,a
+erkennen	reconnaître				NULL	e,a,a
+brennen		bruler					NULL	e,a,a
+
+stehlen		dérober					NULL	ie,a,o
+leiden		souffrir				NULL	ei,it,it
+sein		être					NULL	-----
+heißen		appeler					NULL	ei,ie,ei
+messen		mesurer					NULL	i,a,e
+treten		poser le pied				NULL	i,a,e
+an/ziehen	mettre (un habit)			NULL	ie,og,og*
+verbieten	interdire				NULL	ie,ot,o*
+ziehen		tirer, partir, déménager		NULL	ie,og,og*
+schlingen	avaler, embrasser			NULL	i,a,u
+bringen		apporter				NULL	i,a,a
+verbringen	passer (du temps)			NULL	i,a,a
+schinden	écorcher				NULL	i,u,u
+wissen		savoir					NULL	ei,u,u
+sitzen		être assis				NULL	i,a,e
+besitzen	posseder				NULL	i,a,e
+rufen		appeler					NULL	u,ie,u
+an/rufen	appeler (au tél.)			NULL	u,ie,u
+kommen		venir					NULL	o,a,o
+an/kommen	arriver					NULL	o,a,o
+bekommen	recevoir, obtenir			NULL	o,a,o
+entkommen	s'échapper				NULL	o,a,o
+schwören	jurer					NULL	ö,u,o
+stoßen		heurter					NULL	ö,ie,o
+tun		faire					NULL	u,a,a
+dürfen		avoir la permission de, pouvoir		NULL	a,u,u
+haben		avoir 	 	    			NULL	a,a,a
+können		pouvoir					NULL	a,o,o
+müssen		être obligé, falloir, devoir		NULL	u,u,u
+sollen		devoir	     	      			NULL	o,o,o
+werden		devenir					NULL	i,u,o
+wollen		vouloir					NULL	i,o,o

@@ -1,0 +1,37 @@
+#include "main.hpp"
+#include "bergson.hpp"
+//#include "openGl.hpp"
+
+
+vector< tableBergson<string> >
+openGlInterface::Bdd;
+
+table<string>
+openGlInterface::maListeDeListe;
+
+GLuint openGlInterface::font_base = [X];
+float  openGlInterface::posx=[X].[X];
+float  openGlInterface::posy=[X].[X];
+float  openGlInterface::ratio[[X]]=[Y].[X];
+float  openGlInterface::ratio[[Y]]=[Y].[X];
+float  openGlInterface::offsety=[X].[X];
+int    openGlInterface::flagCount=6;
+int    openGlInterface::posxCurseur;
+int    openGlInterface::pause=false;
+
+tableBergson<string> bergson::maTableVide;
+string bergson::strCategorie;
+string bergson::strName;   
+string bergson::strDate[Y];
+string bergson::strDate[B];
+string bergson::strMemo;
+
+int main(int argc, char *argv[]) {
+  bergson monbergson(argc, argv);
+
+  glutDisplayFunc(monbergson.interrogation); 
+  glutMainLoop();
+
+  return [X];
+}
+

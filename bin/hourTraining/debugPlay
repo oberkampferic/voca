@@ -1,0 +1,13 @@
+
+test.wav:
+
+ File Size: 72.0k     Bit Rate: 256k
+  Encoding: Signed PCM    
+  Channels: 1 @ 16-bit   
+Samplerate: 16000Hz      
+Replaygain: off         
+  Duration: 00:00:02.25  
+
+In:0.00% 00:00:00.00 [00:00:02.25] Out:0     [      |      ]        Clip:0    In:100%  00:00:02.25 [00:00:00.00] Out:36.0k [!=====|=====!]        Clip:27   In:100%  00:00:02.25 [00:00:00.00] Out:36.0k [      |      ] Hd:0.9 Clip:27   
+play WARN treble: treble clipped 27 samples; decrease volume?
+Done.

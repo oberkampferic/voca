@@ -1,0 +1,126 @@
+#STRING	KE1		KE1		KE1		KE1			KE1				SHOT	MEMO
+fangen		angen ng		er fängt		er fing			er hat gefangen			attraper				NULL	ä,i,a
+an/fangen	angen ng		er fängt an		er fing an		er hat angefangen		commencer				NULL	ä,i,a
+hängen		ängen ng		er hängt		er hing			er hat gehangen			pendre, être suspendu			NULL	ä,i,a
+
+schlafen	afen f			er schläft		er schlief		er hat geschlafen		dormir					NULL	ä,ie,a
+fallen		allen l			er fällt		er fiel			er ist gefallen			tomber					NULL	ä,ie,a
+gefallen	allen l			er gefällt		er gefiel		er hat gefallen			plaire					NULL	ä,ie,a
+halten		alten l			er hält			er hielt		er hat gehalten			tenir					NULL	ä,ie,a
+lassen		assen s			er lässt		er ließ			er hat gelassen			laisser					NULL	ä,ie,a
+verlassen	assen s			er verlässt		er verließ		er hat verlassen		quitter, abandonner			NULL	ä,ie,a
+
+ein/laden	aden d			er lädt ein		er lud ein		er hat eingeladen		inviter					NULL	ä,u,a
+laden		aden d			er lädt			er lud			er hat geladen			charger					NULL	ä,u,a
+schlagen	agen g			er schlägt		er schlug		er hat geschlagen		frapper					NULL	ä,u,a
+vor/schlagen	agen g			er schlägt vor		er schlug vor		er hat vorgeschlagen		proposer				NULL	ä,u,a
+tragen		agen g			er trägt		er trug			er hat getragen			porter					NULL	ä,u,a
+fahren		ahren h			er fährt		er fuhr			er ist gefahren			aller (en véhicule)			NULL	ä,u,a
+_______________________________________________________________________________________________________________________________________________________
+
+geben		eben b			er gibt			er gab			er hat gegeben			donner					NULL	i,a,e
+aus/geben	eben b			er gibt aus		er gab aus		er hat ausgegeben		dépenser				NULL	i,a,e
+lesen		esen s			er liest		er las			er hat gelesen			lire					NULL	i,a,e
+essen		essen ss		er isst			er aß			er hat gegessen			manger					NULL	i,a,e
+vergessen	essen ss		er vergisst		er vergaß		er hat vergessen		oublier					NULL	i,a,e
+fressen		essen ss		er frisst		er frass		er hat gefressen		dévorer					NULL	i,a,e
+bitten		itten tt		er bitt			er bat			er hat gebeten			prier qn				NULL	i,a,e
+
+brechen		echen ch		er bricht		er brach		er hat gebrochen		casser,briser				NULL	i,a,o
+sprechen	echen ch		er spricht		er sprach		er hat gesprochen		parler					NULL	i,a,o
+stechen		echen ch		er sticht		er stach		er hat gestochen		piquer					NULL	i,a,o
+erschrecken	ecken ck		er erschrickt		er erschrack		er hat erschroken		s'effrayer				NULL	i,a,o
+treffen		effen ff		er trifft		er traf			er hat getroffen		rencontrer, atteindre			NULL	i,a,o
+nehmen		ehmen hm		er nimmt		er nahm			er hat genommen			prendre					NULL	i,a,o
+helfen		elfen lf		er hilft		er half			er hat geholfen			aider					NULL	i,a,o
+mit/helfen	elfen lf		er hilft mit		er half mit		er hat mitgeholfen		donner un coup de main			NULL	i,a,o
+sterben		erben rb		er stirbt		er starb		er ist gestorben		mourir					NULL	i,a,o
+werfen		erfen rf		er wirft		er warf			er hat geworfen			jeter					NULL	i,a,o
+bergen		ergen rg		er birgt		er barg			er hat geborgen			se cacher				NULL	i,a,o
+
+binden		inden nd		er bind			er band			er hat gebunden			lier					NULL	i,a,u
+finden		inden nd		er findt		er fand			er hat gefunden			trouver					NULL	i,a,u
+schwinden	inden nd		er schwindet		er schwand		er ist geschwunden		disparaître				NULL	i,a,u
+stinken		inden nd		er stinkt		er stank		er hat gestunken		empester				NULL	i,a,u
+singen		ingen ng		er singt		er sang			er hat gesungen			chanter					NULL	i,a,u
+zwingen		ingen ng		er zwingt		er zwang		er hat gezwungen		forcer, obliger				NULL	i,a,u
+gelingen	ingen ng		er gelingt		er gelang		er hat gelungen			réussir					NULL	i,a,u
+klingen		ingen ng		er klingt		er klang		er hat geklungen		tinter, sonner				NULL	i,a,u
+ringen		ingen ng		er ringt		er rang			er hat gerungen			lutter					NULL	i,a,u
+sinken		ingen ng		er sinkt		er sank			er ist gesunken			sombrer					NULL	i,a,u
+trinken		inken nk		er trinkt		er trank		er hat getrunken		boire					NULL	i,a,u
+springen	inken nk		er springt		er sprang		er ist gesprungen		sauter					NULL	i,a,u
+
+beginnen	innen nn		er beginnt		er begann		er hat begonnen			commencer				NULL	i,a,o
+gewinnen	innen nn		er gewinnt		er gewann		er hat gewonnen			gagner					NULL	i,a,o
+schwimmen	immen mm		er schwimmt		er schwamm		er hat geschwommen		nager					NULL	i,a,o
+
+klimmen		immen mm		er klimmt		er klomm		er hat geklommen		grimper					NULL	i,o,o
+schmelzen	elzen lz		er schmilzt		er schmolz		er ist geschmolzen		fondre					NULL	i,o,o
+dreschen	eschen sch		er drischt		er drosch		er hat gedroschen		battre au fléau				NULL	i,o,o
+____________________________________________________________________________________________________________________________________________________
+
+schreien	eien _			er schreit		er schrie		er hat geschrien		crier					NULL	ei,ie,ie
+übertreiben	eiben b			er übertreibt		er übertrieb		er hat übertrieben		exagérer				NULL	ei,ie,ie
+schreiben	eiben b			er schreibt		er schrieb		er hat geschrieben		écrire					NULL	ei,ie,ie
+bleiben		eiben b			er bleibt		er blieb		er ist geblieben		rester					NULL	ei,ie,ie
+entscheiden	eiden d			er entscheidet		er entschied		er hat entschieden		décider					NULL	ei,ie,ie
+steigen		eigen g			er steigt		er stieg		er ist gestiegen		monter					NULL	ei,ie,ie
+
+streichen	eichen ch		er streicht		er strich		er hat gestrichen		rayer					NULL	ei,i,i
+schneiden	eiden d			er schneidet		er schnitt		er hat geschnitten		couper					NULL	ei,i,i
+beißen		eißen ß			er beisst		er biss			er ist gebissen			mordre					NULL	ei,i,i
+_____________________________________________________________________________________________________________________________________________________
+
+sehen		ehen h			er sieht		er sah			er hat gesehen			voir					NULL	ie,a,e
+fern/sehen	ehen h			er sieht fern		er sah fern		er hat ferngesehen		regarder la télé			NULL	ie,a,e
+geschehen	ehen h			er geschieht		er geschah		er ist geshehen			se passer				NULL	ie,a,e
+liegen		iegen			er liegt		er lag			er hat gelegen			être couché				NULL	ie,a,e
+
+fliegen		iegen g			er fliegt		er flog			er ist geflogen			voler					NULL	ie,o,o
+ziehen		iehen h			er zieht		er zog			er hat gezogen			tirer					NULL	ie,o,o
+fliehen		iehen h			er flieht		er floh			er ist geflohen			fuir					NULL	ie,o,o
+verlieren	ieren r			er verliert		er verlor		er hat verloren			perdre					NULL	ie,o,o
+frieren		ieren r			er friert		er fror			er hat gefroren			frire					NULL	ie,o,o
+schießen	ießen ß			er schießt		er schoss		er hat geschossen		tirer(arme)				NULL	ie,o,o
+schließen	ießen ß			er schließt		er schloss		er hat geschlossen		fermer					NULL	ie,o,o
+_______________________________________________________________________________________________________________________________________________________
+
+lügen		ügen			er lügt			er log			er hat gelogen			mentir					NULL	ü,o,o
+küren		üren			er kürt			er kor			er hat gekoren			élire					NULL	ü,o,o
+
+hauen		auen			er haut			er hieb			er hat gehauen			frapper					NULL	äu,ie,au
+
+wachsen		achsen			er wächst		er wuchs		er ist gewachsen		croître					NULL	ä,u,a
+raten		aten			er rät			er riet			er hat geraten			conseiller				NULL	ä,ie,a
+schlafen	afen			er schläft		er schlief		er hat geschlafen		dormir					NULL	ä,ie,a
+waschen		aschen			er wäscht		er wusch		er hat gewaschen		laver					NULL	ä,u,a
+laufen		aufen			er läuft		er lief			er ist gelaufen			courir					NULL	äu,ie,au
+gehen		ehen			er geht			er ging			er ist gegangen			aller					NULL	e,i,a
+
+senden		enden			er sendet		er sandte		er hat gesandt			envoyer					NULL	e,a,a
+denken		enken			er denkt		er dachte		er hat gedacht			penser					NULL	e,a,a
+stehen		ehen			er steht		er stand		er hat gestanden		être debout				NULL	e,a,a
+verstehen	ehen			er versteht		er verstand		er hat verstanden		comprendre				NULL	e,a,a
+kennen		ennen			er kennt		er kannte		er hat gekannt			connaître				NULL	e,a,a
+erkennen	ennen			er erkennt		er erkannte		er hat erkannt			reconnaître				NULL	e,a,a
+brennen		ennen			er brennt		er brannte		er hat gebrannt			bruler					NULL	e,a,a
+
+leiden		eiden			er leidet		er litt			er hat gelitten			souffrir				NULL	ei,it,it
+sein		ein			er ist			er war			er ist gewesen			être					NULL	-----
+messen		essen			er misst		er maß			er hat gemessen			mesurer					NULL	i,a,e
+verbieten	ieten			er verbietet		er verbot		er hat verboten			interdire				NULL	ie,ot,o*
+ziehen		iehen			er zieht		er zog			er hat gezogen/er ist gezogen	tirer, partir, déménager		NULL	ie,og,og*
+bringen		ingen			er bringt		er brachte		er hat gebracht			apporter				NULL	i,a,a
+wissen		issen			er weiß			er wusste		er hat gewusst			savoir					NULL	ei,u,u
+sitzen		itzen			er sitzt		er saß			er hat gesessen			être assis				NULL	i,a,e
+rufen		ufen			er ruft			er rief			er hat gerufen			appeler					NULL	u,ie,u
+kommen		ommen			er kommt		er kam			er ist gekommen			venir					NULL	o,a,o
+tun		un			er tut			er tat			er hat getan			faire					NULL	u,a,a
+dürfen		ürfen			er darf			er durft		er hat gedurft			avoir la permission de, pouvoir		NULL	a,u,u
+haben		aben			er hat			er hatte		er hat gehabt			avoir 	 	    			NULL	a,a,a
+können		önnen			er kann			er konnte		er hat gekonnt			pouvoir					NULL	a,o,o
+müssen		üssen			er musst		er musste		er hat gemusst			être obligé, falloir, devoir		NULL	u,u,u
+sollen		ollen			er soll			er sollte		er hat gesollt			devoir	     	      			NULL	o,o,o
+werden		erden			er wird			er wurde		er ist geworden			devenir					NULL	i,u,o
+wollen		ollen			er will			er wollte		er hat gewollt			vouloir					NULL	i,o,o

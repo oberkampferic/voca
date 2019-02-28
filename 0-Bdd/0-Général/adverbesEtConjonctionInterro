@@ -1,0 +1,141 @@
+#STRING		KEY						SHOT	MEMO
+hinein			à l’intérieur						NULL	NULL
+oberhalb		au-dessus						NULL	NULL
+stets			constamment						NULL	NULL
+zurzeit			actuellement						NULL	NULL
+anstandshalber		par souci des convenances				NULL	NULL
+demnach			en conséquence						NULL	NULL
+demzufolge		par conséquent						NULL	NULL
+folglich		par conséquent, ainsi					NULL	NULL
+äußerst			extrêmement						NULL	NULL
+ebenfalls		aussi							NULL	NULL
+zuvor			auparavant, avant					NULL	NULL
+ehe			avant que						NULL	NULL
+folgendermaßen		de la manière suivante					NULL	NULL
+reihenweise		les uns après les autres				NULL	NULL
+worüber			ce sur quoi, ce à propos de quoi			NULL	NULL
+wohingegen		alors que, tandis que					NULL	NULL
+sooft			aussi souvent que					NULL	NULL
+allerdings		toutefois						NULL	NULL
+
+immerhin		tout de même						NULL	NULL
+jedoch			pourtant						NULL	NULL
+vorher			avant							NULL	NULL
+zuvor			auparavant, préalablement				NULL	NULL
+beinahe			presque, quasi						NULL	NULL
+somit			par conséquent						NULL	NULL
+hauptsächlich		surtout							NULL	NULL
+größtenteils		en majeure partie, majoritairement			NULL	NULL
+bekanntlich		comme chacun sait					NULL	NULL
+trotzdem		tout de même						NULL	NULL
+anders			autrement						NULL	NULL
+doch			quand même, pourtant					NULL	NULL
+denn			car							NULL	NULL
+bevor			avant que, de						NULL	NULL
+damit			ainsi, afin que						NULL	NULL
+falls			au cas où						NULL	NULL
+indem			en + participe présent (indique un moyen)		NULL	NULL
+seitdem			depuis que						NULL	NULL
+sodass			à tel point que, de façon que				NULL	NULL
+also			donc							NULL	NULL
+anschließend		ensuite							NULL	NULL
+außerdem		en outre						NULL	NULL
+dabei			en même temps, à cette occasion, et pourtant		NULL	NULL
+dadurch			ainsi, de ce fait, par ce moyen				NULL	NULL
+dafür			pour cela, en revanche					NULL	NULL
+dagegen			en revanche						NULL	NULL
+darauf			puis, à ce sujet					NULL	NULL
+davor			avant, auparavant					NULL	NULL
+dazu			avec cela						NULL	NULL
+dann			puis							NULL	NULL
+neulich			récemment						NULL	NULL
+regelmäßig		régulièrement						NULL	NULL
+Unter welcher Bedingung?	A quelle condition?				NULL	NULL
+genauso			de même							NULL	NULL
+kaum			guère, à peine						NULL	NULL
+möglicherweise		peut-être						NULL	NULL
+so			ainsi							NULL	NULL
+womit			par quoi, ce avec quoi					NULL	NULL
+wofür			ce pour quoi						NULL	NULL
+außerdem		en outre						NULL	NULL
+also			ainsi, donc						NULL	NULL
+aufwärts		vers le haut						NULL	NULL
+bereits			déjà							NULL	NULL
+unten			au-dessous						NULL	NULL
+außen/draußen		à l’extérieur						NULL	NULL
+innen/drinnen		à l’intérieur						NULL	NULL
+hierhin			(vers/jusqu') ici					NULL	NULL
+einst			jadis							NULL	NULL
+fort			au loin							NULL	NULL
+nachdem			après que						NULL	NULL
+obwohl			bien que						NULL	NULL
+hinten			derrière						NULL	NULL
+irgendwo		quelque part						NULL	NULL
+nebenan			à côté							NULL	NULL
+bisher			jusqu'à présent						NULL	NULL
+weder … noch		ni ... ni						NULL	NULL
+leider			malheureusement						NULL	NULL
+einerseits		d'une part						NULL	NULL
+andererseits		d'autre part						NULL	NULL
+inzwischen		entre temps						NULL	NULL
+schließlich		finalement						NULL	NULL
+seitdem			depuis							NULL	NULL
+später			plus tard						NULL	NULL
+zwar			certes							NULL	NULL
+trotzdem		malgré tout						NULL	NULL
+schließlich		finalement, après tout					NULL	NULL
+Warum			pourquoi?						NULL	NULL
+Wieso			pourquoi? Pour quelle raison?				NULL	NULL
+Weshalb			Pour quelle raison?					NULL	NULL
+Weswegen		Pour quelle raison?					NULL	NULL
+darum			c’est pourquoi						NULL	NULL
+deshalb			pour cette raison, pour cela, c'est pourquoi		NULL	NULL
+deswegen		pour cela						NULL	NULL
+Wie?			Comment?						NULL	NULL
+Wie viel?		Combien?						NULL	NULL
+Wie sehr?		Combien?						NULL	NULL
+Wie lange?		Combien de temps?					NULL	NULL
+Wie oft?		Avec quelle fréquence?					NULL	NULL
+fast			presque							NULL	NULL
+ganz			tout, entièrement					NULL	NULL
+genug			assez							NULL	NULL
+gern			volontiers						NULL	NULL
+sehr			très							NULL	NULL
+vielleicht		peut-être						NULL	NULL
+wirklich		vraiment						NULL	NULL
+wo			où							NULL	NULL
+danach			ensuite							NULL	NULL
+aber			mais							NULL	NULL
+sondern			non pas ... mais					NULL	NULL
+oder			ou							NULL	NULL
+und			et							NULL	NULL
+als			comme, lorsque, alors que (temporel)			NULL	NULL
+bis			jusqu'à							NULL	NULL
+da			comme							NULL	NULL
+dass			que							NULL	NULL
+Wo			où?							NULL	NULL
+Wohin			vers où?						NULL	NULL
+Woher			d'où?							NULL	NULL
+da			là							NULL	NULL
+dort			là-bas							NULL	NULL
+hier			ici							NULL	NULL
+links			à gauche						NULL	NULL
+überall			partout							NULL	NULL
+Wann			Quand?							NULL	NULL
+Bis wann?		Jusqu'à quand?						NULL	NULL
+Seit wann?		Depuis quand?						NULL	NULL
+bald			bientôt							NULL	NULL
+danach			après							NULL	NULL
+endlich			enfin, à la fin						NULL	NULL
+gestern			hier							NULL	NULL
+immer			toujours						NULL	NULL
+inzwischen		entre-temps						NULL	NULL
+nie			jamais							NULL	NULL
+oft			souvent							NULL	NULL
+sofort			tout de suite						NULL	NULL
+täglich			quotidiennement						NULL	NULL
+seit			depuis							NULL	NULL
+solange			tant que						NULL	NULL
+während			pendant que						NULL	NULL
+weil			parce que						NULL	NULL
+wenn			quand, si						NULL	NULL

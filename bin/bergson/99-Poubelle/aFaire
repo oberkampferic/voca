@@ -1,0 +1,17 @@
+.Il faut transformer la classe Field en Template pour prendre en charge tous les types de données.
+.level et time font partis du haut niveau. Il doivent donc trouver leur place dans bergson.
+.A chaque recordSet<char> de bergson, doivent correspondrent:
+   un     recordSet<int> pour level
+   un     recordSet<long> pour time
+
+C'est les fonctions de pedagogie et de bergson qui prendront en charge les différences. Peut ẗre faut il créer une fonction qui regroupe le:
+  loadFile(fileName);
+  parsing();
+  monRecordSet.nbColonnes=nbColonnes;
+  if (!monRecordSet.storage(contenuFichier)) erreur("pedagogie","fileAppendToRecordSet", "Storage: Problème.");
+  puis faire une classe intermédiaire entre table et bergson, spécialisé dans le bas niveau du haut niveau.
+
+Comment procéder dans l'écriture?
+On peut commencer par transformer Field en Template,
+Créer cette classe table[B]
+Déplacer les fonctions level time

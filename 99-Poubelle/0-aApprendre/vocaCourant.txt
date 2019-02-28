@@ -1,0 +1,27 @@
+#KEY		STRING				MEMO							SHOT
+dagegen			cependant			NULL							NULL
+Anführungszeichen	guillemets			NULL							NULL
+die Rede		le discours			NULL							NULL
+die Vorrede		l'avant propos			NULL							NULL
+zuversichtlich		confiant			Ich sehe zuversichtlich in die Zukunft			NULL
+							Er sagt, er sähe zuversichtlich in die Zukunft		NULL
+ausschließlich		exclusivement			NULL	    	 		       			NULL
+die Besonderheit	particularité			NULL							NULL
+auffordern		inviter/ragasser		NULL							NULL
+ein/führen		importer/introduire		NULL							NULL
+vor/kommen		se produit/arrive		NULL							NULL
+die Verhandlung		la négociation			NULL							NULL
+hoffen auf etw		espérer qqc			NULL							NULL
+benutzen   		utiliser			NULL							NULL
+die Wiedergabe		reproduction/description	NULL							NULL
+tauchen			plonger/immerger		NULL							NULL
+der Stamm(s,"s)		le tronc, la radical		NULL							NULL
+die Umwandlung		la conversion			NULL							NULL
+die Aufforderung	l'ordre, l'invitation pressante	NULL							NULL
+absolvieren		effectuer/accomplir   		NULL							NULL
+die Wendung		une tournure			NULL							NULL
+die Wortart		la catégorie grammaticale	NULL							NULL
+die Stich		la piqûre    			NULL							NULL
+das Wort		le mot clé			NULL							NULL
+unterbrechen(i,a,o)	interrompre			NULL							NULL
+indem			en				NULL							NULL

@@ -1,0 +1,70 @@
+#ifndef OPENGL_HPP
+#define OPENGL_HPP
+
+#include <iostream>
+#include <GL/gl.h>
+#include <GL/glut.h>
+#include <X[Y][Y]/Intrinsic.h>    /* Display, Window */
+#include <GL/glx.h>           /* GLXContext */
+#include "../../lib/gründ/commun.hpp"
+#include "../../lib/gründ/fichier.hpp"
+#define X [X]
+#define Y [Y]
+#define R [X]
+#define G [Y]
+#define B [B]
+#define A [A]
+
+using namespace std;
+
+class tableBergson: public TABLE {
+public:
+  int flagVisible;
+  int flagQuestionVisible;
+  int flagMemoVisible;
+  double pos[[B]];
+  float color[4];
+};
+
+class openGlInterface {
+public:
+  float static pos[[B]];
+  float static ratio[[B]];
+  float static old[[B]];
+
+  int   static pause;
+  float static offsety;
+  int   static leftState, rightState;
+  int   static nearestTableIndex; //le y est le plus proche
+  
+  int static flagCount;
+  static int posxCurseur;
+  
+  static vector<tableBergson > Bdd;
+  static TABLE maListeDeListe; 
+  static TABLE maListeDeListesRecordSet;
+  
+  static GLuint font_base;
+
+  char window_title[[B]56];
+  char font_name[[B]56];
+  void static attente (void);
+  void init_font(GLuint base, char* f);
+  // gestion windows
+  void static gestionListe_rectangle(double x[Y], double y[Y], double x[B], double y[B]);
+  void static gestionListe_rectanglePlein(double x[Y], double y[Y], double x[B], double y[B]);
+  void static gestionListe_gestionCurseur(int Sens);
+  void static gestionListe_affichageMenuHorizontal();
+  void static gestionListe_affichageMenuVertical();
+  
+  void static print_string(GLuint base, const char* s);
+  void my_init(char* f);
+  void static my_reshape(int w, int h);
+  void static my_handle_key(unsigned char key, int x, int y);
+  void static my_motionMouse(int x, int y);
+  void static my_mouse(int button, int state, int x, int y);
+
+  openGlInterface(int argc, char* argv[]);
+};
+
+#endif

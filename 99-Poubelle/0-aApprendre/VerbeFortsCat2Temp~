@@ -1,0 +1,245 @@
+#STRING	KEY		KEY		KEY		KEY			KEY				SHOT	MEMO
+fangen		angen ng		er fängt		er fing			er hat gefangen			attraper				NULL	ä,i,a
+an/fangen	angen ng		er fängt an		er fing an		er hat angefangen		commencer				NULL	ä,i,a
+empfangen	angen ng		er empfängt		er empfing		er hat empfangen		acceuillir, recevoir			NULL	ä,i,a
+hängen		ängen ng		er hängt		er hing			er hat gehangen			pendre, être suspendu			NULL	ä,i,a
+
+schlafen	afen f			er schläft		er schlief		er hat geschlafen		dormir					NULL	ä,ie,a
+ein/schlafen	afen f			er schläft ein		er schlief ein		er ist eingeschlafen		s’endormir				NULL	ä,ie,a
+fallen		allen l			er fällt		er fiel			er ist gefallen			tomber					NULL	ä,ie,a
+gefallen	allen l			er gefällt		er gefiel		er hat gefallen			plaire					NULL	ä,ie,a
+halten		alten l			er hält			er hielt		er hat gehalten			tenir					NULL	ä,ie,a
+erhalten	alten l			er erhält		er erhielt		er hat erhalten			obtenir					NULL	ä,ie,a
+unterhalten	alten l			er unterhält		er unterhielt		er hat unterhalten		entretenir				NULL	ä,ie,a
+blasen		asen s			er bläst		er blies		er hat geblasen			souffler (très fort)			NULL	ä,ie,a
+lassen		assen s			er lässt		er ließ			er hat gelassen			laisser					NULL	ä,ie,a
+verlassen	assen s			er verlässt		er verließ		er hat verlassen		quitter, abandonner			NULL	ä,ie,a
+braten		aten t			er brät			er briet		er hat gebraten			faire rôtir				NULL	ä,ie,a
+
+graben		aben b			er gräbt		er grub			er hat gegraben			creuser					NULL	ä,u,a
+backen		acken k			er backt		er buk			er hat gebacken			cuire au four				NULL	ä,u,a
+ein/laden	aden d			er lädt ein		er lud ein		er hat eingeladen		inviter					NULL	ä,u,a
+laden		aden d			er lädt			er lud			er hat geladen			charger					NULL	ä,u,a
+schlagen	agen g			er schlägt		er schlug		er hat geschlagen		frapper					NULL	ä,u,a
+vor/schlagen	agen g			er schlägt vor		er schlug vor		er hat vorgeschlagen		proposer				NULL	ä,u,a
+tragen		agen g			er trägt		er trug			er hat getragen			porter					NULL	ä,u,a
+ertragen	agen g			er erträgt		er ertrug		er hat ertragen			supporter				NULL	ä,u,a
+fahren		ahren h			er fährt		er fuhr			er ist gefahren			aller (en véhicule)			NULL	ä,u,a
+_______________________________________________________________________________________________________________________________________________________
+
+geben		eben b			er gibt			er gab			er hat gegeben			donner					NULL	i,a,e
+aus/geben	eben b			er gibt aus		er gab aus		er hat ausgegeben		dépenser				NULL	i,a,e
+lesen		esen s			er liest		er las			er hat gelesen			lire					NULL	i,a,e
+essen		essen ss		er isst			er aß			er hat gegessen			manger					NULL	i,a,e
+vergessen	essen ss		er vergisst		er vergaß		er hat vergessen		oublier					NULL	i,a,e
+fressen		essen ss		er frisst		er frass		er hat gefressen		dévorer					NULL	i,a,e
+bitten		itten tt		er bitt			er bat			er hat gebeten			prier qn				NULL	i,a,e
+
+brechen		echen ch		er bricht		er brach		er hat gebrochen		casser,briser				NULL	i,a,o
+sprechen	echen ch		er spricht		er sprach		er hat gesprochen		parler					NULL	i,a,o
+versprechen	echen ch		er verspricht		er versprach		er hat versprochen		promettre				NULL	i,a,o
+stechen		echen ch		er sticht		er stach		er hat gestochen		piquer					NULL	i,a,o
+erschrecken	ecken ck		er erschrickt		er erschrack		er hat erschroken		s'effrayer				NULL	i,a,o
+treffen		effen ff		er trifft		er traf			er hat getroffen		rencontrer, atteindre			NULL	i,a,o
+nehmen		ehmen hm		er nimmt		er nahm			er hat genommen			prendre					NULL	i,a,o
+benehmen	ehmen hm		er benimmt,		er benahm		er hat benommen			se conduire 				NULL	i,a,o
+mit/nehmen	ehmen hm		er nimmt mit		er nahm mit		er hat mitgenommen		emporter				NULL	i,a,o
+helfen		elfen lf		er hilft		er half			er hat geholfen			aider					NULL	i,a,o
+mit/helfen	elfen lf		er hilft mit		er half mit		er hat mitgeholfen		donner un coup de main			NULL	i,a,o
+gelten		elten lt		er gilt			er galt			er hat gegolten			valoir, passer pour			NULL	i,a,o
+schelten	elten lt		er schilt		er schalt		er hat gescholten		injurier				NULL	i,a,o
+werben		erben rb		er wirbt		er warb			er hat geworben			recruter, briguer, faire la pub		NULL	i,a,o
+bewerben	erben rb		er bewirbt		er bewarb		er hat beworben			poser sa candidature			NULL	i,a,o
+verderben	erben rb		er verdirbt		er verdarb		er ist verdorben		pourrir					NULL	i,a,o
+verderben	erben rb		er verdirbt		er verdarb		er hat verdorben		gâter, gacer				NULL	i,a,o
+sterben		erben rb		er stirbt		er starb		er ist gestorben		mourir					NULL	i,a,o
+werfen		erfen rf		er wirft		er warf			er hat geworfen			jeter					NULL	i,a,o
+bergen		ergen rg		er birgt		er barg			er hat geborgen			se cacher				NULL	i,a,o
+bersten		ersten rst		er birst		er barst		er ist geborsten		éclater					NULL	i,a,o
+
+binden		inden nd		er bind			er band			er hat gebunden			lier					NULL	i,a,u
+finden		inden nd		er findt		er fand			er hat gefunden			trouver					NULL	i,a,u
+verschwinden	inden nd		er verschwindet		er verschwand		er ist verschwunden		disparaître				NULL	i,a,u
+schwinden	inden nd		er schwindet		er schwand		er ist geschwunden		disparaître				NULL	i,a,u
+stinken		inden nd		er stinkt		er stank		er hat gestunken		empester				NULL	i,a,u
+winden		inden nd		er windet		er wand			er hat gewunden			tordre, tresser				NULL	i,a,u
+dringen		ingen ng		er dringt		er drang		et hat gedrungen		pénétrer				NULL	i,a,u
+dingen		ingen ng		er dingt		er dang			er hat gedungen			soudoyer, louer				NULL	i,a,u
+singen		ingen ng		er singt		er sang			er hat gesungen			chanter					NULL	i,a,u
+zwingen		ingen ng		er zwingt		er zwang		er hat gezwungen		forcer, obliger				NULL	i,a,u
+gelingen	ingen ng		er gelingt		er gelang		er hat gelungen			réussir					NULL	i,a,u
+klingen		ingen ng		er klingt		er klang		er hat geklungen		tinter, sonner				NULL	i,a,u
+ringen		ingen ng		er ringt		er rang			er hat gerungen			lutter					NULL	i,a,u
+schwingen	ingen ng		er schwingt		er schwang		er hat geschwungen		brandir, balancer			NULL	i,a,u
+sinken		ingen ng		er sinkt		er sank			er ist gesunken			sombrer					NULL	i,a,u
+wringen		ingen ng		er wringt		er wrang		er hat gewrungen		tordre, essorer				NULL	i,a,u
+trinken		inken nk		er trinkt		er trank		er hat getrunken		boire					NULL	i,a,u
+springen	inken nk		er springt		er sprang		er ist gesprungen		sauter					NULL	i,a,u
+
+beginnen	innen nn		er beginnt		er begann		er hat begonnen			commencer				NULL	i,a,o
+gewinnen	innen nn		er gewinnt		er gewann		er hat gewonnen			gagner					NULL	i,a,o
+spinnen		innen nn		er spinnt		er spann		er hat gesponnen		filer					NULL	i,a,o
+sinnen		innen nn		er sinnt		er sann			er hat gesonnen			réfléchir				NULL	i,a,o
+rinnen		innen nn		er rinnt		er rann			er ist geronnen			couler					NULL	i,a,o
+schwimmen	immen mm		er schwimmt		er schwamm		er hat geschwommen		nager					NULL	i,a,o
+
+klimmen		immen mm		er klimmt		er klomm		er hat geklommen		grimper					NULL	i,o,o
+glimmen		immen mm		er glimmt		er glomm		er hat geglommen		jeter une faible lueur			NULL	i,o,o
+schwellen	ellen ll		es schwillt		es schwoll		es hat geschwollen		enfler, gonfler				NULL	i,o,o
+quellen		ellen ll		er quillt		er quoll		er ist gequollen		sourdre, jaillir			NULL	i,o,o
+schmelzen	elzen lz		er schmilzt		er schmolz		er ist geschmolzen		fondre					NULL	i,o,o
+dreschen	eschen sch		er drischt		er drosch		er hat gedroschen		battre au fléau				NULL	i,o,o
+____________________________________________________________________________________________________________________________________________________
+
+speien		eien _			er speit		er spie			er hat gespien			cracher					NULL	ei,ie,ie
+schreien	eien _			er schreit		er schrie		er hat geschrien		crier					NULL	ei,ie,ie
+treiben		eiben b			er treibt		er trieb		er hat getrieben		pratiquer, pousser			NULL	ei,ie,ie
+übertreiben	eiben b			er übertreibt		er übertrieb		er hat übertrieben		exagérer				NULL	ei,ie,ie
+schreiben	eiben b			er schreibt		er schrieb		er hat geschrieben		écrire					NULL	ei,ie,ie
+beschreiben	eiben b			er beschreibt		er beschrieb		er hat beschrieben		décrire					NULL	ei,ie,ie
+bleiben		eiben b			er bleibt		er blieb		er ist geblieben		rester					NULL	ei,ie,ie
+scheiden	eiden d			er scheidet		er schied		er hat geschieden		séparer					NULL	ei,ie,ie
+entscheiden	eiden d			er entscheidet		er entschied		er hat entschieden		décider					NULL	ei,ie,ie
+unterscheiden	eiden d			er unterscheidet	er unterschied		er hat unterschieden		distinguer, différencier		NULL	ei,ie,ie
+meiden		eiden d			er meidt		er mied			er hat gemieden			éviter					NULL	ei,ie,ie
+schweigen	eigen g			er schweigt		er schwieg		er hat geschwiegen		se taire				NULL	ei,ie,ie
+steigen		eigen g			er steigt		er stieg		er ist gestiegen		monter					NULL	ei,ie,ie
+gedeihen	eihen h			er gedeiht		er gedieh		er ist gediehen			prospérer				NULL	ei,ie,ie
+leihen		eihen h			er leiht		er lieh			er hat geliehen			prêter					NULL	ei,ie,ie
+verleihen	eihen h			er verleiht		er verlieh		er hat verliehen		perdre					NULL	ei,ie,ie
+verzeihen	eihen h			er verzeiht		er verzieh		er hat verziehen		pardonner				NULL	ei,ie,ie
+scheinen	einen n			er scheint		er schien		er hat geschienen		sembler, briller			NULL	ei,ie,ie
+erscheinen	einen n			er erscheint		er erschien		er hat erschienen		apparaître, paraître			NULL	ei,ie,ie
+weisen		eisen s			er weist		er wies			er hat gewiesen			montrer					NULL	ei,ie,ie
+preisen		eisen s			er preist		er pries		er hat gepriesen		vanter					NULL	ei,ie,ie
+
+streichen	eichen ch		er streicht		er strich		er hat gestrichen		rayer					NULL	ei,i,i
+weichen		eichen ch		er weicht		er wich			er ist gewichen			céder le pas				NULL	ei,i,i
+schleichen	eichen ch		er schleicht		er schlich		er ist geschlichen		se glisser				NULL	ei,i,i
+vergleichen	eichen ch		er vergleicht		er verglich		er hat verglichen		comparer				NULL	ei,i,i
+gleichen	eichen ch		er gleicht		er glich		er hat geglichen		ressembler				NULL	ei,i,i
+pfeifen		eifen f			er pfeift		er gepfiff		er hat gepfiffen		siffler					NULL	ei,i,i
+schleifen	eifen f			er schleift		er schliff		er hat geschliffen		aiguiser				NULL	ei,i,i
+kneifen		eifen f			er kneift		er knif			er hat gekniffen		pincer					NULL	ei,i,i
+greifen		eifen f			er greift		er griff		er hat gegriffen		saisir					NULL	ei,i,i
+begreifen	eifen f			er begreift		er begriff		er hat begriffen		comprendre, saisir			NULL	ei,i,i
+schneiden	eiden d			er schneidet		er schnitt		er hat geschnitten		couper					NULL	ei,i,i
+reiten		eiten t			er reitet		er ritt			er ist geritten			aller à cheval				NULL	ei,i,i
+schreiten	eiten t			er schreitet		er schritt		er hat geschritten		marcher					NULL	ei,i,i
+sich streiten	eiten t			er streitet sich	er stritt sich		er hat sich gestritten		se disputer				NULL	ei,i,i
+gleiten		eiten t			er gleitet		er glitt		er ist geglitten		glisser					NULL	ei,i,i
+sich befleißen	eißen ß			er beflisst sich	er befliss		er hat beflissen		s'appliquer				NULL	ei,i,i
+beißen		eißen ß			er beisst		er biss			er ist gebissen			mordre					NULL	ei,i,i
+schmeißen	eißen ß			er schmeißt		er schmiss		er hat geschmissen		lancer					NULL	ei,i,i
+spleißen	eißen ß			er spleißt		er spliss		er hat gesplissen		fendre					NULL	ei,i,i
+verschleißen	eißen ß			er verschließt		er vershliss		er ist verschlissen		s'user prématurément			NULL	ei,i,i
+verschleißen	eißen ß			er verschließt		er vershliss		er hat verschlissen		user prématurément			NULL	ei,i,i
+_____________________________________________________________________________________________________________________________________________________
+
+sehen		ehen h			er sieht		er sah			er hat gesehen			voir					NULL	ie,a,e
+aus/sehen	ehen h			er sieht aus		er sah aus		er hat ausgesehen		avoir l’air, sembler			NULL	ie,a,e
+fern/sehen	ehen h			er sieht fern		er sah fern		er hat ferngesehen		regarder la télé			NULL	ie,a,e
+geschehen	ehen h			er geschieht		er geschah		er ist geshehen			se passer				NULL	ie,a,e
+liegen		iegen			er liegt		er lag			er hat gelegen			être couché				NULL	ie,a,e
+
+befehlen	ehlen hl		er berfiehlt		er befahl		er hat befohlen			ordonner				NULL	ie,a,o
+empfehlen	ehlen hl		er empfiehlt		er empfahl		er hat empfohlen		recommander				NULL	ie,a,o
+stieben		ieben b			er stiebt		er stob			er hat gestoben			voler en poussière			NULL	ie,o,o
+schieben	ieben b			er schiebt		er schob		er hat geschoben		pousser, déplacer			NULL	ie,o,o
+kriechen	iechen ch		er kriecht		er kroch		er ist gekrochen		ramper					NULL	ie,o,o
+riechen		iechen ch		er riecht		er roch			er hat gerochen			sentir(odeur)				NULL	ie,o,o
+sieden		ieden d			er siedet		er sott			er hat gesotten			bouillir				NULL	ie,o,o
+biegen		iegen g			er biegt		er bog			er hat gebogen			plier					NULL	ie,o,o
+fliegen		iegen g			er fliegt		er flog			er ist geflogen			voler					NULL	ie,o,o
+wiegen		iegen g			er wiegt		er wog			er hat gewogen			peser					NULL	ie,o,o
+ziehen		iehen h			er zieht		er zog			er hat gezogen			tirer					NULL	ie,o,o
+ziehen		iehen h			er zieht		er zog			er ist gezogen			partir en groupde			NULL	ie,o,o
+fliehen		iehen h			er flieht		er floh			er ist geflohen			fuir					NULL	ie,o,o
+verlieren	ieren r			er verliert		er verlor		er hat verloren			perdre					NULL	ie,o,o
+frieren		ieren r			er friert		er fror			er hat gefroren			frire					NULL	ie,o,o
+verdrießen	ießen ß			er verdrießt		er verdross		er hat verdrossen		contrarier				NULL	ie,o,o
+sprießen	ießen ß			er sprießt		er spross		er ist gesprossen		germer, éclore				NULL	ie,o,o
+schießen	ießen ß			er schießt		er schoss		er hat geschossen		tirer(arme)				NULL	ie,o,o
+fließen		ießen ß			er fließt		er floß			er ist geflossen		couler					NULL	ie,o,o
+schließen	ießen ß			er schließt		er schloss		er hat geschlossen		fermer					NULL	ie,o,o
+beschließen	ießen ß			er beschließt		er beschloss		er hat beschlossen		décider					NULL	ie,o,o
+gießen		ießen ß			er giesst		er goss			er hat gegossen			verser					NULL	ie,o,o
+genessen	essen ss		er geniesst		er genoss		er hat genossen			jouir de				NULL	ie,o,o
+(an)bieten	ieten t			er bietet (an)		er bot (an)		er hat (an)geboten		offrir, proposer			NULL	ie,o,o
+_______________________________________________________________________________________________________________________________________________________
+
+(er)wägen	ägen			er erwägt		er erwog		er hat erwogen			peser, considérer			NULL	ä,o,o
+gären		ären			er gärt			er gor			er hat gegoren			fermenter				NULL	ä,o,o
+erlöschen	öschen			er erlischt		er erlosch		er ist erloschen		s'éteindre				NULL	i,o,o
+(be)trügen	ügen			er (be)trügt		er (be)trog		er hat (be)trogen		tromper					NULL	ü,o,o
+lügen		ügen			er lügt			er log			er hat gelogen			mentir					NULL	ü,o,o
+küren		üren			er kürt			er kor			er hat gekoren			élire					NULL	ü,o,o
+lügen		ügen			er lügt			er log			er hat gelogen			mentir					NULL	ü,o,o
+
+(er)schallen	allen			er erschallt		er erscholl		er hat erschollen		résonner, retentir			NULL	a,o,o
+heben		allen			er hebt			er hob			er hat gehoben			soulever  				NULL	e,o,o
+gebären		ären			sie gäbiert		sie gebar		sie hat geboren			mettre au monde				NULL	ie,a,o
+hauen		auen			er haut			er hieb			er hat gehauen			frapper					NULL	äu,ie,au
+schnauben	auben			er schnaubt		er schnob		er hat geschnoben		s'ébrouer, haleter			NULL	au,o,o
+saufen		aufen			er säuft		er soff			er hat gesoffen			boire(animaux)				NULL	äu,o,o
+saugen		augen			er saugt		er sog			er hat gesogen			sucer					NULL	au,o,o
+
+wachsen		achsen			er wächst		er wuchs		er ist gewachsen		croître					NULL	ä,u,a
+aufwachsen	achsen			er wächst auf		er wuchs auf		er ist aufwachsen		grandir					NULL	ä,u,a
+schaffen	affen			er schafft		er schuf		er hat geschaffen		créer					NULL	a,u,a
+raten		aten			er rät			er riet			er hat geraten			conseiller				NULL	ä,ie,a
+schlafen	afen			er schläft		er schlief		er hat geschlafen		dormir					NULL	ä,ie,a
+waschen		aschen			er wäscht		er wusch		er hat gewaschen		laver					NULL	ä,u,a
+laufen		aufen			er läuft		er lief			er ist gelaufen			courir					NULL	äu,ie,au
+weben		eben			er webt			er wob			er hat gewoben			tisser					NULL	e,o,o
+bewegen		eben			er bewegt		er bewog		er hat bewogen			inciter à				NULL	e,o,o
+melken		egen			er melkt		er melkt		er molk				er hat gemolken				NULL	e,o,o
+pflegen		egen			er pflegt		er plog			er hat gepflogen		avoir coutume de			NULL	e,o,o
+scheren		eren			er schert		er schor		er hat geschoren		tondre					NULL	e,o,o
+fechten		echten			er ficht		er focht		er hat gefochten		se battre en duel			NULL	i,ot,o
+flechten	echten			er flicht		er floch		er hat geflochen		tresser					NULL	i,o,o
+gehen		ehen			er geht			er ging			er ist gegangen			aller					NULL	e,i,a
+vergehen	ehen			er vergeht		er verging		er ist vergangen		passer					NULL	e,i,a
+
+senden		enden			er sendet		er sandte		er hat gesandt			envoyer					NULL	e,a,a
+denken		enken			er denkt		er dachte		er hat gedacht			penser					NULL	e,a,a
+stehen		ehen			er steht		er stand		er hat gestanden		être debout				NULL	e,a,a
+verstehen	ehen			er versteht		er verstand		er hat verstanden		comprendre				NULL	e,a,a
+nennen		ennen			er nennt		er nannte		er hat genannt			appeler					NULL	e,a,a
+kennen		ennen			er kennt		er kannte		er hat gekannt			connaître				NULL	e,a,a
+erkennen	ennen			er erkennt		er erkannte		er hat erkannt			reconnaître				NULL	e,a,a
+brennen		ennen			er brennt		er brannte		er hat gebrannt			bruler					NULL	e,a,a
+
+stehlen		ehlen			er stiehlt		er stahlt		er hat gestohlen		dérober					NULL	ie,a,o
+leiden		eiden			er leidet		er litt			er hat gelitten			souffrir				NULL	ei,it,it
+sein		ein			er ist			er war			er ist gewesen			être					NULL	-----
+heißen		eißen			er heißt		er hieß			er hat geheissen		appeler					NULL	ei,ie,ei
+messen		essen			er misst		er maß			er hat gemessen			mesurer					NULL	i,a,e
+treten		eten			er tritt		er trat			er ist getreten			poser le pied				NULL	i,a,e
+an/ziehen	iehen			er zieht an		er zog an		er hat angezogen		mettre (un habit)			NULL	ie,og,og*
+verbieten	ieten			er verbietet		er verbot		er hat verboten			interdire				NULL	ie,ot,o*
+ziehen		iehen			er zieht		er zog			er hat gezogen/er ist gezogen	tirer, partir, déménager		NULL	ie,og,og*
+schlingen	ingen			er schlingt		er schlang		er hat geschlungen		avaler, embrasser			NULL	i,a,u
+bringen		ingen			er bringt		er brachte		er hat gebracht			apporter				NULL	i,a,a
+verbringen	ingen			er verbringt		er verbrachte		er hat verbracht		passer (du temps)			NULL	i,a,a
+schinden	inden			er schindet		er schund		er hat geschunden		écorcher				NULL	i,u,u
+wissen		issen			er weiß			er wusste		er hat gewusst			savoir					NULL	ei,u,u
+sitzen		itzen			er sitzt		er saß			er hat gesessen			être assis				NULL	i,a,e
+besitzen	itzen			er besitzt		er besaß		er hat besessen			posseder				NULL	i,a,e
+rufen		ufen			er ruft			er rief			er hat gerufen			appeler					NULL	u,ie,u
+an/rufen	ufen			er ruft an		er rief an		er hat angerufen		appeler (au tél.)			NULL	u,ie,u
+kommen		ommen			er kommt		er kam			er ist gekommen			venir					NULL	o,a,o
+an/kommen	ommen			er kommt an		er kam an		er ist angekommen		arriver					NULL	o,a,o
+bekommen	ommen			er bekommt		er bekam		er hat bekommen			recevoir, obtenir			NULL	o,a,o
+entkommen	ommen			er entkommt		er entkamm		er ist entkommen		s'échapper				NULL	o,a,o
+schwören	ören			er schwört		er schwur		er hat geschworen		jurer					NULL	ö,u,o
+stoßen		oßen			er stößt		er stieß		er hat gestoßen			heurter					NULL	ö,ie,o
+tun		un			er tut			er tat			er hat getan			faire					NULL	u,a,a
+dürfen		ürfen			er darf			er durft		er hat gedurft			avoir la permission de, pouvoir		NULL	a,u,u
+haben		aben			er hat			er hatte		er hat gehabt			avoir 	 	    			NULL	a,a,a
+können		önnen			er kann			er konnte		er hat gekonnt			pouvoir					NULL	a,o,o
+müssen		üssen			er musst		er musste		er hat gemusst			être obligé, falloir, devoir		NULL	u,u,u
+sollen		ollen			er soll			er sollte		er hat gesollt			devoir	     	      			NULL	o,o,o
+werden		erden			er wird			er wurde		er ist geworden			devenir					NULL	i,u,o
+wollen		ollen			er will			er wollte		er hat gewollt			vouloir					NULL	i,o,o
+

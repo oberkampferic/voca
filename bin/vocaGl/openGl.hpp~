@@ -1,0 +1,103 @@
+#ifndef OPENGL_HPP
+#define OPENGL_HPP
+
+#include <boost/algorithm/string.hpp>
+#include <iostream>
+#include <GL/gl.h>
+#include <GL/glut.h>
+#include <X11/Intrinsic.h>    /* Display, Window */
+#include <GL/glx.h>           /* GLXContext */
+#include "../../lib/gründ/commun.hpp"
+#include "../../lib/gründ/fichier.hpp"
+#define X 0
+#define Y 1
+#define R 0
+#define G 1
+#define B 2
+#define A 3
+
+using namespace std;
+
+
+class tableBergson: public TABLE {
+public:
+  int flagVisible;
+  int flagQuestionVisible;
+  int flagMemoVisible;
+  double pos[2];
+  float color[4];
+  string filename;
+  tableBergson(){
+   color[0]=1.0;		     
+   color[1]=1.0;		 
+   color[2]=0.0;		 
+   pos[0]=0.0;		 
+   pos[1]=0.0;		 
+   flagQuestionVisible=1;	 
+   flagMemoVisible=1;	 
+   flagVisible=1;		 
+   filename.assign("Nouveau");
+  }
+};
+
+class openGlInterface {
+public:
+  static string fileName;
+  static string fileName2;
+  static string fileNameListe;
+  static float  pos[2];
+  static float  ratio[2];
+  static float  old[2];
+  static float  offsety;
+  static int    pause;
+  static int    leftState, rightState;
+  static int    nearestTableIndex; //le y est le plus proche
+  static int    posxCurseur;
+
+  static GLuint font_base;
+  
+  static vector<tableBergson > Bdd;
+  static TABLE  monDico;
+  static TABLE  monHauftisteWorte;
+  static TABLE  maListeDeListe;
+  static TABLE  prefixe;
+  static TABLE  suffixe;
+  static TABLE  tmpDico;
+  static TABLE  tmpHauftig;
+  static TABLE  tmpDicoXhauftig;
+  
+  char window_title[256];
+  char font_name[256];
+  void static attente (void);
+  void init_font(GLuint base, char* f);
+  //## ELEMENTS WINDOWS ######################################
+  void static gestionListe_rectangle(double x1, double y1, double x2, double y2);
+  void static gestionListe_rectanglePlein(double x1, double y1, double x2, double y2);
+  void static gestionListe_gestionCurseur(int Sens);
+  void static gestionListe_affichageMenuHorizontal();
+  void static gestionListe_affichageMenuVertical();
+  //## GESTION INTERFACE SOURIS ##############################
+  void static colonneConcernee(int x, int y);
+  int static motConcerne (int x, int y);
+//  void static deplacerMot(int prochaineTableIndex, int projY){
+//    
+//  }
+
+  int static radical(string &mot, string &radical);
+  int static supprimerArticle(string &mot, string &radical);
+  int static radical1(string &mot, string &radical);
+  int static radical2(string &mot, string &radical);
+  double static offsetPositionMondeCurseurSouris_X(double oldRatiox, int x, int y);
+  double static offsetPositionMondeCurseurSouris_Y(double oldRatioy, int x, int y);
+  //## TYPOGRAPHIE ###########################################
+  void static print_string(GLuint base, const char* s);
+  //## INITIALISATION ET POINTEUR DE FONCTION ################
+  void my_init(char* f);
+  void static my_reshape(int w, int h);
+  void static my_motionMouse(int x, int y);
+  void static my_mouse(int button, int state, int x, int y);
+
+  openGlInterface(int argc, char* argv[]);
+};
+
+#endif

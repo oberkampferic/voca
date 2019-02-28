@@ -1,0 +1,36 @@
+int bergson::loadFile(string fileName){
+  kurz("Lecture du fichier=============================================\n");
+  
+  ifstream in(fileName);
+  stringstream buffer;
+  buffer << in.rdbuf();
+  contenuFichier = buffer.str();
+}
+//true pas de problème
+//false problème
+
+int bergson::parsing(){
+  unsigned int monNbColonnes;
+  cout << "preparsing" << endl;
+  preParsing(&contenuFichier);
+
+  monNbColonnes = detectNbColonneInit(&contenuFichier);
+  if (controleCoherenceFichier(&contenuFichier, monNbColonnes)==false) 
+    erreur ("bergson", "parsing", "problème de cohérence, nombre de colonnes." + to_string(monNbColonnes));
+  cout << "analyseEntete" << endl;
+  size_t pos=analyseEntete(&contenuFichier);
+  
+  if (memoIndex.size()==[X]) flagMemo=false; else flagMemo=true;
+  flagShot=false;
+
+  contenuFichier=contenuFichier.substr(pos, contenuFichier.npos -pos);
+  cout << "postparsing" << endl;
+  postParsing(&contenuFichier);
+  debug ("bergson", "parsing",  "contenuFichier:" + contenuFichier);
+
+  cout << monNbColonnes << endl;
+  nbColonnes=monNbColonnes;
+  cout << "fin" << endl;
+}
+
+

@@ -1,0 +1,156 @@
+#include "bergson.hpp"
+#include "bergsonLogistique.cpp"
+
+//double bergson::monX(double offset) { return (Bdd[j].pos[X] + offset - pos[X] ) * ratio[X] };
+	  
+
+void bergson::afficherListeDessin1(){
+  double ratioCoul=0.1;
+  for (int j=0; j <Bdd.size(); j++) {
+    for (int i=0; i< Bdd[j].size(); i++) {
+      if (Bdd[j].flagVisible==true) {
+	//## Carré vertical #################################################
+	if (j==posxCurseur)
+	  if (ratioCoul < 0.6) ratioCoul=0.8; else ratioCoul=0.3;
+	else
+	  if (ratioCoul < 0.6) ratioCoul=0.7; else ratioCoul=0.4;
+	
+	glColor4f( (Bdd[j].color[R] * ratioCoul) / 3,
+		   (Bdd[j].color[G] * ratioCoul) / 3,
+		   (Bdd[j].color[B] * ratioCoul) / 3,
+		   Bdd[j].color[A] * 0.2 );
+		
+	glColor4f( (Bdd[j].color[R] * ratioCoul) / 3,
+		   (Bdd[j].color[G] * ratioCoul) / 3,
+		   (Bdd[j].color[B] * ratioCoul) / 3,
+		   Bdd[j].color[A] * 0.2 );
+	glBegin(GL_QUADS);{
+	  glVertex2f( (Bdd[j].pos[X] + 010 - pos[X] )*ratio[X] ,( -(i*20) - pos[Y])*ratio[Y] );
+	  glVertex2f( (Bdd[j].pos[X] + 600 - pos[X] )*ratio[X] ,( -(i*20) - pos[Y])*ratio[Y] );      
+	  glVertex2f( (Bdd[j].pos[X] + 600 - pos[X] )*ratio[X] ,( -(i*20) - pos[Y])*ratio[Y] );
+	  glVertex2f( (Bdd[j].pos[X] + 010 - pos[X] )*ratio[X] ,( -(i*20) - pos[Y])*ratio[Y] );
+	}    glEnd();
+	//## CarréDate ###########################################################
+	glColor4f(Bdd[j].color[R] * ratioCoul  , Bdd[j].color[G] * ratioCoul , Bdd[j].color[B] * ratioCoul , Bdd[j].color[A] *0.5);
+	glBegin(GL_QUADS);{
+	  glVertex2f( (Bdd[j].pos[X] - 10 - pos[X] )*ratio[X],( -(i*20) - pos[Y])*ratio[Y]);
+	  glVertex2f( (Bdd[j].pos[X] - 80 - pos[X] )*ratio[X],( -(i*20) - pos[Y])*ratio[Y]);      
+	  glVertex2f( (Bdd[j].pos[X] - 80 - pos[X] )*ratio[X],( -(i*20) - pos[Y])*ratio[Y]);
+	  glVertex2f( (Bdd[j].pos[X] - 10 - pos[X] )*ratio[X],( -(i*20) - pos[Y])*ratio[Y]);
+	}    glEnd();
+	
+      } } }
+}
+
+void bergson::afficherListeDessin2(){
+  double ratioCoul=1;
+
+  for (int j=0; j <Bdd.size(); j++) {
+    for (int i=0; i< Bdd[j].size(); i++) {
+      if (Bdd[j].flagVisible==true) {
+	//## Ligne horizontale Date 1#############################################
+	glColor4f(Bdd[j].color[R] * 0.5, Bdd[j].color[G] *0.5, Bdd[j].color[B] *0.5, Bdd[j].color[A] );
+	glBegin(GL_LINES);{
+	  glVertex2f((-2000 - pos[X])*ratio[X],( -(i*20) - pos[Y])*ratio[Y]);
+	  glVertex2f(( 2000 - pos[X])*ratio[X],( -(i*20) - pos[Y])*ratio[Y]);
+	}    glEnd();
+	//## Ligne horizontale Date 2#############################################
+	glColor4f(Bdd[j].color[R]* 0.2 , Bdd[j].color[G]* 0.2 , Bdd[j].color[B]* 0.2 , Bdd[j].color[A] );
+	glBegin(GL_LINES);{
+	  glVertex2f((-2000 - pos[X])*ratio[X],( -(i*20) - pos[Y])*ratio[Y]);
+	  glVertex2f(( 2000 - pos[X])*ratio[X],( -(i*20) - pos[Y])*ratio[Y]);
+	}    glEnd();
+      } } }
+}
+
+void bergson::afficherListeTexte() {
+  for (int i=0; i < tmpDico.size(); i++) {
+    //    if (tmpDico.flagVisible==true) {
+      //## Récupère les données de l'enregistrement ############################
+      s_Allemand=tmpDico[i][0];
+      s_Francais=tmpDico[i][1];
+	
+      glColor4f(0.2, 0.4, 0.4, 1.0);
+		//tmpDico.color[R] , tmpDico.color[G] , tmpDico.color[B] , tmpDico.color[A] );
+
+      //## Allemand ############################################################
+      //      if (tmpDico.flagQuestionVisible) {
+      glRasterPos2f(0.0 -glutGet(GLUT_WINDOW_WIDTH)/2 , -(i*20)-60 +glutGet(GLUT_WINDOW_HEIGHT)/2);
+	print_string(font_base, s_Allemand.c_str());
+	//      }
+      //## Francais ############################################################
+	//      if (tmpDico.flagMemoVisible) {
+	glRasterPos2f(200 -glutGet(GLUT_WINDOW_WIDTH)/2, -(i*20)-60 +glutGet(GLUT_WINDOW_HEIGHT)/2);
+	print_string(font_base, s_Francais.c_str());
+	//      }
+
+    }
+  //}
+    for (int i=0; i < tmpHauftig.size(); i++) {
+    //    if (tmpHauftig.flagVisible==true) {
+      //## Récupère les données de l'enregistrement ############################
+      s_Allemand=tmpHauftig[i][0];
+      s_Francais=tmpHauftig[i][1];
+	
+      glColor4f(0.4, 0.4, 0.2, 1.0);
+		//tmpHauftig.color[R] , tmpHauftig.color[G] , tmpHauftig.color[B] , tmpHauftig.color[A] );
+
+      //## Allemand ############################################################
+      //      if (tmpHauftig.flagQuestionVisible) {
+      glRasterPos2f(0.0 , -(i*20-10)-60 +glutGet(GLUT_WINDOW_HEIGHT)/2);
+	print_string(font_base, s_Allemand.c_str());
+	//      }
+      //## Francais ############################################################
+	//      if (tmpHauftig.flagMemoVisible) {
+	glRasterPos2f(200, -(i*20-10)-60 +glutGet(GLUT_WINDOW_HEIGHT)/2);
+	print_string(font_base, s_Francais.c_str());
+	//      }
+
+    }
+  //}
+        for (int i=0; i < tmpDicoXhauftig.size(); i++) {
+    //    if (tmpDicoXhauftig.flagVisible==true) {
+      //## Récupère les données de l'enregistrement ############################
+      s_Allemand=tmpDicoXhauftig[i][0];
+      s_Francais=tmpDicoXhauftig[i][1];
+	
+      glColor4f(0.8, 0.2, 0.2, 1.0);
+		//tmpDicoXhauftig.color[R] , tmpDicoXhauftig.color[G] , tmpDicoXhauftig.color[B] , tmpDicoXhauftig.color[A] );
+
+      //## Allemand ############################################################
+      //      if (tmpDicoXhauftig.flagQuestionVisible) {
+      glRasterPos2f(0.0-glutGet(GLUT_WINDOW_WIDTH)/4 , -(i*20+15)-60 +glutGet(GLUT_WINDOW_HEIGHT)/2);
+	print_string(font_base, s_Allemand.c_str());
+	//      }
+      //## Francais ############################################################
+	//      if (tmpDicoXhauftig.flagMemoVisible) {
+	glRasterPos2f(200-glutGet(GLUT_WINDOW_WIDTH)/4, -(i*20+15)-60 +glutGet(GLUT_WINDOW_HEIGHT)/2);
+	print_string(font_base, s_Francais.c_str());
+	//      }
+
+    }
+  //}
+    
+  //## TABLES ################################################
+  for (int j=0; j < Bdd.size(); j++) {
+    for (int i=0; i < Bdd[j].size(); i++) {
+      if (Bdd[j].flagVisible==true) {
+	//## Récupère les données de l'enregistrement ############################
+	s_Allemand=Bdd[j][i][0];
+	s_Francais=Bdd[j][i][1];
+	
+	glColor4f(Bdd[j].color[R] , Bdd[j].color[G] , Bdd[j].color[B] , Bdd[j].color[A] );
+
+	//## Allemand ############################################################
+	if (Bdd[j].flagQuestionVisible) {
+	  glRasterPos2f((Bdd[j].pos[X] + 10.0 -300 - pos[X])*ratio[X], (-(i*20+10) - pos[Y] - offsety)*ratio[Y]);
+	  print_string(font_base, s_Allemand.c_str());
+	}
+	//## Francais ############################################################
+	if (Bdd[j].flagMemoVisible) {
+	  glRasterPos2f((Bdd[j].pos[X] + 10.0 + 300 - pos[X])*ratio[X], (-(i*20+10) - pos[Y] - offsety)*ratio[Y]);
+	  print_string(font_base, s_Francais.c_str());
+	}
+	
+      } } } }
+

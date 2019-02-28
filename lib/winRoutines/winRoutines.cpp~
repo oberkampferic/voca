@@ -1,0 +1,14 @@
+void couleurWindows::mesCouleurWindows(void){
+    for (int i=0; i<NBFENSTER; i++) box (myWindows[i],0,0);
+
+    bkgd(COLOR_PAIR(1));
+    wbkgd(stdscr, COLOR_PAIR(2));
+    for (int i=0; i<NBFENSTER; i++) wbkgd(myWindows[i], COLOR_PAIR(2));
+  }
+
+void couleurWindows::mesCouleurWindows2(void){
+    refresh();
+    for (int i=0; i<NBFENSTER; i++) wrefresh(myWindows[i]);
+    for (int i=0; i<NBFENSTER; i++) wnoutrefresh(myWindows[i]);
+    doupdate();
+  }

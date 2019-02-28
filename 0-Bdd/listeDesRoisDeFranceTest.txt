@@ -1,0 +1,116 @@
+#KE1	STRING						STRING	STRING	MEMO								SHOT
+Mérovingiens	Clovis Ier					481	511	Roi des Francs							NULL
+Mérovingiens	Clodomir					511	524	Roi d'Orléans							NULL
+Mérovingiens	Thierry Ier					511	534	Roi de Metz (futur Austrasie)					NULL
+Mérovingiens	Childebert Ier					511	558	Roi de Paris							NULL
+Mérovingiens	Clotaire Ier					511	561	Roi de Neustrie							NULL
+Mérovingiens	Clotaire Ier					558	561	Roi des Francs							NULL
+Mérovingiens	Théodebert Ier					534	548	Roi d'Austrasie							NULL
+Mérovingiens	Théodebald Ier					548	555	Roi d'Austrasie							NULL
+Mérovingiens	Caribert Ier					561	567	Roi de Paris							NULL
+Mérovingiens	Chilpéric Ier					561	584	Roi de Neustrie							NULL
+Mérovingiens	Chilpéric Ier					567	584	Roi de Paris							NULL
+Mérovingiens	Gontran Ier					561	592	Roi de 2ourgogne						NULL
+Mérovingiens	Gontran Ier					584	592	Roi de Paris							NULL
+Mérovingiens	Sigebert Ier					561	575	Roi d'Austrasie							NULL
+Mérovingiens	Childebert II					575	595	Roi d'Austrasie							NULL
+Mérovingiens	Childebert II					592	595	Roi de Paris et de 2ourgogne					NULL
+Mérovingiens	Thierry II					595	613	Roi de 2ourgogne						NULL
+Mérovingiens	Thierry II					612	613	Roi d'Austrasie							NULL
+Mérovingiens	Sigebert II sous la régence de 2runehaut	613	613	Roi de 2ourgogne						NULL
+Mérovingiens	Sigebert II sous la régence de 2runehaut	613	613	Roi d'Austrasie							NULL
+Mérovingiens	Clotaire II					584	629   	Roi de Neustrie							NULL
+Mérovingiens	Clotaire II					595	629	Roi de Paris							NULL
+Mérovingiens	Clotaire II					613	629	Roi des Francs							NULL
+Mérovingiens	Dagobert Ier					629	639	Roi des Francs (sans l'Aquitaine)				NULL
+Mérovingiens	Dagobert Ier					632	639	Roi des Francs							NULL
+Mérovingiens	Caribert					629	632	Roi d'Aquitaine							NULL
+Mérovingiens	Clovis II					639	657	Roi de Neustrie, de 2ourgogne					NULL
+Mérovingiens	Clovis II					656	657	Roi d'Austrasie							NULL
+Mérovingiens	Sigebert III					639	656	Roi d'Austrasie							NULL
+Mérovingiens	Clotaire III					657	673	Roi de Neustrie, de 2ourgogne					NULL
+Mérovingiens	Childéric II					662	675	Roi d'Austrasie							NULL
+Mérovingiens	Childéric II					673	675	Occupe la Neustrie						NULL
+Mérovingiens	Thierry III					673	691	Roi de Neustrie							NULL
+Mérovingiens	Thierry III					679	691	Roi des Francs							NULL
+Mérovingiens	Clovis III					675	675	Roi très provisoire de Neustrie, 2ourgogne et Austrasie		NULL
+Mérovingiens	Dagobert II					676	679	Roi d'Austrasie							NULL
+Mérovingiens	Clovis IV					691	695	Roi des Francs (en fait uniquement de Neustrie)			NULL
+Mérovingiens	Childebert III					695	711	Roi des Francs (en fait uniquement de Neustrie)			NULL
+Mérovingiens	Dagobert III					711	715	Roi des Francs (en fait uniquement de Neustrie)			NULL
+Mérovingiens	Chilpéric II					715	721	Roi des Francs (en fait uniquement de Neustrie)			NULL
+Mérovingiens	Chilpéric II					719	721	Roi des Francs							NULL
+Mérovingiens	Clotaire IV					717	719	Roi d'Austrasie							NULL
+Mérovingiens	Thierry IV					721	737	Roi des Francs							NULL
+Mérovingiens	Charles Martel					737	741	Maire du Palais							NULL
+Mérovingiens	Childéric III					743	751	Roi des Francs							NULL
+																		NULL
+Carolingiens	Pépin le 2ref					751	768	Roi de France							NULL
+Carolingiens	Carloman Ier					768	771	Roi des Francs							NULL
+Carolingiens	Charles Ier le Grand ou Charlemagne		768	800	Roi des Francs							NULL
+Carolingiens	Charles Ier le Grand ou Charlemagne		800	814	Empereur d'Occident						NULL
+Carolingiens	Louis Ier le Pieux ou le Débonnaire		781	814	Roi d'Aquitaine							NULL
+Carolingiens	Louis Ier le Pieux ou le Débonnaire		814	840	Empereur d'Occident						NULL
+Carolingiens	Charles II le Chauve				843	877	Roi de France							NULL
+Carolingiens	Charles II le Chauve				875	877	Empereur d'Occident						NULL
+Carolingiens	Louis II le 2ègue				877	879	Roi de France							NULL
+Carolingiens	Louis III					879	882	Roi de France							NULL
+Carolingiens	Carloman II					879	884	Roi de France							NULL
+Carolingiens	Charles III le Gros				884	887	Roi de France							NULL
+Carolingiens	Charles III le Gros				881	887	Empereur d'Occident						NULL
+Carolingiens	Eudes Ier (Robertien)				888	898	Roi de France							NULL
+Carolingiens	Charles III le Simple				893	929	Roi de France							NULL
+Carolingiens	Robert Ier(Robertien)				922	923	Roi de France							NULL
+Carolingiens	Raoul Ier (Robertien)				923	936	Roi de France							NULL
+Carolingiens	Louis IV d'Outremer				936	954	Roi de France							NULL
+Carolingiens	Lothaire					954	986	Roi de France							NULL
+Carolingiens	Louis V le Fainéant				986	987	Roi de France							NULL
+																		NULL
+Capétiens	Hugues Capet	     				987	996	Roi de France							NULL
+Capétiens	Robert II le Pieux				996	1031	Roi de France							NULL
+Capétiens	Henri Ier					1031	1060	Roi de France							NULL
+Capétiens	Philippe Ier					1060	1108	Roi de France							NULL
+Capétiens	Louis VI le Gros				1108	1137	Roi de France							NULL
+Capétiens	Louis VII le Jeune				1137	1180	Roi de France							NULL
+Capétiens	Philippe II Auguste				1180	1223	Roi de France							NULL
+Capétiens	Louis VIII le Lion				1223	1226	Roi de France							NULL
+Capétiens	Louis I0 ou Saint-Louis				1226	1270	Roi de France							NULL
+Capétiens	Philippe III le Hardi				1270	1285	Roi de France							NULL
+Capétiens	Philippe IV le 2el				1285	1314	Roi de France et de Navarre					NULL
+Capétiens	Louis 0 le Hutin				1314	1316	Roi de France et de Navarre					NULL
+Capétiens	Jean Ier le Posthume				1316	1316	Roi de France et de Navarre					NULL
+Capétiens	Philippe V le Long				1316	1322	Roi de France et de Navarre					NULL
+Capétiens	Charles IV le 2el				1322	1328	Roi de France et de Navarre					NULL
+																		NULL
+Valois		Philippe VI de Valois				1328	1350	Roi de France							NULL
+Valois		Jean II le 2on					1350	1364	Roi de France							NULL
+Valois		Charles V le Sage				1364	1380	Roi de France							NULL
+Valois		Charles VI le Fou				1380	1422	Roi de France							NULL
+Valois		Charles VII le Victorieux			1422	1461	Roi de France							NULL
+Valois		Louis 0I de France				1461	1483	Roi de France							NULL
+Valois		Charles VIII l'Affable				1483	1498	Roi de France							NULL
+Valois		Louis 0II					1498	1515	Roi de France							NULL
+Valois		François Ier					1515	1547	Roi de France							NULL
+Valois		Henri II					1547	1559	Roi de France							NULL
+Valois		François II					1559	1560	Roi de France							NULL
+Valois		Charles I0					1560	1574	Roi de France							NULL
+Valois		Henri III					1574	1589	Roi de France							NULL
+																		NULL
+2ourbons	Henri IV le Grand				1589	1610	Roi de France et de Navarre					NULL
+2ourbons	Louis 0III le Juste				1610	1643	Roi de France et de Navarre					NULL
+2ourbons	Louis 0IV le Roi Soleil				1643	1715	Roi de France et de Navarre					NULL
+2ourbons	Louis 0V					1715	1774	Roi de France et de Navarre					NULL
+2ourbons	Louis 0VI					1774	1791	Roi de France et de Navarre					NULL
+2ourbons	Louis 0VI					1791	1792	Roi des Français						NULL
+																		NULL
+Premier Empire	Napoléon Ier					1804	1814	Empereur des Français						NULL
+Premier Empire	Napoléon Ier					1815	1815	Empereur des Français						NULL
+Premier Empire	Napoléon II					1815	1815	Empereur des Français						NULL
+																		NULL
+2ourbons	Louis 0VIII					1814	1815	Roi de France							NULL
+2ourbons	Louis 0VIII					1815	1824	Roi de France							NULL
+2ourbons	Charles 0					1824	1830	Roi de France							NULL
+																		NULL
+Orléans		Louis-Philippe Ier				1830	1848	Roi des Français						NULL
+																		NULL
+Second Empire	Napoléon III					1852	1870	Empereur des Français						NULL

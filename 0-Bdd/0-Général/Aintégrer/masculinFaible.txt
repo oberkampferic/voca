@@ -1,0 +1,77 @@
+#STRING			KEY				MEMO	SHOT
+der Affe			le singe				NULL	NULL
+der Ahn(e)			l'aïeul	               			NULL	NULL
+der Bär		        	l'ours					NULL	NULL
+der Bauer			le fermier				NULL	NULL
+der Bote			le messager	               		NULL	NULL
+der Bub(e)			le valet	               		NULL	NULL
+der Buhle			le bien-aimé	               		NULL	NULL
+der Bürge			le garant	               		NULL	NULL
+der Bursch(e)	        	le garçon	               		NULL	NULL
+der Christ			le chrétien		       		NULL	NULL
+der Drache			le dragon		       		NULL	NULL
+der Elf		        	l'elfe                         		NULL	NULL
+der Erbe			l'héritier                     		NULL	NULL
+der Falke			le faucon                      		NULL	NULL
+der Fatzke			le fat                         		NULL	NULL
+der Fürst			le prince                      		NULL	NULL
+der Ganove			le malfrat                     		NULL	NULL
+der Gatte			l'époux                        		NULL	NULL
+der Geck			le dandy                       		NULL	NULL
+der Gefährte	        	le compagnon                   		NULL	NULL
+der Geselle			le compagnon sociétal          		NULL	NULL
+der Genosse			le camarade communiste         		NULL	NULL
+der Götze			l'idole                        		NULL	NULL
+der Graf			le comte                       		NULL	NULL
+der Greif			le griffon                     		NULL	NULL
+der Fink			le pinson                      		NULL	NULL
+der Halunke			le fripon                      		NULL	NULL
+der Heide			le païen                       		NULL	NULL
+der Held			le héros                       		NULL	NULL
+der Herr			le monsieur                    		NULL	NULL
+der Hirt(e)			le berger                      		NULL	NULL
+der Hüne			le géant                       		NULL	NULL
+der Husar			le hussard                     		NULL	NULL
+der Insasse			le détenu                      		NULL	NULL
+der Junge			le garçon                      		NULL	NULL
+der Knabe			le garçon(-usité)              		NULL	NULL
+der Knappe			l'écuyer				NULL	NULL
+der Kunde			le client                      		NULL	NULL
+der Laie			le laïque                      		NULL	NULL
+der Lakai			le laquais                     		NULL	NULL
+der Leopard			le léopard                     		NULL	NULL
+der Lotse			le pilote                      		NULL	NULL
+der Löwe			le lion                        		NULL	NULL
+der Lump			le scélérat                    		NULL	NULL
+der Mensch			l'être humain                  		NULL	NULL
+der Matrose			le matelot                     		NULL	NULL
+der Mohr			le maure                       		NULL	NULL
+der Nachbar			le voisin                      		NULL	NULL
+der Nachkomme	        	le descendant                  		NULL	NULL
+der Narr			le bouffon                     		NULL	NULL
+der Neffe			le neveu                       		NULL	NULL
+der Nomade			le nomade                      		NULL	NULL
+der Oberst			le colonel                     		NULL	NULL
+der Ochse			le boeuf                       		NULL	NULL
+der Pate			le parrain                     		NULL	NULL
+der Pfaffe			le cureton                     		NULL	NULL
+der Prinz			le prince                      		NULL	NULL
+der Rabe			le corbeau                     		NULL	NULL
+der Rappe			le cheval noir                 		NULL	NULL
+der Recke			le preux                       		NULL	NULL
+der Rekrut			la recrue                      		NULL	NULL
+der Riese			le géant                       		NULL	NULL
+der Rüde			le chien de chasse             		NULL	NULL
+der Scherge			le sbire                       		NULL	NULL
+der Schöffe			l'échevin                     		NULL	NULL
+der Schurke			la crapule                     		NULL	NULL
+der Schütze			le tireur                      		NULL	NULL
+der Spatz			le moineau                     		NULL	NULL
+der Steinmetz   		le tailleur de pierres         		NULL	NULL
+der Tor		        	le fou                         		NULL	NULL
+der Vagabund	        	le vagabond                    		NULL	NULL
+der Vasall			le vassal                      		NULL	NULL
+der Vorfahr			l'ancêtre                      		NULL	NULL
+der Welfe			le guelfe                      		NULL	NULL
+der Zar 			le tsar                        		NULL	NULL
+der Zeuge			le témoin                     		NULL	NULL

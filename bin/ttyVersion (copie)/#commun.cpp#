@@ -1,0 +1,158 @@
+#include <iostream>
+#include "commun.hpp"
+void commun::kurz(string message) {
+  cout << message;
+}
+
+void commun::usage (string nomProgramme) {
+  kurz ( "Usage:\n");
+  kurz ( nomProgramme );
+  kurz ( " Filename -[DROITE|GAUCHE|DI {temps} |MEMN|MEMH]\n");
+  exit(false);
+}
+
+void commun::message(string classe, string fonction, string message) {
+  kurz( "message:" + classe + "::" + fonction + "():" + message + "\n");
+}
+
+void commun::debug (string classe, string fonction, string message) {
+  if (flagVerbose)
+    kurz("debug:" + classe + "::" + fonction + "():" + message + "\n");
+}
+
+void commun::erreur (string classe, string fonction, string message) {
+  kurz( "erreur:" + classe + "::" + fonction + "():" + message + "\n");
+  exit(0);
+}
+
+void commun::erreur (string classe, string fonction, char** message) {
+  kurz ("erreur:" + classe + "::" + fonction + "():");
+  cout << message;
+  kurz ("\n");
+  exit(0);
+}
+
+int commun::ReplaceString(string * subject, string search, string strReplace) {
+  size_t pos;
+  
+  while ( (pos = subject->find(search, 0)) != subject->npos ) {
+    if (pos>subject->length()) return 0;
+    while (pos != subject->npos) {
+      subject->replace(pos, search.length(), strReplace);
+      pos += strReplace.length();
+      pos = subject->find(search, pos);
+    }
+  }
+}
+
+int commun::isSetVector(vector<int> coli) {
+  for (int i=0; i<coli.size();i++)
+    if (coli[i]!=true) return false;
+  return true;
+}
+
+int commun::nbSeparateurEnLigne(string * ligne) {
+  int i=0;
+  size_t pos1 = 0;
+  size_t pos2;
+
+  do {
+    pos2 = ligne->find("|", pos1);
+    if (pos2 == ligne->npos) break;
+    pos1 = pos2+1;
+    i++;
+  } while (true);
+
+  return i;
+}
+
+int commun::nbColonneEnLigne(string * ligne) {
+  int i = nbSeparateurEnLigne(ligne);
+  debug("main.hpp", "nbColonneEnLigne", to_string(i) + " separateurs");
+  return i+1;
+}
+
+int commun::detectNbColonne(string * contenuFichier){ //detection du nombre de colonne
+  cout << "Detection nb colonne========================================" << endl;
+  
+  string ligne=contenuFichier->substr(0, contenuFichier->find("\n"));
+  return nbColonneEnLigne(&ligne);
+}
+
+int commun::detectNbColonneInit(string * contenuFichier){ //detection du nombre de colonne
+  cout << "Detection nb colonne init===================================" << endl;
+  size_t pos;
+  pos = contenuFichier->find("\n",0);
+  pos++;
+  
+  string ligne=contenuFichier->substr(pos, contenuFichier->find("\n", pos)-pos);
+
+  cout << ligne << endl;
+  cout << nbColonneEnLigne(&ligne);
+  
+  debug("main.hpp", "detectNbColonneInit", ligne);
+  return nbColonneEnLigne(&ligne);
+}
+
+int commun::controleCoherenceFichier(string * contenuFichier, unsigned int nbColonne) {
+  cout << "Controle Coherence Fichier========================================" << endl;
+  int i;
+  size_t posCR, posCR2=0; //CR: Carrier Return
+
+  posCR2 = contenuFichier->find("\n", 0);
+  do {
+    posCR=posCR2+1;
+    posCR2 = contenuFichier->find("\n", posCR);
+
+    string ligne=contenuFichier->substr(posCR, posCR2-posCR);
+    i=nbColonneEnLigne(&ligne);
+
+    if (i!=nbColonne) {
+      if ((posCR2-contenuFichier->npos)<1) return true;
+      cout << "ligne:" << ligne << endl;
+      cout << i << " colonnes." << endl;
+      return false;
+    }
+  } while (posCR2 != contenuFichier->npos);
+
+  return true;
+}
+void commun::bascule (int *flag) {
+  if (*flag) *flag=false;
+  else *flag=true;
+  debug ("main.hpp", "bascule", "état: " + to_string(*flag));
+}
+
+void commun::preParsing(string * contenuFichier){
+  cout << "Parsing========================================================" << endl;
+  ReplaceString(contenuFichier, "\t", "|");
+  ReplaceString(contenuFichier, "_", "|");   
+  ReplaceString(contenuFichier, "  ", "|"); 
+  ReplaceString(contenuFichier, " |", "|");   
+  ReplaceString(contenuFichier, "| ", "|");   
+  ReplaceString(contenuFichier, "||", "|"); 
+  ReplaceString(contenuFichier, "\n|\n", "\n");  
+  ReplaceString(contenuFichier, "\n\n","\n");
+
+  cout << "affichage parsé en colonnes" << endl;
+  cout << *contenuFichier << endl;
+}
+
+int commun::postParsing(string * contenuFichier) {
+  ReplaceString(contenuFichier, "\n", "|");  
+  ReplaceString(contenuFichier, "||", "|"); 
+}
+
+long commun::monTemps() {
+  struct tm y2k = {0};
+  long seconds;
+
+  time_t timer;
+  time(&timer);
+  
+  y2k.tm_hour = 0;   y2k.tm_min = 0; y2k.tm_sec = 0;
+  y2k.tm_year = 100; y2k.tm_mon = 0; y2k.tm_mday = 1;
+
+  time(&timer);  /* get current time; same as: timer = time(NULL)  */
+  seconds = difftime(timer,mktime(&y2k));
+}

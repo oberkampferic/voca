@@ -1,0 +1,14 @@
+#include "pedagogie.hpp"
+
+void pedagogie::pedagogieLoad() {
+  triptysch monTriptyshRecordSet;
+  
+  fileName = "listeDesRoisDeFranceTest.txt";
+  string nomFichier(fileName);
+  pedagogieLoadFile(fileName, &monTriptyshRecordSet);
+}
+
+int pedagogie::Hauptmenu(){
+    interrogation();
+}
+

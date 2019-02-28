@@ -1,0 +1,10 @@
+g++  -g   -c -o main.o main.cpp
+g++  -g   -c -o ../../lib/interfacetty/interfacetty.o ../../lib/interfacetty/interfacetty.cpp
+g++  -g   -c -o ../../lib/gründ/commun.o ../../lib/gründ/commun.cpp
+g++  -g   -c -o ../../lib/gründ/parser.o ../../lib/gründ/parser.cpp
+g++  -g   -c -o ../../lib/gründ/preParser.o ../../lib/gründ/preParser.cpp
+g++  -g   -c -o ../../lib/gründ/Head.o ../../lib/gründ/Head.cpp
+g++  -g   -c -o ../../lib/gründ/fichier.o ../../lib/gründ/fichier.cpp
+g++  -g   -c -o bergson.o bergson.cpp
+g++  -g   -c -o openGl.o openGl.cpp
+<commande interne> : la recette pour la cible « openGl.o » a échouée

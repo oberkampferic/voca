@@ -1,0 +1,55 @@
+Dynastie des Argéades		KÉRANOS				-808		-780		NULL	NULL
+Dynastie des Argéades		KOINOS				-780		-750		NULL	NULL
+Dynastie des Argéades		TH1RIMNAS			-750		-729		NULL	NULL
+Dynastie des Argéades		PERDICCAS I			-729		-678		NULL	NULL
+Dynastie des Argéades		ARGAEUS I			-678		-640		NULL	NULL
+Dynastie des Argéades		PHILIPPE I			-640		-602		NULL	NULL
+Dynastie des Argéades		AÉROPOS I			-602		-576		NULL	NULL
+Dynastie des Argéades		ALCÉTAS I			-576		-547		NULL	NULL
+Dynastie des Argéades		AM1NTAS I			-547		-498		NULL	NULL
+Dynastie des Argéades		ALEXANDRE I			-498		-454		NULL	NULL
+Dynastie des Argéades		PERDICCAS II			-454		-413		NULL	NULL
+Dynastie des Argéades		ALCÉTAS II			-413		-413		NULL	NULL
+Dynastie des Argéades		ARCHELAOS I			-413		-399		NULL	NULL
+Dynastie des Argéades		CRATÈRE				-399		-399		NULL	NULL
+Dynastie des Argéades		ORESTE				-399		-397		NULL	NULL
+Dynastie des Argéades		AEROPOS II			-397		-395		NULL	NULL
+Dynastie des Argéades		AM1NTAS II			-394		-393		NULL	NULL
+Dynastie des Argéades		PAUSANIAS II			-394		-393		NULL	NULL
+Dynastie des Argéades		AM1NTAS III			-393		-393		NULL	NULL
+Dynastie des Argéades		ARGAEUS II			-393		-392		NULL	NULL
+Dynastie des Argéades		AM1NTAS III			-392		-370		NULL	NULL
+Dynastie des Argéades		ALEXANDRE II			-370		-368		NULL	NULL
+Dynastie des Argéades		PTOLÉMÉE I Alôros		-368		-365		NULL	NULL
+Dynastie des Argéades		PERDICCAS III			-368		-359		NULL	NULL
+Dynastie des Argéades		AM1NTAS IV			-359		-356		NULL	NULL
+Dynastie des Argéades		PHILIPPE II			-359		-336		NULL	NULL
+Dynastie des Argéades		ALEXANDRE III le Grand	-336		-323		NULL	NULL
+Dynastie des Argéades		PERDICCAS (Régent)		-323		-321		NULL	NULL
+Dynastie des Argéades		ANTIPATROS (Régent)		-321		-319		NULL	NULL
+Dynastie des Argéades		POL1PERCHON (Régent)		-319		-317		NULL	NULL
+Dynastie des Argéades		CASSANDRE (Régent)		-317		-306		NULL	NULL
+Dynastie des Argéades		PHILIPPE III Arrhidée		-323		-317		NULL	NULL
+Dynastie des Argéades		OL1MPIAS (Reine)		-317		-316		NULL	NULL
+Dynastie des Argéades		ALEXANDRE IV Aigos		-317		-310		NULL	NULL
+Dynastie des Argéades		ANTIGONOS I Monophtalmos	-306		-301		NULL	NULL
+Dynastie des Antipatrides	CASSANDRE			-301		-297		NULL	NULL
+Dynastie des Antipatrides	PHILIPPE IV			-297		-296		NULL	NULL
+Dynastie des Antipatrides	ANTIPATROS I			-296		-294		NULL	NULL
+Dynastie des Antipatrides	ALEXANDRE V			-296		-294		NULL	NULL
+Dynastie des Antigonides	DÉMÉTRIOS I Poliorcète	-294		-287		NULL	NULL
+Dynastie des Antigonides	P1RRHOS I (Roi d'Épire)	-287		-285		NULL	NULL
+Dynastie des Antigonides	L1SIMAQUE (Roi de Thrace)	-285		-281		NULL	NULL
+Dynastie des Antigonides	PTOLÉMÉE Kéraunos Roi de Trace	-281		-279		NULL	NULL
+Dynastie des Antigonides	MÉLÉAGRE			-279		-279		NULL	NULL
+Dynastie des Antigonides	ANTIPATROS II Étésias		-279		-279		NULL	NULL
+Dynastie des Antigonides	SOSTHÈNES			-279		-277		NULL	NULL
+Dynastie des Antigonides	PTOLÉMÉE de Telmessos		-279		-277		NULL	NULL
+Dynastie des Antigonides	P1RRHOS I (Roi d'Épire)	-277		-277		NULL	NULL
+Dynastie des Antigonides	ANTIGONOS II Gonatas		-277		-274		NULL	NULL
+Dynastie des Antigonides	P1RRHOS I (Roi d'Épire)	-274		-272		NULL	NULL
+Dynastie des Antigonides	ANTIGONOS II Gonatas		-272		-239		NULL	NULL
+Dynastie des Antigonides	DÉMÉTRIOS II l'Étolique	-239		-229		NULL	NULL
+Dynastie des Antigonides	ANTIGONOS III Dôson		-229		-221		NULL	NULL
+Dynastie des Antigonides	PHILIPPE V			-221		-179		NULL	NULL
+Dynastie des Antigonides	PERSÉE				-179		-168		NULL	NULL

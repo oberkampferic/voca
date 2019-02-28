@@ -1,0 +1,37 @@
+der Affe			le singe	               
+der Ahn(e)			l'aïeul		               
+der Bär		        	l'ours		               
+der Bauer			le fermier	               
+der Bote			le messager	               
+der Bub(e)			le valet	               
+der Buhle			le bien-aimé	               
+der Bürge			le garant	               
+der Bursch(e)	        	le garçon	               
+der Christ			le chrétien		       
+der Drache			le dragon		       
+der Elf		        	l'elfe                         
+der Erbe			l'héritier                     
+der Falke			le faucon                      
+der Fatzke			le fat                         
+der Fürst			le prince                      
+der Ganove			le malfrat                     
+der Gatte			l'époux                        
+der Geck			le dandy                       
+der Gefährte	        	le compagnon                   
+der Geselle			le compagnon sociétal          
+der Genosse			le camarade communiste         
+der Götze			l'idole                        
+der Graf			le comte                       
+der Greif			le griffon                     
+der Fink 			le pinson                      
+der Halunke			le fripon                      
+der Heide			le païen                       
+der Held			le héros                       
+der Herr			le monsieur                    
+der Hirt(e)			le berger                      
+der Hüne			le géant                       
+der Husar			le hussard                     
+der Insasse			le détenu                      
+der Junge			le garçon                      
+der Knabe			le garçon(-usité)              
+der Knappe			l'écuyer                       

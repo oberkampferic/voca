@@ -1,0 +1,108 @@
+Dynastie théodosienne						Valens										364	378	NULL	NULL
+Dynastie théodosienne						Théodose Ier le Grand								379	395	NULL	NULL
+Dynastie théodosienne						Arcadius									395	408	NULL	NULL
+Dynastie théodosienne						Théodose II									408	450	NULL	NULL
+Dynastie théodosienne						Marcien										450	457	NULL	NULL
+Dynastie théodosienne						Léon Ier le Grand								457	474	NULL	NULL
+Dynastie théodosienne						Léon II										474	474	NULL	NULL
+Dynastie théodosienne						Zénon Ier Tarasius								474	491	NULL	NULL
+Dynastie théodosienne						Basiliscus, empereur rival							475	476	NULL	NULL
+Dynastie théodosienne						Anastase Ier									491	518	NULL	NULL
+Dynastie justinienne						Justin Ier le Grand								518	527	NULL	NULL
+Dynastie justinienne						Justinien Ier le Grand								527	565	NULL	NULL
+Dynastie justinienne						Justin II									565	578	NULL	NULL
+Dynastie justinienne						Tibère II Constantin								578	582	NULL	NULL
+Dynastie justinienne						Maurice Ier Tiberius								582	602	NULL	NULL
+Dynastie justinienne						Phocas le Tyr									602	610	NULL	NULL
+Dynastie des Héraclides						Héraclius									610	641	NULL	NULL
+Dynastie des Héraclides						Constantin III Heraclius							641	641	NULL	NULL
+Dynastie des Héraclides						Heraclonas Constantine								641	641	NULL	NULL
+Dynastie des Héraclides						Constant II Heraclius Pogonatus							641	668	NULL	NULL
+Dynastie des Héraclides						Constantin IV									668	685	NULL	NULL
+Dynastie des Héraclides						Justinien II Rhinotmetus							685	695	NULL	NULL
+Dynastie des Héraclides						Justinien II Rhinotmetus							695	698	NULL	NULL
+Dynastie des Héraclides						Tibère										698	705	NULL	NULL
+Dynastie des Héraclides						Justinien II Rhinotmetus, restauré						705	711	NULL	NULL
+Dynastie des Héraclides						Philippic									711	713	NULL	NULL
+Dynastie des Héraclides						Anastase									713	715	NULL	NULL
+Dynastie des Héraclides						Théodose III									715	717	NULL	NULL
+Dynastie isaurienne						Léon III l'Isaurien								717	741	NULL	NULL
+Dynastie isaurienne						Constantin V Copronyme								741	775	NULL	NULL
+Dynastie isaurienne						Artabasde, empereur rival							741	743	NULL	NULL
+Dynastie isaurienne						Léon IV le Khazar								775	780	NULL	NULL
+Dynastie isaurienne						Constantin VI l'Aveugle								780	797	NULL	NULL
+Dynastie isaurienne						Irène l'Athénienne								797	802	NULL	NULL
+Dynastie isaurienne						Nicéphore Ier le général Logothète						802	811	NULL	NULL
+Dynastie isaurienne						Staurakios									811	811	NULL	NULL
+Dynastie isaurienne						Michel Ier Rhangabe								811	813	NULL	NULL
+Dynastie isaurienne						Léon V l'Arménien								813	820	NULL	NULL
+Dynastie des Amoriens						Michel II l'Amorien								820	829	NULL	NULL
+Dynastie des Amoriens						Théophile									829	842	NULL	NULL
+Dynastie des Amoriens						Michel III l'Ivrogne								842	867	NULL	NULL
+Dynastie des Macédoniens					Basile Ier le Macédonien							867	886	NULL	NULL
+Dynastie des Macédoniens					Constantin, associé								869	879	NULL	NULL
+Dynastie des Macédoniens					Léon VI, associé								870	886	NULL	NULL
+Dynastie des Macédoniens					Alexandre III, associé								879	886	NULL	NULL
+Dynastie des Macédoniens					Léon VI le Sage									886	912	NULL	NULL
+Dynastie des Macédoniens					Alexandre III, associé								886	912	NULL	NULL
+Dynastie des Macédoniens					Alexandre III									912	913	NULL	NULL
+Dynastie des Macédoniens					Constantin VII Porphyrogénète né dans la pourpre				913	919	NULL	NULL
+Dynastie des Macédoniens					Romain Ier Lécapène								919	944	NULL	NULL
+Dynastie des Macédoniens					Constantin VII, associé								919	945	NULL	NULL
+Dynastie des Macédoniens					Christophe Lécapène, associé							921	931	NULL	NULL
+Dynastie des Macédoniens					Etienne Lécapène, associé							924	945	NULL	NULL
+Dynastie des Macédoniens					Constantin Lécapène, associé							924	945	NULL	NULL
+Dynastie des Macédoniens					Constantin VII, de nouveau							945	959	NULL	NULL
+Dynastie des Macédoniens					Romain II Porphyrogénète							959	963	NULL	NULL
+Dynastie des Macédoniens					Nicéphore II Phocas								963	969	NULL	NULL
+Dynastie des Macédoniens					Jean Ier Tzimiskes								969	976	NULL	NULL
+Dynastie des Macédoniens					Basile II, associé								970	1025	NULL	NULL
+Dynastie des Macédoniens					Constantin VIII, associé							970	1025	NULL	NULL
+Dynastie des Macédoniens					Basile II Bulgaroctone								976	1025	NULL	NULL
+Dynastie des Macédoniens					Constantin VIII, associé							976	1025	NULL	NULL
+Dynastie des Macédoniens					Constantin VIII Porphyrogénète							1025	1028	NULL	NULL
+Dynastie des Macédoniens					Zoé Porphyrogénète								1028	1050	NULL	NULL
+Dynastie des Macédoniens					Romain III Argyre								1028	1034	NULL	NULL
+Dynastie des Macédoniens					Michel IV le Paphlagonien							1034	1041	NULL	NULL
+Dynastie des Macédoniens					Michel V le Calfat								1041	1042	NULL	NULL
+Dynastie des Macédoniens					Constantin IX Monomaque								1042	1050	NULL	NULL
+Dynastie des Macédoniens					Constantin IX Monomaque								1050	1054	NULL	NULL
+Dynastie des Macédoniens					Théodora Porphyrogénète								1054	1056	NULL	NULL
+Dynastie des Macédoniens					Michel VI Stratiotique								1056	1057	NULL	NULL
+Dynastie des Comnènes						Isaac Ier Comnène								1057	1059	NULL	NULL
+Dynastie des Doukas						Constantin X Doukas								1059	1067	NULL	NULL
+Dynastie des Doukas						Michel VII Doukas								1067	1078	NULL	NULL
+Dynastie des Doukas						Romain IV Diogène, associé							1067	1071	NULL	NULL
+Dynastie des Doukas						Andronic Doukas, associé							1067	1078	NULL	NULL
+Dynastie des Doukas						Constantin Doukas, associé							1071	1078	NULL	NULL
+Dynastie des Doukas						Constantin Doukas, associé							1074	1078	NULL	NULL
+Dynastie des Doukas						Nicéphore III Botaniate								1078	1081	NULL	NULL
+Dynastie des Comnène						Alexis Ier Comnène								1081	1118	NULL	NULL
+Dynastie des Comnène						Constantin Doukas, associé							1081	1087	NULL	NULL
+Dynastie des Comnène						Jean II Comnène									1118	1143	NULL	NULL
+Dynastie des Comnène						Manuel Ier Comnène								1143	1180	NULL	NULL
+Dynastie des Comnène						Alexis II Comnène								1180	1183	NULL	NULL
+Dynastie des Comnène						Andronic Ier Comnène								1183	1185	NULL	NULL
+Dynastie des Ange						Isaac II Ange									1185	1195	NULL	NULL
+Dynastie des Ange						Alexis III Ange									1195	1203	NULL	NULL
+Dynastie des Ange						Alexis IV Ange									1203	1204	NULL	NULL
+Dynastie des Ange						Isaac II Ange, restauré								1204	1204	NULL	NULL
+Dynastie des Ange						Alexis V Doukas Murzuphle aux sourcils touffus					1204	1204	NULL	NULL
+Dynastie des Lascaris empereurs à Nicée				Théodore Ier Lascaris								1204	1222	NULL	NULL
+Dynastie des Lascaris empereurs à Nicée				Jean III Doukas Vatatzès							1222	1254	NULL	NULL
+Dynastie des Lascaris empereurs à Nicée				Théodore II Lascaris								1254	1258	NULL	NULL
+Dynastie des Lascarispereurs à Nicée				Jean IV Lascaris								1258	1261	NULL	NULL
+Dynastie Paléologue restaurée à Constantinople			Michel VIII Paléologue								1259	1282	NULL	NULL
+Dynastie Paléologue restaurée à Constantinople			Andronic II Paléologue								1282	1328	NULL	NULL
+Dynastie Paléologue restaurée à Constantinople			Michel IX Paléologue, co-empereur						1295	1320	NULL	NULL
+Dynastie Paléologue restaurée à Constantinople			Andronic III Paléologue								1328	1341	NULL	NULL
+Dynastie Paléologue restaurée à Constantinople			Jean V Paléologue								1341	1376	NULL	NULL
+Dynastie Paléologue restaurée à Constantinople			Jean VI Cantacuzène, co-empereur						1347	1354	NULL	NULL
+Dynastie Paléologue restaurée à Constantinople			Mathieu Cantacuzène, co-empereur						1353	1357	NULL	NULL
+Dynastie Paléologue restaurée à Constantinople			Andronic IV Paléologue								1376	1379	NULL	NULL
+Dynastie Paléologue restaurée à Constantinople			Jean V Paléologue, restauré							1379	1391	NULL	NULL
+Dynastie Paléologue restaurée à Constantinople			Jean VII Paléologue, empereur rival						1390	1390	NULL	NULL
+Dynastie Paléologue restaurée à Constantinople			Manuel II Paléologue, fils de Jean V						1391	1425	NULL	NULL
+Dynastie Paléologue restaurée à Constantinople			Jean VII Paléologue, co-empereur						1398	1402	NULL	NULL
+Dynastie Paléologue restaurée à Constantinople			Jean VIII Paléologue								1425	1448	NULL	NULL
+Dynastie Paléologue restaurée à Constantinople			Constantin XI Paléologue							1449	1453	NULL	NULL

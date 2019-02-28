@@ -1,0 +1,7 @@
+#ifndef PARSER
+#define PARSER
+
+#include "../interfacetty/interfacetty.hpp"
+
+class PARSER: public interfacetty
+#endif 

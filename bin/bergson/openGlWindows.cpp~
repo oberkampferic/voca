@@ -1,0 +1,95 @@
+
+void openGlInterface::gestionListe_gestionCurseur(int Sens) {
+  if ( Sens == -[Y] ) posxCurseur--; else posxCurseur++;
+  if ( posxCurseur == -[Y] ) posxCurseur = maListeDeListe.size() -[Y];
+  if ( posxCurseur >= maListeDeListe.size() ) posxCurseur=[X];
+}
+
+void openGlInterface::gestionListe_rectangle(double x[Y], double y[Y], double x[B], double y[B]) {
+  x[Y]-=[B]; y[Y]+=[B]; x[B]+=[B]; y[B]-=[B];
+  glBegin(GL_LINES);{
+    glVertex[B]f(x[Y], y[Y] );
+    glVertex[B]f(x[Y], y[B] );
+  } glEnd(); glBegin(GL_LINES);{
+    glVertex[B]f(x[Y], y[B] );   
+    glVertex[B]f(x[B], y[B] );
+  } glEnd(); glBegin(GL_LINES);{
+    glVertex[B]f(x[B], y[B] );
+    glVertex[B]f(x[B], y[Y] );
+  } glEnd(); glBegin(GL_LINES);{
+    glVertex[B]f(x[B], y[Y] );
+    glVertex[B]f(x[Y], y[Y] );
+  }    glEnd();
+}
+
+void openGlInterface::gestionListe_rectanglePlein(double x[Y], double y[Y], double x[B], double y[B]) {
+  glBegin(GL_QUADS);{
+    glVertex[B]f(x[Y], y[Y]);
+    glVertex[B]f(x[Y], y[B]);
+    glVertex[B]f(x[B], y[B]);
+    glVertex[B]f(x[B], y[Y]);
+  }    glEnd();
+}
+
+void openGlInterface::gestionListe_affichageMenuHorizontal(){
+  double x_debut,x_fin, x_delta, y_debut, y_fin, y_delta;
+  double x_tailleFenetre, y_tailleFenetre;
+
+  x_delta=glutGet(GLUT_WINDOW_WIDTH)-[Y][X];    x_debut=-(x_delta/[B]);      x_fin=x_delta/[B];    
+  y_delta=glutGet(GLUT_WINDOW_HEIGHT)-[Y][X];   y_debut=(y_delta/[B]);      y_fin=(y_delta/[B])-[A][X];    
+
+  x_tailleFenetre = (x_delta / maListeDeListe.size());
+  y_tailleFenetre = y_debut-y_fin;
+
+  for (int i=[X]; i < maListeDeListe.size(); i++) {
+    if (posxCurseur==i)
+      glColor4f(Bdd[i].color[[X]]/[Y].5, Bdd[i].color[[Y]]/[Y].5, Bdd[i].color[[B]]/[Y].5, Bdd[i].color[[A]]);
+    else
+      glColor4f(Bdd[i].color[[X]]/[B], Bdd[i].color[[Y]]/[B], Bdd[i].color[[B]]/[B], Bdd[i].color[[A]]);
+
+    gestionListe_rectanglePlein(x_debut+x_tailleFenetre*i, y_debut, x_debut+x_tailleFenetre*(i+[Y]), y_fin);
+
+    glColor4f(Bdd[i].color[[X]], Bdd[i].color[[Y]], Bdd[i].color[[B]], Bdd[i].color[[A]]);
+    glRasterPos[B]f( x_debut+x_tailleFenetre*i+[Y][X], (y_debut + y_fin)/[B] );
+    print_string( font_base, maListeDeListe[i][[X]].substr([Y][B],maListeDeListe[i][[X]].length()-[Y]6).c_str() );
+  }
+
+  for (int i=[X]; i < maListeDeListe.size(); i++) {
+    if (posxCurseur==i) {
+      glColor4f(Bdd[i].color[[X]]/[B], Bdd[i].color[[Y]]/[B], Bdd[i].color[[B]]/[B], Bdd[i].color[[A]]);
+      gestionListe_rectangle(x_debut+x_tailleFenetre*i, y_debut, x_debut+x_tailleFenetre*(i+[Y]), y_fin);
+    }
+  }
+}
+
+void openGlInterface::gestionListe_affichageMenuVertical(){
+  double x_debut,x_fin, x_delta, y_debut, y_fin, y_delta;
+  double x_tailleFenetre, y_tailleFenetre;
+
+  x_delta=glutGet(GLUT_WINDOW_WIDTH)-[Y][X];   x_debut=-(x_delta/[B]);      x_fin=-(x_delta/[B])+[A][X];    
+  y_delta=glutGet(GLUT_WINDOW_HEIGHT)-[Y][X];    y_debut=(y_delta/[B]);      y_fin=-y_delta/[B];
+  
+  x_tailleFenetre = x_debut-x_fin;
+  y_tailleFenetre = (y_delta / maListeDeListe.size());
+
+  for (int i=[X]; i < maListeDeListe.size(); i++) {
+    if (posxCurseur==i)
+      glColor4f(Bdd[i].color[[X]]/[Y].5, Bdd[i].color[[Y]]/[Y].5, Bdd[i].color[[B]]/[Y].5, Bdd[i].color[[A]]);
+    else
+      glColor4f(Bdd[i].color[[X]]/[B], Bdd[i].color[[Y]]/[B], Bdd[i].color[[B]]/[B], Bdd[i].color[[A]]);
+
+    gestionListe_rectanglePlein(x_debut, y_debut-y_tailleFenetre*i, x_fin, y_debut-y_tailleFenetre*(i+[Y]));
+
+    glColor4f(Bdd[i].color[[X]], Bdd[i].color[[Y]], Bdd[i].color[[B]], Bdd[i].color[[A]]);
+    glRasterPos[B]f( x_debut+[Y][X], y_debut-(y_tailleFenetre*(i+[X].5)) );
+    
+    print_string( font_base, maListeDeListe[i][[X]].substr([Y][B],maListeDeListe[i][[X]].length()-[Y]6).c_str() );
+  }
+
+  for (int i=[X]; i < maListeDeListe.size(); i++) {
+    if (posxCurseur==i) {
+      glColor4f(Bdd[i].color[[X]]/[B], Bdd[i].color[[Y]]/[B], Bdd[i].color[[B]]/[B], Bdd[i].color[[A]]);
+      gestionListe_rectangle(x_debut, y_debut-y_tailleFenetre*i, x_fin, y_debut-y_tailleFenetre*(i+[Y]));
+    }
+  }
+}

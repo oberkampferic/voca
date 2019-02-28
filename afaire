@@ -1,0 +1,7 @@
+.Visiblement, il y a une erreur de répartition structurelle des fonctions.
+.A bas niveau, Les classes de bases prennent en charge des fonctions avancées qu'elles ne devraient utiliser que par héritage.
+.A haut niveau, il faut différents exécutable:
+différents utilitaires,
+un exécutable pour l'interface ncurse,
+un exécutable pour l'utilisation en ligne de commande.
+.Entre les deux, il y a cette classe foure tout, commun, qui devrait être éclaté au minimum en trois classes différentes.

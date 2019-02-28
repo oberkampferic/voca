@@ -1,0 +1,137 @@
+#include "freqFragment.hpp"
+
+
+bool freqFragment::is_number(const std::string& s) {
+  string::const_iterator it = s.begin();
+  while (it != s.end() && std::isdigit(*it)) ++it;
+  return !s.empty() && it == s.end();
+}
+
+string freqFragment::getFileContent(const std::string& path) {
+  std::ifstream file(path);
+  std::string content((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+
+  return content;
+}
+
+int freqFragment::load(string &fileName){
+  //CHARGEMENT/////////////////////////////////////////
+  tampon = getFileContent(fileName);
+}
+
+int freqFragment::parsing(){
+  //PARSING////////////////////////////////////////////
+  monPreParser.preParsing(&tampon);
+  monPreParser.postParsing(&tampon);
+  monPreParser.ReplaceString(&tampon, " ", "|");
+  monPreParser.ReplaceString(&tampon, ",", "");
+  monPreParser.ReplaceString(&tampon, ";", "");
+  monPreParser.ReplaceString(&tampon, ":", "");
+  monPreParser.ReplaceString(&tampon, "&", "");
+  monPreParser.ReplaceString(&tampon, "?", "");
+  monPreParser.ReplaceString(&tampon, "!", "");
+  monPreParser.ReplaceString(&tampon, "/", "");
+  monPreParser.ReplaceString(&tampon, ".", "");
+  monPreParser.ReplaceString(&tampon, "&", "");
+  monPreParser.ReplaceString(&tampon, "*", "");
+  monPreParser.ReplaceString(&tampon, "\"", "");
+  monPreParser.ReplaceString(&tampon, "•", "");
+  monPreParser.ReplaceString(&tampon, "=", "");
+  monPreParser.ReplaceString(&tampon, "(", "");
+  monPreParser.ReplaceString(&tampon, ")", "");
+  monPreParser.ReplaceString(&tampon, "{", "");
+  monPreParser.ReplaceString(&tampon, "}", "");
+  monPreParser.ReplaceString(&tampon, "[", "");
+  monPreParser.ReplaceString(&tampon, "]", "");
+  monPreParser.ReplaceString(&tampon, "-", "1");
+}
+
+int freqFragment::store(){
+  //CHARGEMENT VECTEUR/////////////////////////////////
+  size_t pos1=0, pos2=0;
+  string col;
+  int flagLast=false;
+
+  do {
+    pos2 = tampon.find("|", pos1);
+    if (pos2==string::npos) {
+      flagLast=true;
+      pos2=tampon.size();
+    }
+    col = tampon.substr(pos1, (pos2-pos1));
+    s_record.push_back(col);
+    i_record.push_back(1);
+    pos1 = pos2+1;
+  } while (!flagLast);
+}
+
+int freqFragment::sortAlpha(){
+  //TRI BULLE DU VECTEUR //////////////////////////////
+  for (int i=0; i < s_record.size(); i++)
+    for (int j=i; j < s_record.size(); j++) {
+      if (s_record[i].compare (s_record[j]) > 0) {
+	string s_swap;
+	s_swap = s_record[i];
+	s_record[i] = s_record[j];
+	s_record[j] = s_swap;
+      }
+    }
+}
+
+int freqFragment::regroup() {
+  //REGROUPEMENT //////////////////////////////////////
+  for (int i=0; i < s_record.size(); i++) {
+    while (s_record[i+1].compare(s_record[i])==0) {
+      i_record[i]++;
+      s_record.erase( s_record.begin()+i+1 );
+      i_record.erase( i_record.begin()+i+1 );
+    }
+  }
+}
+
+int freqFragment::deleteNumber() {
+  for (int i=0; i < s_record.size(); i++) {
+    while ( is_number(s_record[i+1]) ) {
+      s_record.erase( s_record.begin()+i+1 );
+      i_record.erase( i_record.begin()+i+1 );
+    }
+  }
+}
+
+int freqFragment::sortNum() {
+  //NOUVEAU TRI BULLE DU VECTEUR SELON I //////////////
+  for (int i=0; i < i_record.size(); i++)
+    for (int j=i; j < i_record.size(); j++) {
+      if (i_record[i] > i_record[j]) {
+	int i_swap;
+	i_swap = i_record[i];
+	i_record[i] = i_record[j];
+	i_record[j] = i_swap;
+
+	string s_swap;
+	s_swap = s_record[i];
+	s_record[i] = s_record[j];
+	s_record[j] = s_swap;
+      }
+    }
+}
+
+int freqFragment::print() {
+  //SORTIE/////////////////////////////////////////////
+  cout << tampon << endl;
+
+  for (int i=0; i< s_record.size(); i++)
+    cout << i_record[i] << " : " << s_record[i] << endl;
+  cout << s_record.size() << " nombres éléments.";
+}
+
+freqFragment::freqFragment(string &fileName) {
+  load(fileName);
+  parsing();
+  store();
+  deleteNumber();
+  sortAlpha();
+  regroup();
+  sortNum();
+  print();
+}

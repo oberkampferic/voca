@@ -1,0 +1,126 @@
+#include "bergson.hpp"
+
+void bergson::afficherListeDessin[Y](){
+  double ratioCoul=[X].[Y];
+  for (int j=[X]; j <maListeDeListe.flagCount; j++) {
+    for (int i=[X]; i< Bdd[j].flagCount; i++) {
+      if (Bdd[j].flagVisible==true) {
+	//## Récupère les données de l'enregistrement ############################
+	strName = Bdd[j].monRecordSet[i][[Y]];
+	strDate[Y] = Bdd[j].monRecordSet[i][[B]];
+	strDate[B] = Bdd[j].monRecordSet[i][[A]];
+	//## Carré vertical ######################################################
+	if (ratioCoul < [X].6) ratioCoul=[X].7; else ratioCoul=[X].5;
+	glColor4f( (Bdd[j].r * ratioCoul) / [A],
+		   (Bdd[j].g * ratioCoul) / [A],
+		   (Bdd[j].b * ratioCoul) / [A],
+		   Bdd[j].x * [X].[B] );
+	glBegin(GL_QUADS);{
+	  glVertex[B]f( (Bdd[j].posx + [X][Y][X] - posx )*ratio[[X]] ,([Y][X][X][X].[X] - stof(strDate[Y]) - posy)*ratio[[Y]] );
+	  glVertex[B]f( (Bdd[j].posx + 6[X][X] - posx )*ratio[[X]] ,([Y][X][X][X].[X] - stof(strDate[Y]) - posy)*ratio[[Y]] );      
+	  glVertex[B]f( (Bdd[j].posx + 6[X][X] - posx )*ratio[[X]] ,([Y][X][X][X].[X] - stof(strDate[B]) - posy)*ratio[[Y]] );
+	  glVertex[B]f( (Bdd[j].posx + [X][Y][X] - posx )*ratio[[X]] ,([Y][X][X][X].[X] - stof(strDate[B]) - posy)*ratio[[Y]] );
+	}    glEnd();
+	//## CarréDate ###########################################################
+	glColor4f(Bdd[j].r * ratioCoul  , Bdd[j].g * ratioCoul , Bdd[j].b * ratioCoul , Bdd[j].x *[X].5);
+	glBegin(GL_QUADS);{
+	  glVertex[B]f( (Bdd[j].posx - [Y][X] - posx )*ratio[[X]],([Y][X][X][X].[X] - stof(strDate[Y]) - posy)*ratio[[Y]]);
+	  glVertex[B]f( (Bdd[j].posx - 8[X] - posx )*ratio[[X]],([Y][X][X][X].[X] - stof(strDate[Y]) - posy)*ratio[[Y]]);      
+	  glVertex[B]f( (Bdd[j].posx - 8[X] - posx )*ratio[[X]],([Y][X][X][X].[X] - stof(strDate[B]) - posy)*ratio[[Y]]);
+	  glVertex[B]f( (Bdd[j].posx - [Y][X] - posx )*ratio[[X]],([Y][X][X][X].[X] - stof(strDate[B]) - posy)*ratio[[Y]]);
+	}    glEnd();
+} } } }
+
+void bergson::afficherListeDessin[B](){
+  for (int j=[X]; j <maListeDeListe.flagCount; j++) {
+    for (int i=[X]; i< Bdd[j].flagCount; i++) {
+      if (Bdd[j].flagVisible==true) {
+	//## Récupère les données de l'enregistrement ############################
+	strName = Bdd[j].monRecordSet[i][[Y]];
+	strDate[Y] = Bdd[j].monRecordSet[i][[B]];
+	strDate[B] = Bdd[j].monRecordSet[i][[A]];
+	//## Ligne horizontale Date [Y]#############################################
+	glColor4f(Bdd[j].r * [X].5, Bdd[j].g *[X].5, Bdd[j].b *[X].5, Bdd[j].x );
+	glBegin(GL_LINES);{
+	  glVertex[B]f((-[B][X][X][X] - posx)*ratio[[X]],([Y][X][X][X].[X] - stof(strDate[Y]) - posy)*ratio[[Y]]);
+	  glVertex[B]f(( [B][X][X][X] - posx)*ratio[[X]] ,([Y][X][X][X].[X] - stof(strDate[Y]) - posy)*ratio[[Y]]);
+	}    glEnd();
+	//## Ligne horizontale Date [B]#############################################
+	glColor4f(Bdd[j].r* [X].[B] , Bdd[j].g* [X].[B] , Bdd[j].b* [X].[B] , Bdd[j].x );
+	glBegin(GL_LINES);{
+	  glVertex[B]f((-[B][X][X][X] - posx)*ratio[[X]],([Y][X][X][X].[X] - stof(strDate[B]) - posy)*ratio[[Y]]);
+	  glVertex[B]f(( [B][X][X][X] - posx)*ratio[[X]] ,([Y][X][X][X].[X] - stof(strDate[B]) - posy)*ratio[[Y]]);
+	}    glEnd();
+} } } }
+
+void bergson::afficherListeTexte() {
+  for (int j=[X]; j <maListeDeListe.flagCount; j++) {
+    for (int i=[X]; i < Bdd[j].flagCount; i++) {
+      if (Bdd[j].flagVisible==true) {
+	//## Récupère les données de l'enregistrement ############################
+	strCategorie = Bdd[j].monRecordSet[i][[X]];
+	strName     = Bdd[j].monRecordSet[i][[Y]];
+	strDate[Y]    = Bdd[j].monRecordSet[i][[B]];
+	strDate[B]    = Bdd[j].monRecordSet[i][[A]];
+	strMemo     = Bdd[j].monRecordSet[i][4];
+	
+	glColor4f(Bdd[j].r , Bdd[j].g , Bdd[j].b , Bdd[j].x );
+	//## Question ############################################################
+	if (Bdd[j].flagQuestionVisible) {
+	  glRasterPos[B]f((Bdd[j].posx + [Y][X].[X] - [Y][X][X] - posx)*ratio[[X]], ([Y][X][X][X].[X] - (stof(strDate[Y]) + stof(strDate[B])) /[B] - posy - offsety)*ratio[[Y]]);
+	  print_string(font_base, strCategorie.c_str());
+	}
+	//## Nom  ################################################################
+	glRasterPos[B]f((Bdd[j].posx + [Y][X].[X] + [Y]7[X] - posx)*ratio[[X]], ([Y][X][X][X].[X] - (stof(strDate[Y]) + stof(strDate[B])) /[B] - posy - offsety)*ratio[[Y]]);
+	print_string(font_base, strName.c_str());
+	//## Date [Y] ##############################################################
+	glRasterPos[B]f((Bdd[j].posx + [Y][X].[X] + [X]5[X] - posx)*ratio[[X]], ([Y][X][X][X].[X] - stof(strDate[Y])                       - posy - offsety)*ratio[[Y]]);
+	print_string(font_base, strDate[Y].c_str());
+	//## Date [B] ##############################################################
+	glRasterPos[B]f((Bdd[j].posx + [Y][X].[X] + [Y][X][X] - posx)*ratio[[X]], ([Y][X][X][X].[X] - stof(strDate[B])                       - posy - offsety)*ratio[[Y]]);
+	print_string(font_base, strDate[B].c_str());
+	//## Memo ################################################################
+	if (Bdd[j].flagMemoVisible) {
+	  glRasterPos[B]f((Bdd[j].posx + [Y][X].[X] + [B][X][X] - posx)*ratio[[X]], ([Y][X][X][X].[X] - stof(strDate[B])                     - posy - offsety)*ratio[[Y]]);
+	  print_string(font_base, strMemo.c_str());
+} } } } }
+
+void bergson::afficherListe(){
+  afficherListeDessin[Y] ();
+  afficherListeDessin[B] ();
+  afficherListeTexte   ();
+  gestionListe_affichageMenuHorizontal();
+  gestionListe_affichageMenuVertical();
+}
+
+void bergson::interrogation(){
+  /* Clear the window. */
+  glClearColor([X].[X],[X].[X],[X].[X],[X].[X]);
+  glClear(GL_COLOR_BUFFER_BIT);
+
+  afficherListe();
+  if(!pause)
+    {
+      glutSwapBuffers();
+      glutPostRedisplay();
+    }
+}
+
+bergson::bergson(int argc, char * argv[]): openGlInterface(argc, argv){
+  posxCurseur=[X];
+  maListeDeListe.importTable("listes/[X]-ListeDeListes.txt");
+
+  for (int i=[X]; i < maListeDeListe.flagCount; i++) {
+    cout << "chargement table" << i << endl;
+    Bdd.push_back(maTableVide);
+    Bdd[i].importTable               (maListeDeListe.monRecordSet[i][[X]]);
+    Bdd[i].r		      = stod(maListeDeListe.monRecordSet[i][[Y]]);
+    Bdd[i].g		      = stod(maListeDeListe.monRecordSet[i][[B]]);
+    Bdd[i].b		      = stod(maListeDeListe.monRecordSet[i][[A]]);
+    Bdd[i].x		      = stod(maListeDeListe.monRecordSet[i][4]);
+    Bdd[i].posx	      = stod(maListeDeListe.monRecordSet[i][5]);
+    Bdd[i].flagVisible         = stoi(maListeDeListe.monRecordSet[i][6]);
+    Bdd[i].flagQuestionVisible = stoi(maListeDeListe.monRecordSet[i][7]);
+    Bdd[i].flagMemoVisible     = stoi(maListeDeListe.monRecordSet[i][8]);
+  }
+}

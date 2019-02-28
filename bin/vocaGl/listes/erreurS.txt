@@ -1,0 +1,5 @@
+die Altersgruppen			les classes d'ages
+der Freundeskreis			le cercle d'amis
+der Staatsrat				le conseil d'état
+das Wirtshaus				l'auberge
+

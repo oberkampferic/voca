@@ -1,0 +1,42 @@
+#include "Record.hpp"
+
+//true:  pas de problème
+//false: problème
+//2:     on continue.
+
+int record::store(string contenuFichier, size_t *pos1, size_t *pos2, int flagSuperStatic) {
+  for (int i=0; i<nbColonnes; i++)
+    switch (vectorField[i].store(contenuFichier, pos1, pos2, flagSuperStatic)) {
+    case true:  debug ("Record", "store", "Fin    point 1\n")              ; return true;
+    case false: debug ("Record", "store", "Erreur point 2\n")              ; return false;
+    case 2:     /*debug ("Record", "store", "Pas de problème, on continue.B");*/  break;
+    }
+  return 2;
+}
+
+int record::reste() {
+  if ((vectorField[0].level==0) || (vectorField[1].level==0)) {
+    for (int i=0; i<nbColonnes; i++) 
+      vectorField[i].saveShort(&cout);
+    cout << endl;
+  }
+}
+
+int record::print() {
+  saveHumain(&cout);
+}
+
+int record::printShort() {
+  for (int i=0; i<nbColonnes; i++) vectorField[i].saveShort(&cout);
+  cout << endl;
+}
+
+int record::saveHumain(ostream * out) {
+  for (int i=0; i<nbColonnes; i++) vectorField[i].saveHumain(out);
+  *out << endl;
+}
+
+Record::Record() {
+  for (int i=0; i<20; i++)
+    vectorField[i].col="";
+}

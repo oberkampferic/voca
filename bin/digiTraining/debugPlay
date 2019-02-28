@@ -1,0 +1,12 @@
+
+test.wav:
+
+ File Size: 82.1k     Bit Rate: 256k
+  Encoding: Signed PCM    
+  Channels: 1 @ 16-bit   
+Samplerate: 16000Hz      
+Replaygain: off         
+  Duration: 00:00:02.56  
+
+In:0.00% 00:00:00.00 [00:00:02.56] Out:0     [      |      ]        Clip:0    In:99.8% 00:00:02.56 [00:00:00.00] Out:41.0k [======|======]        Clip:0    In:100%  00:00:02.56 [00:00:00.00] Out:41.0k [      |      ] Hd:2.7 Clip:0    
+Done.

@@ -1,0 +1,385 @@
+#include "openGl.hpp"
+#include "openGlWindows.cpp"
+
+void openGlInterface::init_font(GLuint base, char* f) {
+  Display* display;
+  XFontStruct* font_info;
+  int first;
+  int last;
+  int argc=0;
+  char * argv[]={""};
+  
+  /* Need an X Display before calling any Xlib routines. */
+  display = XOpenDisplay(0);
+  if (display == 0) {
+    cout << "XOpenDisplay() failed.  Exiting.\n";
+    exit(-1);
+  } 
+  else {
+ 
+    /* Load the font. */
+    //    font_info = XLoadQueryFont(display, f);
+    font_info = XLoadQueryFont(display, "-misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso8859-3");
+//    font_info = XLoadQueryFont(display, "7x13euro");
+    //font_info = XLoadQueryFont(display, "-bitstream-courier 10 pitch-medium-r-normal--0-0-0-0-m-0-iso10646-1");
+    //font_info = XLoadQueryFont(display, "-misc-fixed-medium-r-normal--10-100-75-75-c-60-iso10646-1");
+
+
+    if (!font_info) {
+      cout << "XLoadQueryFont() failed - Exiting.\n";
+      exit(-1);
+    }
+    else {
+      /* Tell GLX which font & glyphs to use. */
+      first = font_info->min_char_or_byte2;
+      last  = font_info->max_char_or_byte2;
+      glXUseXFont(font_info->fid, first, last-first+1, base+first);
+    }
+    XCloseDisplay(display);
+    display = 0;
+  }
+}
+
+void openGlInterface::print_string(GLuint base, const char* s) {
+  if (!glIsList(font_base)) {
+    cout << "print_string(): Bad display list. - Exiting.\n";
+    exit (-1);
+  }
+  else if (s && strlen(s)) {
+    glPushAttrib(GL_LIST_BIT);
+    glListBase(base);
+    glCallLists(strlen(s), GL_UNSIGNED_BYTE, (GLubyte *)s);
+    glPopAttrib();
+  }
+}
+
+void openGlInterface::my_init(char* f) {
+  font_base = glGenLists(256);
+  if (!glIsList(font_base)) {
+    //     cout << "my_init(): Out of display lists. - Exiting.\n";
+    exit (-1);
+  }
+  else {
+    init_font(font_base, "fixed");
+  }
+}
+
+void openGlInterface::my_reshape(int w, int h) {
+  GLdouble size;
+  GLdouble aspect;
+
+  /* Use the whole window. */
+  glViewport(0, 0, w, h);
+
+  /* We are going to do some 2-D orthographic drawing. */
+  glMatrixMode(GL_PROJECTION);
+  glLoadIdentity();
+  size = (GLdouble)((w >= h) ? w : h) / 2.0;
+  if (w <= h) {
+    aspect = (GLdouble)h/(GLdouble)w;
+    glOrtho(-size, size, -size*aspect, size*aspect, -100000.0, 100000.0);
+  }
+  else {
+    aspect = (GLdouble)w/(GLdouble)h;
+    glOrtho(-size*aspect, size*aspect, -size, size, -100000.0, 100000.0);
+  }
+
+  /* Make the world and window coordinates coincide so that 1.0 in */
+  /* model space equals one pixel in window space.                 */
+  glScaled(aspect, aspect, 1.0);
+
+  /* Now determine where to draw things. */
+  glMatrixMode(GL_MODELVIEW);
+  glLoadIdentity();
+  
+}
+void openGlInterface::attente(void) {
+  // une variable pour memoriser le temps a attendre
+  static int nWaitUntil = glutGet(GLUT_ELAPSED_TIME);
+
+  // on recupere le temps présent
+  int nTimer = glutGet(GLUT_ELAPSED_TIME);
+  // et on le compare a l'instant qu'il faut attendre
+  if(nTimer >= nWaitUntil) {
+    // pour rafraichir l'affichage
+    glutPostRedisplay();
+    // 5 fois pas seconde
+    nWaitUntil = nTimer + (1000 / 30);
+  }
+}
+
+void openGlInterface::my_motionMouse(int x, int y) {
+  float delta[2];
+  
+
+  if (leftState==1) {    //déplacement de l'ensemble de la map
+    delta[X]=old[X]-x;
+    delta[Y]=old[Y]-y;
+    pos[X]+=delta[X]/ratio[X];
+    pos[Y]-=delta[Y]/ratio[Y];
+    old[X]=x; old[Y]=y;
+  }
+  //    if (glutGetModifiers() & GLUT_ACTIVE_ALT) {
+    if (rightState==1) {   //déplacement de la colonne dont
+      delta[X]=old[X]-x;
+      Bdd[nearestTableIndex].pos[X]-=delta[X]/ratio[X];
+      old[X]=x;
+    }
+    //  }
+}
+
+double carreFunc(double x1) {
+  return x1*x1;
+}
+
+void openGlInterface::colonneConcernee(int x, int y) {
+  double monDeltaX, bestDeltaX;
+  long widthSur2= glutGet(GLUT_WINDOW_WIDTH)/2;
+
+  if (Bdd.size()>0) { //besoin d'initialiser
+      bestDeltaX = carreFunc(Bdd[0].pos[X] - ((((double) x - widthSur2 ) / ratio[X]) + pos[X]));
+      nearestTableIndex = 0;
+    }
+  for (int i=1; i< Bdd.size(); i++) { 
+    monDeltaX =    carreFunc(Bdd[i].pos[X] - ((((double) x - widthSur2 ) / ratio[X]) + pos[X]));
+    if (monDeltaX<bestDeltaX) {
+      bestDeltaX=monDeltaX;
+      nearestTableIndex = i;
+    }
+  }
+}
+
+int openGlInterface::motConcerne(int x, int y) {
+  long heightSur2= glutGet(GLUT_WINDOW_HEIGHT)/2;
+  double projY= (((double) y - (double) heightSur2 ) / ratio[Y])- pos[Y];
+  projY/=20; 
+  if ((projY<Bdd[nearestTableIndex].size()) && (projY>=0))
+    return (int) projY;
+  else
+    return -1;
+}
+
+double openGlInterface::offsetPositionMondeCurseurSouris_X(double oldRatiox, int x, int y){
+  long widthSur2= glutGet(GLUT_WINDOW_WIDTH)/2;
+  return  ( ((((double) x - widthSur2 ) /  ratio[X]) + pos[X]) -
+	    ((((double) x - widthSur2 ) / oldRatiox) + pos[X])     );
+}
+
+double openGlInterface::offsetPositionMondeCurseurSouris_Y(double oldRatioy, int x, int y){
+  long heightSur2= glutGet(GLUT_WINDOW_HEIGHT)/2;
+  return  ( ((((double) y - heightSur2 ) /  ratio[Y]) + pos[Y]) -
+	    ((((double) y - heightSur2 ) / oldRatioy) + pos[Y])    );
+}
+
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+int openGlInterface::radical(string &mot, string &s_radical) {
+  //recherche du radical
+  supprimerArticle(mot, s_radical);
+  string s_radical2;
+  radical1(s_radical, s_radical2);
+  cout << "radical sans préfixes: " << s_radical << endl;
+  s_radical.assign(s_radical2);
+  radical2(s_radical, s_radical2);
+  cout << "radical sans suffixes: " << s_radical2 << endl;
+  s_radical.assign(s_radical2);
+}
+
+int openGlInterface::supprimerArticle(string &mot, string &s_radical) {
+  s_radical.assign(mot);
+  cout << "supprimerArticle: " << s_radical << endl;
+  if (mot.find("der ")!=string::npos) s_radical.assign (mot.substr(4, mot.size()-4));
+  if (mot.find("die ")!=string::npos) s_radical.assign (mot.substr(4, mot.size()-4));
+  if (mot.find("das ")!=string::npos) s_radical.assign (mot.substr(4, mot.size()-4));
+  if (mot.find("ein ")!=string::npos) s_radical.assign (mot.substr(4, mot.size()-4));
+  if (mot.find("eine ")!=string::npos) s_radical.assign (mot.substr(5, mot.size()-5));
+  boost::algorithm::to_lower(s_radical);
+  cout << "supprimerArticle: " << s_radical << endl;
+}
+
+int openGlInterface::radical1(string &mot, string &s_radical) {
+      //Analyse des préfixes.
+  int valRet=false;
+  cout << "radical1        : " << s_radical << endl;
+  for (int i=0; i<prefixe.size(); i++){
+    if (mot.find(prefixe[i][0])==0){
+      cout << "préfixes:" << prefixe[i][0] << " " << endl;
+      s_radical.assign( mot.substr(prefixe[i][0].size(), mot.size()-prefixe[i][0].size()) );
+      cout << "radical1        : " << s_radical << endl;
+      //      string s_radical2;                     //réccursivité
+      //      radical1( s_radical, s_radical2);
+      //      s_radical.assign(s_radical2);
+      return true;      
+    }
+  }
+  s_radical.assign(mot);
+  return false;
+}
+
+int openGlInterface::radical2(string &mot, string &s_radical) {
+      //Analyse des suffixes.
+  int valRet=false;
+  cout << "radical2        : " << s_radical << endl;
+  for (int i=0; i<suffixe.size(); i++){
+    if (mot.find(suffixe[i][0], mot.size()-suffixe[i][0].size()-1)!=string::npos){
+      cout << "suffixes:" << suffixe[i][0] << " " << endl;
+      s_radical.assign( mot.substr(0,
+				   mot.size() - suffixe[i][0].size()
+				   ));
+
+      cout << "radical2        : " << s_radical << endl;
+      //      string s_radical2;                     //réccursivité
+      //      radical2( s_radical, s_radical2);
+      //      s_radical.assign(s_radical2);
+      return true;      
+    }
+  }
+  s_radical.assign(mot);
+  return false;
+}
+
+void openGlInterface::my_mouse(int button, int state, int x, int y) {
+  int mod=glutGetModifiers();
+  long widthSur2= glutGet(GLUT_WINDOW_WIDTH)/2;
+  long heightSur2= glutGet(GLUT_WINDOW_HEIGHT)/2;
+  int prochaineTableIndex;
+  colonneConcernee(x, y);
+  int projY=motConcerne(x,y);	//Identifier quel est le mot le plus proche.
+
+  //recherche Dico de ce mot
+  if (state==GLUT_DOWN){
+    if (projY!=-1) {  //Il y a bien un mot concerné?
+      cout << Bdd[nearestTableIndex][(int) projY][0] << " <=> "
+	   << Bdd[nearestTableIndex][(int) projY][1] << "##################" << endl;
+
+
+      string s_radical;
+      radical(Bdd[nearestTableIndex][(int) projY][0], s_radical);
+      cout << "radical: " << s_radical << endl;
+
+      string tampon;
+      //recherche des mots apparentés
+      tmpDico.clear();
+      for (int i=0; i<monDico.size(); i++) {
+	tampon=monDico[i][0];
+	boost::algorithm::to_lower(tampon);
+
+	if ( tampon.find( s_radical ) != string::npos){
+	  cout << "Dico:" << monDico[i][0]
+	       << ":"     << monDico[i][1] << endl;
+	  RECORD  temp;
+	  temp.push_back(monDico[i][0]);
+	  temp.push_back(monDico[i][1]);
+	  tmpDico.push_back(temp);
+	}
+      }
+      tmpDicoXhauftig.clear();
+      tmpHauftig.clear();
+      for (int i=0; i<monHauftisteWorte.size(); i++) {
+		tampon=monHauftisteWorte[i][0];
+	boost::algorithm::to_lower(tampon);
+	if (tampon.find( s_radical )  != string::npos){
+	  cout << "Häuftig:" << monHauftisteWorte[i][1]
+	       << ": "       << monHauftisteWorte[i][0] << endl;
+	  RECORD  temp;
+	  temp.push_back(monHauftisteWorte[i][0]);
+	  temp.push_back(monHauftisteWorte[i][1]);
+	  tmpHauftig.push_back(temp);
+	  RECORD  temp2;
+	  for (int j=0; j<tmpDico.size(); j++) {
+	    if (tmpDico[j][0].compare(temp[0])==0) {
+	      temp2.push_back(tmpDico[j][0]);
+	      temp2.push_back(tmpDico[j][1]);
+	      tmpDicoXhauftig.push_back(temp2);
+	    }
+	  }
+	}
+      }
+    }
+  }
+
+  switch(button) {
+  case GLUT_LEFT_BUTTON: //########################################
+    if (state==GLUT_UP) //Désenclenchement du déplacement de la map
+      leftState=0;
+    if (state==GLUT_DOWN) {
+      if (!(glutGetModifiers() & GLUT_ACTIVE_ALT)) {    //Déplacement d'un mot
+	if (projY!=-1) {  //Il y a bien un mot concerné?
+	  //Identifier quelle est la colonne de destination
+	  if (Bdd.size()>1) { //une seule table?
+	    if (nearestTableIndex == 0)       prochaineTableIndex=  (Bdd.size()-1);
+	    else                   	    prochaineTableIndex = nearestTableIndex-1;
+	    Bdd[prochaineTableIndex].push_back( Bdd[nearestTableIndex][(int) projY] );
+	    Bdd[nearestTableIndex].erase(Bdd[nearestTableIndex].begin()+(int) projY);
+	  } } }
+      leftState=1;         //Enclenchement du déplacement de la map
+      old[X]=x; old[Y]=y;
+    }
+    break;
+    
+  case GLUT_RIGHT_BUTTON://########################################
+    if (state==GLUT_UP) //Désenclenchement du déplacement d'une colonne
+      rightState=0;
+    if (state==GLUT_DOWN) {
+        if (!(glutGetModifiers() & GLUT_ACTIVE_ALT)) {      //Déplacement d'un mot
+	  if (projY!=-1) { // il y a bien un mot concerné?
+	    //Identifier quelle est la colonne de destination
+	    if (Bdd.size()>1) { //une seule table?
+	      if ((nearestTableIndex) < (Bdd.size()-1)) prochaineTableIndex = nearestTableIndex+1;
+	      else                            	    prochaineTableIndex = 0;
+	      Bdd[prochaineTableIndex].push_back( Bdd[nearestTableIndex][(int) projY] );
+	      Bdd[nearestTableIndex].erase(Bdd[nearestTableIndex].begin()+(int) projY);
+	    } } }
+	rightState=1;     //Enclenchement du déplacement d'une colonne
+    }
+    old[X]=x; old[Y]=y;
+    break;
+
+  case 3://####################################################
+    //Zoom
+    // Adaptation de posx pour zoomer à partir de la position de la souris
+    if (glutGetModifiers() & GLUT_ACTIVE_CTRL) {
+      double oldRatiox=ratio[X];
+      ratio[X]/= ((glutGetModifiers() & GLUT_ACTIVE_SHIFT)?0.97:0.8);
+      pos[X] -= offsetPositionMondeCurseurSouris_X( oldRatiox, x, y );
+    } else {
+      double oldRatioy=ratio[Y];
+      ratio[Y]/= ((glutGetModifiers() & GLUT_ACTIVE_SHIFT)?0.97:0.8);
+      pos[Y] += offsetPositionMondeCurseurSouris_Y( oldRatioy, x, y );
+    }
+    break;
+  case 4://######################################################
+    if (glutGetModifiers() & GLUT_ACTIVE_CTRL){//Dézoomage
+      double oldRatiox=ratio[X];
+      ratio[X]*= ((glutGetModifiers() & GLUT_ACTIVE_SHIFT)?0.97:0.8);
+      pos[X] -= offsetPositionMondeCurseurSouris_X( oldRatiox, x, y);
+    }
+    else {
+      double oldRatioy=ratio[Y];
+      ratio[Y]*= ((glutGetModifiers() & GLUT_ACTIVE_SHIFT)?0.97:0.8);
+      pos[Y] += offsetPositionMondeCurseurSouris_Y( oldRatioy, x, y);
+    }
+    break;
+  default:
+    break;
+  }
+}
+  
+openGlInterface::openGlInterface(int argc, char * argv[]){
+  glutInitDisplayMode(GLUT_SINGLE|GLUT_RGBA);
+  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+  glEnable( GL_BLEND );
+  glutInitWindowSize(800, 700);
+  glutInit(&argc, argv);
+  glutIdleFunc(attente);
+  glutInitDisplayMode(GLUT_RGB|GLUT_DOUBLE);
+  strcpy(window_title, "glxfont: ");
+  strcpy(font_name, "fixed");
+  strcat(window_title, font_name);
+  glutCreateWindow(window_title);
+  my_init(font_name);
+  glutReshapeFunc(my_reshape);
+  glutMotionFunc(my_motionMouse);
+  glutMouseFunc(my_mouse);
+}
+

@@ -1,0 +1,38 @@
+#ifndef VOKABEL_HPP
+#define VOKABEL_HPP
+
+#include <GL/gl.h>
+#include <GL/glut.h>
+#include <X[Y][Y]/Intrinsic.h>    /* Display, Window */
+#include <GL/glx.h>           /* GLXContext */
+#include <boost/algorithm/string.hpp>
+
+#include "../../lib/gründ/commun.hpp"
+//#include "../../lib/gründ/table.hpp"
+#include "openGl.hpp"
+
+class bergson:public openGlInterface{
+public:
+  //  int flagShot=false, flagBlitz=true;
+  //  string reponse;
+
+  static tableBergson<string> maTableVide;
+  static string strCategorie;
+  static string strName;
+  static string strDate[Y];
+  static string strDate[B];
+  static string strMemo;
+  
+  void static afficherListeDessin[Y]();
+  void static afficherListeDessin[B]();
+  void static afficherListeTexte();
+  void static afficherListe();
+  
+  void static interrogation();
+  bergson(int argc, char * argv[]);//: openGlInterface(argc, argv);
+};
+
+
+
+
+#endif

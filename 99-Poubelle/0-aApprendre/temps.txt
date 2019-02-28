@@ -1,0 +1,102 @@
+#FORMATION################################################################################################################################################################################
+INDIKATIV
+présent:    |		e, st,  t, en,  t, en		|	.pour certains verbes forts: changement de radical aux 2ième et 3ième personnes du singulier.
+	    |	   	#, st,  #, en,  t, en		|	.les verbes de modalité et le verbe wissen n'ont pas de désinence personelle à la 1ère de 3ème personne du sing.
+	    |	   	   	   	   		|	.présence du e de liaison après d, t, tt ou groupe de consonnes difficile à prononcer, sauf halten et raten.
+préterit:   |	te +	#, st,  #, en,  t, en		|	.Tous les verbes forts présentent au prétérit une voyelle différente de celle du présent.
+	    |	   	   	   	   		|	.présence du e de liaison après d, t, tt ou groupe de consonnes difficile à prononcer, sauf halten et raten.
+	    |						|	.fusion du s du radical avec celui de la terminaison st pour les verbes dont le radical se termine par s, ss, ß.
+futur I:    |	   présent  werden     + infinitif	|	
+____________________________________________________________________________________________________________________________________________________________________________________________
+
+parfait:	   présent  haben|sein + participe II
+Plus-Que-Parfait:  prétérit haben|sein + participe II
+Futur II	   présent  werden     + infinitif II
+____________________________________________________________________________________________________________________________________________________________________________________________
+KONJONKTIV
+Konjunktiv I     |   Radical infinitif   + e + désinences prétérit
+Konjunktiv II	 |   Radical du prétérit + "e + désinences prétérit
+Perfekt		 |   Präsens konjunktiv I  de haben|sein + participe passé du verbe.
+Plusquamperfekt	 |   Präsens konjunktiv II de haben|sein + participe passé du verbe.
+Futur I		 |   Präsens konjunktiv I  de werden + infinitif du verbe.
+Futur II         |   Präsens konjunktiv II de werden + infinitif du verbe.
+
+
+
+#EMPLOIS####################################################################################################################################################################################
+Présent:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+.évènement qui coïncide avec le moment de l'acte de parole (présent immédiat)	Wo ist denn Eva? Sie spielt gerade im Garten.	Où est passée Ève? Elle est en train de jouer dans le jardin.
+.fait d'ordre général								Zwei mal drei ist sechs.			Deux fois trois font six.
+.futur proche, combiné avec un adverbe de temps					Morgen fahre ich nach Berlin.			Demain je pars pour Berlin.
+.présent historique    	       	       	  					Am 9. November 1919 dankt Kaiser Wihelm II. ab.	Le 9 novembre 1919, l'empereur Guillaume II abdique.
+
+Prétérit:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+.le prétérit allemand correspond à la fois au passé simple, à l'imparfait et au passé composé français.
+.temps privilégié du récit.	      	      	    	      		     	Die Berliner Mauer fiel im November 1989.	Le mur de Berlin est tombé en novembre 1989.
+										Damals war ich noch ein kleiner Junge.		À cette époque, j'étais encore un gamin.
+										
+Futur I:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+.un évènement futur:								Wird du bald heiraten?				Tu vas te marier bientôt?
+.une prédiction:								Es wird eine neue Zeit beginnen.		Une nouvelle ère va commencer.
+.Une résolution:								Ich werde pünktlich da sein.			Je serai là à l'heure.
+     										Wir werden ihn nie vergessen!			Jamais nous ne l'oublierons!
+.un ordre:									Du wirst das sofort zurücknehmen!		Retire cette parole immédiatement!
+.une supposition:								Peter ist heute nicht da. Es wird bestimmt krank sein.
+     										      	  	      	     	  	   	Pierre n'est pas là aujourd'hui, il est sûrement malade.
+.par rapport au présent (futur proche), le futur 1 marque une nuance d'incertitude, soulignée par certains adverbes.
+     	     		       		   	   	      	     		Ich komme gleich.				J'arrive tout de suite.
+										Er wird wohl kommen.				Il viendra sans doute.
+___________________________________________________________________________________________________________________________________________________________________________________________
+
+Parfait, Plus-que-parfait, Futur II:-------------------------------------------------------------------------------------------------------------------------------------------------------
+.Par rapport aux trois temps précédents, le parfait, le plus-que-parfait et le futur II désignent une action accomplie (opposition d'aspect).
+
+Parfait------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+.s'emploie pour décrire une action achevée au moment où l'on parle (présent).	Gestern haben die Kinder Im Garten gespielt.	Hier, les enfants ont joué dans le jardin.
+.Il peut également désigner un passé immédiat, voire une action projetée dans le futur
+    	 	   	       	     	       	     	 		      	Eben ist der ICE eingetroffen.			Le TGV vient juste d'entrer en gare.
+										Morgen haben wir es geschafft.			Demain, nous aurons fini.
+Plus-Que-Parfait---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+.désigne une action achevée à un moment du passé				Sonja war zu Besuch gekommen			Sonia était venue me voir.
+.traduit l'antériorité d'un évènement par rapport au prétérit ou au parfait.	Es hatte geregnet, und die Straße war nass.	Il avait plu, et la route était mouillé.
+										Als wir gekommen sind, war er schon gegangen.	Quand nous sommes arrivés, il était déjà parti. 
+Futur II-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+.Sert à représenter une action achevée à un moment du futur.			Bis du zurückkommst, werden wir die Sache erledigt haben.
+.traduit l'antériorité par rapport à un événement futur				       		     	    	    	  	Avant ton retour, nous aurons réglé cette affaire.
+.exprime également une supposition par rapport à un événement passé,		Er wird sich schon wieder verlaufen haben.	Il se sera de nouveau trompé de chemin.
+ cette nuance est souvent soulignée par un adverbe.
+
+___________________________________________________________________________________________________________________________________________________________________________________________
+Konjonktif I
+.Rapporter les paroles d'autrui sans se prononcer sur la véracité des faits. surtout employé à l'écrit.
+.Le verbe conserve au sujontf 1 le temps q'ui aurait normalement à l'indicatif si les propos étaient tenus au discours direct.
+    	  	      	      	   	      	     		   	        Thomas hat geschrieben, er sei krank.		Thomas a écrit qu'il était malade.
+										Thomas hat geschrieben, er werde später kommen.	Thomas a écrit qu'il viendrait plus tard.
+										Der Minister erklärte, die Zahl des Arbeitslosen sei im letzeten Semester zurückgegangen.
+										  Le ministre a déclaré que le nombre de chômeurs avait diminué au dernier semestre.
+.permet également l'expression d'un souhait					Möge er doch kommen!	       	      	 	Puisse-t-il venir!
+		  	       	    						Dein Wille geschehe!				Que ta volonté soit faite!
+.d'une instruction écrite							Man vermische Mehl, Milch und Eier.		Mélanger de la farine, du lait et des oeufs.
+.d'une hypothèse mathématique							Gegeben sei das Dreieck ABC   			Soit le triangle ABC...
+.dans les formules figées:							Gott sei Dank!					Dieu merci!
+										Komme, was da wolle!				Advienne que pourra!
+Konjonktif II------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+.correspond au conditionnel présent. Il sert à exprimer:
+.> Une hypothèse peu probable							Es könnte wohl sein, dass...			Il se pourrait bien que...
+       		     								Stell dir vor, wir würden im Lotto gewinnen!	Imagine que nous gagnions au Loto.
+-> un souhait:									Ich würde mich riesig darüber freuen.		J'en serais terriblement heureux.
+-> une condition non réalisée dans le présent:					Wenn die Hifische Menschen wären.		Si les requins étaient des hommes.
+-> une comparaison avec als ob (comme si):					Er wurde rot, als ob er sich schämte.		Il rougit comme s'il avait honte
+-> une demande polie:	       	      						Würden Sie mir bitte das Brot geben?		Pourriez-vous me passer le pain, s'il vous plaît?
+-> une opinion prudente:							Ich würde sagen, dass...      			Je dirais que...
+       	       									Ich würde meinen, dass...			Je serais d'avis que...
+-> on emploie le futur du subjontif II de préférence au présent avec les verbes faibles:
+										Ich würde spielen				Je jouerais
+   et avec les verbes forts, dont les formes de présent, ressenties aujourd'hui comme désuiètes, sont inusitées dans le langage courant.
+      	       	      	     	      	     		 	    		Ich würde helfen      		     		J'aiderais,		plutôt que	ich hälfe ou hülfe
+										Ich würde raten					Je conseillerais 	plutôt que	ich riete
+										Ich würde verstehen				Je comprendrais		plutôt que	ich verstände ou verstunde
+-> Toutefois, le présent du konjonctif II est de règle pour les auxiliaires:	Ich wäre, ich hätte, ich würde
+   les verbes de modalité et le verbe wissen: 	       	    			ich könnte, möchte, müsste, wüsste.
+-> le présent du konjonctif II reste en usage pour certains verbes forts (ich käme, ginge, bliebe)
+										

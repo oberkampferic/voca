@@ -1,0 +1,64 @@
+#STRING	KE1		KE1		KE1		KE1			KE1				SHOT	MEMO
+
+benehmen	ehmen hm		er benimmt,		er benahm		er hat benommen			se conduire 				NULL	i,a,o
+
+schelten	elten lt		er schilt		er schalt		er hat gescholten		injurier				NULL	i,a,o
+werben		erben rb		er wirbt		er warb			er hat geworben			recruter, briguer, faire la pub		NULL	i,a,o
+verderben	erben rb		er verdirbt		er verdarb		er ist verdorben		pourrir					NULL	i,a,o
+verderben	erben rb		er verdirbt		er verdarb		er hat verdorben		gâter, gacer				NULL	i,a,o
+bersten		ersten rst		er birst		er barst		er ist geborsten		éclater					NULL	i,a,o
+
+verschwinden	inden nd		er verschwindet		er verschwand		er ist verschwunden		disparaître				NULL	i,a,u
+winden		inden nd		er windet		er wand			er hat gewunden			tordre, tresser				NULL	i,a,u
+dringen		ingen ng		er dringt		er drang		et hat gedrungen		pénétrer				NULL	i,a,u
+dingen		ingen ng		er dingt		er dang			er hat gedungen			soudoyer, louer				NULL	i,a,u
+schwingen	ingen ng		er schwingt		er schwang		er hat geschwungen		brandir, balancer			NULL	i,a,u
+
+spinnen		innen nn		er spinnt		er spann		er hat gesponnen		filer					NULL	i,a,o
+sinnen		innen nn		er sinnt		er sann			er hat gesonnen			réfléchir				NULL	i,a,o
+rinnen		innen nn		er rinnt		er rann			er ist geronnen			couler					NULL	i,a,o
+____________________________________________________________________________________________________________________________________________________
+
+speien		eien _			er speit		er spie			er hat gespien			cracher					NULL	ei,ie,ie
+treiben		eiben b			er treibt		er trieb		er hat getrieben		pratiquer, pousser			NULL	ei,ie,ie
+meiden		eiden d			er meidt		er mied			er hat gemieden			éviter					NULL	ei,ie,ie
+gedeihen	eihen h			er gedeiht		er gedieh		er ist gediehen			prospérer				NULL	ei,ie,ie
+verleihen	eihen h			er verleiht		er verlieh		er hat verliehen		perdre					NULL	ei,ie,ie
+erscheinen	einen n			er erscheint		er erschien		er hat erschienen		apparaître, paraître			NULL	ei,ie,ie
+weisen		eisen s			er weist		er wies			er hat gewiesen			montrer					NULL	ei,ie,ie
+preisen		eisen s			er preist		er pries		er hat gepriesen		vanter					NULL	ei,ie,ie
+
+weichen		eichen ch		er weicht		er wich			er ist gewichen			céder le pas				NULL	ei,i,i
+schleichen	eichen ch		er schleicht		er schlich		er ist geschlichen		se glisser				NULL	ei,i,i
+vergleichen	eichen ch		er vergleicht		er verglich		er hat verglichen		comparer				NULL	ei,i,i
+schleifen	eifen f			er schleift		er schliff		er hat geschliffen		aiguiser				NULL	ei,i,i
+schreiten	eiten t			er schreitet		er schritt		er hat geschritten		marcher					NULL	ei,i,i
+gleiten		eiten t			er gleitet		er glitt		er ist geglitten		glisser					NULL	ei,i,i
+sich befleißen	eißen ß			er beflisst sich	er befliss		er hat beflissen		s'appliquer				NULL	ei,i,i
+schmeißen	eißen ß			er schmeißt		er schmiss		er hat geschmissen		lancer					NULL	ei,i,i
+spleißen	eißen ß			er spleißt		er spliss		er hat gesplissen		fendre					NULL	ei,i,i
+verschleißen	eißen ß			er verschließt		er vershliss		er ist verschlissen		s'user prématurément			NULL	ei,i,i
+verschleißen	eißen ß			er verschließt		er vershliss		er hat verschlissen		user prématurément			NULL	ei,i,i
+_____________________________________________________________________________________________________________________________________________________
+
+verdrießen	ießen ß			er verdrießt		er verdross		er hat verdrossen		contrarier				NULL	ie,o,o
+sprießen	ießen ß			er sprießt		er spross		er ist gesprossen		germer, éclore				NULL	ie,o,o
+_______________________________________________________________________________________________________________________________________________________
+
+gären		ären			er gärt			er gor			er hat gegoren			fermenter				NULL	ä,o,o
+erlöschen	öschen			er erlischt		er erlosch		er ist erloschen		s'éteindre				NULL	i,o,o
+(be)trügen	ügen			er (be)trügt		er (be)trog		er hat (be)trogen		tromper					NULL	ü,o,o
+
+(er)schallen	allen			er erschallt		er erscholl		er hat erschollen		résonner, retentir			NULL	a,o,o
+
+melken		egen			er melkt		er melkt		er molk				traire	  				NULL	e,o,o
+pflegen		egen			er pflegt		er plog			er hat gepflogen		avoir coutume de			NULL	e,o,o
+scheren		eren			er schert		er schor		er hat geschoren		tondre					NULL	e,o,o
+fechten		echten			er ficht		er focht		er hat gefochten		se battre en duel			NULL	i,ot,o
+flechten	echten			er flicht		er floch		er hat geflochen		tresser					NULL	i,o,o
+vergehen	ehen			er vergeht		er verging		er ist vergangen		passer					NULL	e,i,a
+
+verbringen	ingen			er verbringt		er verbrachte		er hat verbracht		passer (du temps)			NULL	i,a,a
+schinden	inden			er schindet		er schund		er hat geschunden		écorcher				NULL	i,u,u
+entkommen	ommen			er entkommt		er entkamm		er ist entkommen		s'échapper				NULL	o,a,o
+stoßen		oßen			er stößt		er stieß		er hat gestoßen			heurter					NULL	ö,ie,o

@@ -1,0 +1,27 @@
+#ifndef RECORD_HPP
+#define RECORD_HPP
+
+//#include "../../main.hpp"
+#include "Field.hpp"
+#include "commun.hpp"
+#include "../interfacetty/interfacetty.hpp"
+
+class record: virtual public commun {
+public:
+
+  Field vectorField[20];
+  int nbColonnes;
+
+  int setNbColonnes(int monNbColonnes) { nbColonnes=monNbColonnes; };
+  int store(string contenuFichier,
+	    size_t *pos1, size_t *pos2,	    
+	    int flagSuperStatic);
+  int reste();
+  int print();
+  int printShort();
+  int saveHumain(ostream * out);
+
+    record();
+};
+
+#endif

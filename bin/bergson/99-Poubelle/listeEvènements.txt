@@ -1,0 +1,21 @@
+#KEY	STRING				STRING	STRING	MEMO											SHOT
+NULL	Mise à sac de Rome			846	846	NULL											NULL
+NULL	Bataille d’Ostia			849	849	NULL											NULL
+NULL	[Y]ière Guerre d’Italie			[Y]494	[Y]497	Charles VIII par de Grenoble et franchit le col de Montgenèvre le [B] septembre [Y]494	NULL
+NULL	[B]ième Guerre d’Italie			[Y]499	[Y]5[X][X]	Louis XII prépare minutieusement sa campagne en Italie					NULL
+NULL	[A]ième Guerre d’Italie			[Y]5[X][Y]	[Y]5[X]4	Revendication française sur le royaume de Naples					NULL
+NULL	4ième Guerre d'Italie			[Y]5[X]8	[Y]5[Y][A]	NULL											NULL
+NULL	5ième Guerre d'Italie			[Y]5[Y]5	[Y]5[Y]6	NULL											NULL
+NULL	6ième Guerre d'Italie			[Y]5[B]5	[Y]5[B]6	NULL											NULL
+NULL	7ième Guerre d'Italie			[Y]5[B]7	[Y]5[B]9	NULL											NULL
+NULL	8ième Guerre d'Italie			[Y]5[A]6	[Y]5[A]8	NULL											NULL
+NULL	9ième Guerre d'Italie			[Y]54[B]	[Y]546	NULL											NULL
+NULL	[Y][X]ième Guerre d'Italie			[Y]55[B]	[Y]556	NULL											NULL
+NULL	[Y][Y]ième Guerre d'Italie			[Y]557	[Y]559	NULL											NULL
+NULL	Guerre d’Italie				[Y]494	[Y]559	NULL											NULL
+NULL	Abjuration Henri IV			[Y]59[A]	[Y]59[A]	NULL											NULL
+NULL	guerre civile	 			[Y]56[B]	[Y]598	NULL											NULL
+NULL	Sacre Henri IV ?			[Y]594	[Y]594	NULL											NULL
+NULL	Sac de palatinat			[Y]689	[Y]689	NULL											NULL
+NULL	Bombardement Bruxelles			[Y]695	[Y]695	NULL											NULL
+NULL	Americanishen Unabhängigkeitskrieg	[Y]775	[Y]78[A]	NULL											NULL

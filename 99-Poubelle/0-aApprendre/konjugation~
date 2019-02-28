@@ -1,0 +1,113 @@
+#KEY				STRING			SHOT	MEMO
+
+sein Indikativ Präsens Ich		bin			NULL	NULL
+sein Indikativ Präsens du		bist			NULL	NULL
+sein Indikativ Präsens er/sie/es	ist			NULL	NULL
+sein Indikativ Präsens wir		sind			NULL	NULL
+sein Indikativ Präsens ihr		seid			NULL	NULL
+sein Indikativ Präsens sie		sind			NULL	NULL
+
+sein Indikativ Präteritum Ich		war			NULL	NULL
+sein Indikativ Präteritum du		warst			NULL	NULL
+sein Indikativ Präteritum er/sie/es	ware			NULL	NULL
+sein Indikativ Präteritum wir		waren			NULL	NULL
+sein Indikativ Präteritum ihr		wart			NULL	NULL
+sein Indikativ Präteritum sie		waren			NULL	NULL
+
+sein Konjontiv Präsens Ich		sei			NULL	NULL
+sein Konjontiv Präsens du		seiest			NULL	NULL
+sein Konjontiv Präsens er/sie/es	sei			NULL	NULL
+sein Konjontiv Präsens wir		seien			NULL	NULL
+sein Konjontiv Präsens ihr		seiet			NULL	NULL
+sein Konjontiv Präsens sie		seien			NULL	NULL
+
+sein Konjontiv Präteritum Ich		wäre			NULL	NULL
+sein Konjontiv Präteritum du		wärest			NULL	NULL
+sein Konjontiv Präteritum er/sie/es	wäre			NULL	NULL
+sein Konjontiv Präteritum wir		wären			NULL	NULL
+sein Konjontiv Präteritum ihr		wäret			NULL	NULL
+sein Konjontiv Präteritum sie		wären			NULL	NULL
+____________________________________________________________________________________________________
+haben Indikativ Präsens Ich		habe			NULL	NULL
+haben Indikativ Präsens du		hast			NULL	NULL
+haben Indikativ Präsens er/sie/es	hat			NULL	NULL
+haben Indikativ Präsens wir		haben			NULL	NULL
+haben Indikativ Präsens ihr		habt			NULL	NULL
+haben Indikativ Präsens sie		haben			NULL	NULL
+
+haben Indikativ Präteritum Ich		hatte			NULL	NULL
+haben Indikativ Präteritum du		hattest			NULL	NULL
+haben Indikativ Präteritum er/sie/es	hatte			NULL	NULL
+haben Indikativ Präteritum wir		hatten			NULL	NULL
+haben Indikativ Präteritum ihr		hattet			NULL	NULL
+haben Indikativ Präteritum sie		haten			NULL	NULL
+
+haben Konjontiv Präsens Ich		habe			NULL	NULL
+haben Konjontiv Präsens du		habest			NULL	NULL
+haben Konjontiv Präsens er/sie/es	habe			NULL	NULL
+haben Konjontiv Präsens wir		haben			NULL	NULL
+haben Konjontiv Präsens ihr		habet			NULL	NULL
+haben Konjontiv Präsens sie		haben			NULL	NULL
+
+haben Konjontiv Präteritum Ich		hätte			NULL	NULL
+haben Konjontiv Präteritum du		hättest			NULL	NULL
+haben Konjontiv Präteritum er/sie/es	hätte			NULL	NULL
+haben Konjontiv Präteritum wir		hättest			NULL	NULL
+haben Konjontiv Präteritum ihr		hättet			NULL	NULL
+haben Konjontiv Präteritum sie		hätten			NULL	NULL
+____________________________________________________________________________________________________
+werden Indikativ Präsens Ich		werde			NULL	NULL
+werden Indikativ Präsens du		wirst			NULL	NULL
+werden Indikativ Präsens er/sie/es	wird			NULL	NULL
+werden Indikativ Präsens wir		werden			NULL	NULL
+werden Indikativ Präsens ihr		werdet			NULL	NULL
+werden Indikativ Präsens sie		werden			NULL	NULL
+
+werden Indikativ Präteritum Ich		werde			NULL	NULL
+werden Indikativ Präteritum du		werdest			NULL	NULL
+werden Indikativ Präteritum er/sie/es	werde			NULL	NULL
+werden Indikativ Präteritum wir		werden			NULL	NULL
+werden Indikativ Präteritum ihr		werdet			NULL	NULL
+werden Indikativ Präteritum sie		werden			NULL	NULL
+
+werden Konjontiv Präsens Ich		wurde			NULL	NULL
+werden Konjontiv Präsens du		wurdest			NULL	NULL
+werden Konjontiv Präsens er/sie/es	wurde			NULL	NULL
+werden Konjontiv Präsens wir		wurden			NULL	NULL
+werden Konjontiv Präsens ihr		wurdet			NULL	NULL
+werden Konjontiv Präsens sie		wurden			NULL	NULL
+
+werden Konjontiv Präteritum Ich		würde			NULL	NULL
+werden Konjontiv Präteritum du		würdest			NULL	NULL
+werden Konjontiv Präteritum er/sie/es	würdet			NULL	NULL
+werden Konjontiv Präteritum wir		würden			NULL	NULL
+werden Konjontiv Präteritum ihr		würdet			NULL	NULL
+werden Konjontiv Präteritum sie		würden			NULL	NULL
+____________________________________________________________________________________________________
+werden Indikativ Präsens Ich		werde			NULL	NULL
+werden Indikativ Präsens du		wirst			NULL	NULL
+werden Indikativ Präsens er/sie/es	wird			NULL	NULL
+werden Indikativ Präsens wir		werden			NULL	NULL
+werden Indikativ Präsens ihr		werdet			NULL	NULL
+werden Indikativ Präsens sie		werden			NULL	NULL
+
+werden Indikativ Präteritum Ich		werde			NULL	NULL
+werden Indikativ Präteritum du		werdest			NULL	NULL
+werden Indikativ Präteritum er/sie/es	werde			NULL	NULL
+werden Indikativ Präteritum wir		werden			NULL	NULL
+werden Indikativ Präteritum ihr		werdet			NULL	NULL
+werden Indikativ Präteritum sie		werden			NULL	NULL
+
+werden Konjontiv Präsens Ich		wurde			NULL	NULL
+werden Konjontiv Präsens du		wurdest			NULL	NULL
+werden Konjontiv Präsens er/sie/es	wurde			NULL	NULL
+werden Konjontiv Präsens wir		wurden			NULL	NULL
+werden Konjontiv Präsens ihr		wurdet			NULL	NULL
+werden Konjontiv Präsens sie		wurden			NULL	NULL
+
+werden Konjontiv Präteritum Ich		würde			NULL	NULL
+werden Konjontiv Präteritum du		würdest			NULL	NULL
+werden Konjontiv Präteritum er/sie/es	würdet			NULL	NULL
+werden Konjontiv Präteritum wir		würden			NULL	NULL
+werden Konjontiv Präteritum ihr		würdet			NULL	NULL
+werden Konjontiv Präteritum sie		würden			NULL	NULL

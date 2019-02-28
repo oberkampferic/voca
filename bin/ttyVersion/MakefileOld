@@ -1,0 +1,30 @@
+CC=gcc
+CXX=g++
+RM=rm -f
+CPPFLAGS=-g $(ncusesw5-config --cflags)
+LDFLAGS=-g $(ncusesw5-config --ldflags)
+LDLIBS=$(ncusesw5-config --libs)
+
+SRCS=main.cpp Head.cpp Field.cpp Record.cpp Vokabel.cpp commun.cpp
+
+all:	main
+
+main.o
+
+OBJS=$(subst .cpp,.o,$(SRCS))
+
+all: main
+
+main: $(OBJS)
+	$(CXX) $(LDFLAGS) -o main $(OBJS) $(LDLIBS) 
+
+
+main.o: main.cpp Head.hpp Field.hpp Record.hpp Vokabel.hpp commun.hpp
+commun.o: commun.hpp commun.cpp
+Vokabel.o: Vokabel.hpp Vokabel.cpp
+Head.o:   Head.hpp Head.cpp
+Field.o:  Field.hpp Field.cpp
+Record.o: Record.hpp Record.cpp
+
+clean:
+	$(RM) *.o

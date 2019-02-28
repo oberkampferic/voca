@@ -1,0 +1,64 @@
+Carolingiens		Louis II dit le Germanique				843	876	Roi de Francie orientale			NULL
+Carolingiens		Carloman-Louis le Jeune-Charles le Gros			876	880	Roi de Bavière,Roi de Saxe,			NULL
+Carolingiens		Roi d'Alémanie-Louis le Jeune-Charles le Gros		880	882	Roi de Saxe et roi de Bavière			NULL
+Carolingiens		Roi d'Alémanie et empereur d'Occident-Charles le Gros	882	887	Roi de Francie orientale, empereur d'Occident	NULL
+Carolingiens		Arnulf de Carinthie					887	899	Roi de Francie orientale			NULL
+Carolingiens		Arnulf de Carinthie					896	899	Empereur					NULL
+Carolingiens		Louis IV dit Louis l'Enfant				900	911	Roi de Francie orientale			NULL
+Conradiens		Conrad Ier						911	918	Roi de Francie orientale			NULL
+Ottoniens		Henri Ier dit Henri l'Oiseleur				912	936	Duc de Saxe					NULL
+Ottoniens		Henri Ier dit Henri l'Oiseleur				919	936	Roi de Francie orientale			NULL
+Ottoniens		Otton Ier, dit Otton le Grand				936	973	Roi de Francie orientale			NULL
+Ottoniens		Othon II						955	983	NULL						NULL
+Ottoniens		Othon III						983	1002	NULL						NULL
+Ottoniens		Saint Henri II						1002	1024	NULL						NULL
+franconnienne		Conrad II le Salique					1024	1039	NULL						NULL
+franconnienne		Henri III le Noir					1039	1056	NULL						NULL
+franconnienne		Henri IV						1056	1105	NULL						NULL
+franconnienne		Régence d'Agnès d'Aquitaine				1056	1065	NULL						NULL
+franconnienne		Rodolphe de Souabe					1077	1080	NULL						NULL
+franconnienne		Conrad de Lorraine					1087	1098	NULL						NULL
+franconnienne		Henri V							1105	1125	NULL						NULL
+Supplimbourg		Lothaire II de Supplinbourg				1125	1137	NULL						NULL
+Hohenstaufen		Conrad III de Hohenstaufen				1127	1152	NULL						NULL
+Hohenstaufen		Frédéric Ier Barberousse				1152	1190	NULL						NULL
+Hohenstaufen		Henri VI						1190	1197	NULL						NULL
+Hohenstaufen		Frédéric II Stupor Mundi				1196	1250	NULL						NULL
+Welf			Othon IV de Brunswick					1198	1218	NULL						NULL
+Hohenstaufen		Philippe de Souabe					1198	1208	NULL						NULL
+Hohenstaufen		Henri VII						1220	1235	NULL						NULL
+Hohenstaufen		Conrad IV						1237	1254	NULL						NULL
+Hohenstaufen		Henri-Raspe de Thuringe					1246	1247	NULL						NULL
+Interrègne		Guillaume de Hollande					1247	1256	NULL						NULL
+Interrègne		Richard de Cornouailles					1257	1272	NULL						NULL
+Interrègne		Alphonse de Castille					1257	1274	NULL						NULL
+NULL			Rodolphe I er de Habsbourg				1273	1291	NULL						NULL
+NULL			Adolphe de Nassau					1292	1298	NULL						NULL
+NULL			Albert I er de Habsbourg				1298	1308	NULL						NULL
+NULL			Henri VII de Luxembourg					1308	1313	NULL						NULL
+NULL			Louis IV de Bavière					1314	1346	NULL						NULL
+NULL			Frédéric (III) le Beau					1314	1330	NULL						NULL
+NULL			Charles IV de Luxembourg				1346	1378	NULL						NULL
+NULL			Venceslas de Luxembourg					1378	1400	NULL						NULL
+NULL			Robert du Palatinat					1400	1410	NULL						NULL
+NULL			Josse de Moravie					1410	1411	NULL						NULL
+NULL			Sigismond de Luxembourg					1410	1437	NULL						NULL
+NULL			Albert II de Habsbourg					1438	1439	NULL						NULL
+NULL			Frédéric III						1440	1493	NULL						NULL
+NULL			Maximilien I er						1493	1519	NULL						NULL
+NULL			Charles Quint						1519	1556	NULL						NULL
+NULL			Ferdinand I er						1556	1564	NULL						NULL
+NULL			Maximilien II						1564	1576	NULL						NULL
+NULL			Rodolphe II						1576	1611	NULL						NULL
+NULL			Matthias						1611	1619	NULL						NULL
+NULL			Ferdinand II						1619	1637	NULL						NULL
+NULL			Ferdinand III						1637	1657	NULL						NULL
+NULL			Ferdinand IV François					1653	1654	NULL						NULL
+NULL			Léopold I er						1658	1705	NULL						NULL
+NULL			Joseph I er						1705	1711	NULL						NULL
+NULL			Charles VI						1711	1740	NULL						NULL
+NULL			Charles VII						1742	1745	NULL						NULL
+NULL			François I er						1745	1765	NULL						NULL
+NULL			Joseph II						1765	1790	NULL						NULL
+NULL			Léopold II						1790	1792	NULL						NULL
+NULL			François II						1792	1806	NULL						NULL

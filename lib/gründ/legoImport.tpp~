@@ -1,0 +1,77 @@
+template <> inline int DATABASE::importDriver(string fileName){
+  ifstream in(fileName);
+  string maLigne;
+  
+  while (getline (in, maLigne)) {
+    if (maLigne[0]==0) {
+      cout << "fin detecté" << endl;
+      return true;
+    } else {
+      this->add();
+      this->back().import(&in, &maLigne);
+    }
+  }
+
+  in.close();
+  return true;
+}
+
+template <> inline int TABLE::importDriver(string fileName){
+  ifstream in(fileName);
+  string maLigne;
+  
+  while (getline (in, maLigne)) {
+    if (maLigne[0]==0) {
+      cout << "fin detecté" << endl;
+      cout << "on ferme le fichier" << endl;
+
+      return true;
+    } else {
+      import(&in, &maLigne);
+    }
+  }
+  in.close();
+  return true;
+}
+
+template <typename T> int lego<T>::importDriver(string fileName){
+  return true;
+}
+
+
+template <> inline int RECORD::import(ifstream * in, string * maLigne) {
+  cout << "QUESSKONFOULA?" << endl;
+  return true;
+}
+
+template <typename T> int lego<T>::import(ifstream * in, string * maLigne) {
+  RECORD monRecord;
+  //découpage de la ligne
+  preParsing(maLigne);
+
+  size_t pos1=0, pos2=0, pos3=0;
+  string col;
+
+  int valRet=10;
+  
+  for (;;) {
+    pos3 = maLigne->find("\n",pos1);
+    pos2 = maLigne->find("|", pos1);
+
+    if (pos2==string::npos){
+      pos2=maLigne->size();
+      valRet=false; //là c la fin
+    }
+
+    col = maLigne->substr(pos1, (pos2-pos1));
+    monRecord.push_back(col);
+    cout << col << "\\";
+    pos1 = pos2+1;
+
+    if (valRet!=10){
+      this->push_back(monRecord);
+      cout << endl;
+      return valRet;
+    }
+  }
+}

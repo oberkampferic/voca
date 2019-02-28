@@ -1,0 +1,139 @@
+#include "bergson.hpp"
+
+void bergson::afficherListeDessin[Y](){
+  double ratioCoul=[X].[Y];
+  for (int j=[X]; j <maListeDeListe.size(); j++) {
+    for (int i=[X]; i< Bdd[j].size(); i++) {
+      if (Bdd[j].flagVisible==true) {
+	//## Récupère les données de l'enregistrement ############################
+	s_Name = Bdd[j][i][[Y]];
+	s_Date[Y] = Bdd[j][i][[B]];
+	s_Date[B] = Bdd[j][i][[A]];
+	//## Carré vertical ######################################################
+	if (j==posxCurseur)
+	  if (ratioCoul < [X].6) ratioCoul=[X].8; else ratioCoul=[X].[A];
+	else
+	  if (ratioCoul < [X].6) ratioCoul=[X].7; else ratioCoul=[X].4;
+	
+	glColor4f( (Bdd[j].color[[X]] * ratioCoul) / [A],
+		   (Bdd[j].color[[Y]] * ratioCoul) / [A],
+		   (Bdd[j].color[[B]] * ratioCoul) / [A],
+		   Bdd[j].color[[A]] * [X].[B] );
+		
+	glColor4f( (Bdd[j].color[[X]] * ratioCoul) / [A],
+		   (Bdd[j].color[[Y]] * ratioCoul) / [A],
+		   (Bdd[j].color[[B]] * ratioCoul) / [A],
+		   Bdd[j].color[[A]] * [X].[B] );
+	glBegin(GL_QUADS);{
+	  glVertex[B]f( (Bdd[j].pos[[X]] + [X][Y][X] - pos[[X]] )*ratio[[X]] ,([Y][X][X][X].[X] - stof(s_Date[Y]) - pos[[Y]])*ratio[[Y]] );
+	  glVertex[B]f( (Bdd[j].pos[[X]] + 6[X][X] - pos[[X]] )*ratio[[X]] ,([Y][X][X][X].[X] - stof(s_Date[Y]) - pos[[Y]])*ratio[[Y]] );      
+	  glVertex[B]f( (Bdd[j].pos[[X]] + 6[X][X] - pos[[X]] )*ratio[[X]] ,([Y][X][X][X].[X] - stof(s_Date[B]) - pos[[Y]])*ratio[[Y]] );
+	  glVertex[B]f( (Bdd[j].pos[[X]] + [X][Y][X] - pos[[X]] )*ratio[[X]] ,([Y][X][X][X].[X] - stof(s_Date[B]) - pos[[Y]])*ratio[[Y]] );
+	}    glEnd();
+	//## CarréDate ###########################################################
+	glColor4f(Bdd[j].color[[X]] * ratioCoul  , Bdd[j].color[[Y]] * ratioCoul , Bdd[j].color[[B]] * ratioCoul , Bdd[j].color[[A]] *[X].5);
+	glBegin(GL_QUADS);{
+	  glVertex[B]f( (Bdd[j].pos[[X]] - [Y][X] - pos[[X]] )*ratio[[X]],([Y][X][X][X].[X] - stof(s_Date[Y]) - pos[[Y]])*ratio[[Y]]);
+	  glVertex[B]f( (Bdd[j].pos[[X]] - 8[X] - pos[[X]] )*ratio[[X]],([Y][X][X][X].[X] - stof(s_Date[Y]) - pos[[Y]])*ratio[[Y]]);      
+	  glVertex[B]f( (Bdd[j].pos[[X]] - 8[X] - pos[[X]] )*ratio[[X]],([Y][X][X][X].[X] - stof(s_Date[B]) - pos[[Y]])*ratio[[Y]]);
+	  glVertex[B]f( (Bdd[j].pos[[X]] - [Y][X] - pos[[X]] )*ratio[[X]],([Y][X][X][X].[X] - stof(s_Date[B]) - pos[[Y]])*ratio[[Y]]);
+	}    glEnd();
+	
+} } } }
+
+void bergson::afficherListeDessin[B](){
+  for (int j=[X]; j <maListeDeListe.size(); j++) {
+    for (int i=[X]; i< Bdd[j].size(); i++) {
+      if (Bdd[j].flagVisible==true) {
+	//## Récupère les données de l'enregistrement ############################
+	s_Name = Bdd[j][i][[Y]];
+	s_Date[Y] = Bdd[j][i][[B]];
+	s_Date[B] = Bdd[j][i][[A]];
+	//## Ligne horizontale Date [Y]#############################################
+	glColor4f(Bdd[j].color[[X]] * [X].5, Bdd[j].color[[Y]] *[X].5, Bdd[j].color[[B]] *[X].5, Bdd[j].color[[A]] );
+	glBegin(GL_LINES);{
+	  glVertex[B]f((-[B][X][X][X] - pos[[X]])*ratio[[X]],([Y][X][X][X].[X] - stof(s_Date[Y]) - pos[[Y]])*ratio[[Y]]);
+	  glVertex[B]f(( [B][X][X][X] - pos[[X]])*ratio[[X]] ,([Y][X][X][X].[X] - stof(s_Date[Y]) - pos[[Y]])*ratio[[Y]]);
+	}    glEnd();
+	//## Ligne horizontale Date [B]#############################################
+	glColor4f(Bdd[j].color[[X]]* [X].[B] , Bdd[j].color[[Y]]* [X].[B] , Bdd[j].color[[B]]* [X].[B] , Bdd[j].color[[A]] );
+	glBegin(GL_LINES);{
+	  glVertex[B]f((-[B][X][X][X] - pos[[X]])*ratio[[X]],([Y][X][X][X].[X] - stof(s_Date[B]) - pos[[Y]])*ratio[[Y]]);
+	  glVertex[B]f(( [B][X][X][X] - pos[[X]])*ratio[[X]] ,([Y][X][X][X].[X] - stof(s_Date[B]) - pos[[Y]])*ratio[[Y]]);
+	}    glEnd();
+} } } }
+
+void bergson::afficherListeTexte() {
+  for (int j=[X]; j < maListeDeListe.size(); j++) {
+    for (int i=[X]; i < Bdd[j].size(); i++) {
+	if (Bdd[j].flagVisible==true) {
+	  //## Récupère les données de l'enregistrement ############################
+	  s_Categorie = Bdd[j][i][[X]];
+	  s_Name      = Bdd[j][i][[Y]];
+	  s_Date[Y]     = Bdd[j][i][[B]];
+	  s_Date[B]     = Bdd[j][i][[A]];
+	  s_Memo      = Bdd[j][i][4];
+		      
+	  glColor4f(Bdd[j].color[[X]] , Bdd[j].color[[Y]] , Bdd[j].color[[B]] , Bdd[j].color[[A]] );
+	  //## Catégorie ###########################################################
+	  if (Bdd[j].flagQuestionVisible) {
+	    glRasterPos[B]f((Bdd[j].pos[[X]] + [Y][X].[X] - [Y][X][X] - pos[[X]])*ratio[[X]], ([Y][X][X][X].[X] - (stof(s_Date[Y]) + stof(s_Date[B])) /[B] - pos[[Y]] - offsety)*ratio[[Y]]);
+	    print_string(font_base, s_Categorie.c_str());
+	  }
+	  //## Nom  ################################################################
+	  glRasterPos[B]f((Bdd[j].pos[[X]] + [Y][X].[X] + [Y]7[X] - pos[[X]])*ratio[[X]], ([Y][X][X][X].[X] - (stof(s_Date[Y]) + stof(s_Date[B])) /[B] - pos[[Y]] - offsety)*ratio[[Y]]);
+	  print_string(font_base, s_Name.c_str());
+	  //## Date [Y] ##############################################################
+	  glRasterPos[B]f((Bdd[j].pos[[X]] + [Y][X].[X] + [X]5[X] - pos[[X]])*ratio[[X]], ([Y][X][X][X].[X] - stof(s_Date[Y])                       - pos[[Y]] - offsety)*ratio[[Y]]);
+	  print_string(font_base, s_Date[Y].c_str());
+	  //## Date [B] ##############################################################
+	  glRasterPos[B]f((Bdd[j].pos[[X]] + [Y][X].[X] + [Y][X][X] - pos[[X]])*ratio[[X]], ([Y][X][X][X].[X] - stof(s_Date[B])                       - pos[[Y]] - offsety)*ratio[[Y]]);
+	  print_string(font_base, s_Date[B].c_str());
+	  //## Memo ################################################################
+	  if (Bdd[j].flagMemoVisible) {
+	    glRasterPos[B]f((Bdd[j].pos[[X]] + [Y][X].[X] + [B][X][X] - pos[[X]])*ratio[[X]], ([Y][X][X][X].[X] - stof(s_Date[B])                     - pos[[Y]] - offsety)*ratio[[Y]]);
+	    print_string(font_base, s_Memo.c_str());
+} } } } }
+  
+void bergson::afficherListe(){
+  afficherListeDessin[Y] ();
+  afficherListeDessin[B] ();
+  afficherListeTexte   ();
+  gestionListe_affichageMenuHorizontal();
+  gestionListe_affichageMenuVertical();
+}
+
+void bergson::interrogation(){
+  /* Clear the window. */
+  glClearColor([X].[X],[X].[X],[X].[X],[X].[X]);
+  glClear(GL_COLOR_BUFFER_BIT);
+
+  afficherListe();
+  if(!pause)
+    {
+      glutSwapBuffers();
+      glutPostRedisplay();
+    }
+}
+
+bergson::bergson(int argc, char * argv[]): openGlInterface(argc, argv){
+  posxCurseur=[X];
+  maListeDeListe.importDriver("listes/[X]-ListeDeListes.txt");
+
+  for (int i=[X]; i < maListeDeListe.size(); i++) {
+    Bdd.push_back(maTableVide);
+    Bdd.back().importDriver(maListeDeListe[i][[X]]);
+    Bdd[i].color[[X]]           = stof(maListeDeListe[i][[Y]]);
+    Bdd[i].color[[Y]]	      = stof(maListeDeListe[i][[B]]);
+    Bdd[i].color[[B]]	      = stof(maListeDeListe[i][[A]]);
+    Bdd[i].color[[A]]           = stof(maListeDeListe[i][4]);
+//    Bdd[i].r		      = stod(maListeDeListe[i][[Y]]);
+//    Bdd[i].g		      = stod(maListeDeListe[i][[B]]);
+//    Bdd[i].b		      = stod(maListeDeListe[i][[A]]);
+//    Bdd[i].x		      = stod(maListeDeListe[i][4]);
+    Bdd[i].pos[[X]]	      = stod(maListeDeListe[i][5]);
+    Bdd[i].flagVisible         = stoi(maListeDeListe[i][6]);
+    Bdd[i].flagQuestionVisible = stoi(maListeDeListe[i][7]);
+    Bdd[i].flagMemoVisible     = stoi(maListeDeListe[i][8]);
+  }
+}
