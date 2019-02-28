@@ -63,7 +63,7 @@ void openGlInterface::my_reshape(int w, int h) {
   }
   else {
     aspect = (GLdouble)w/(GLdouble)h;
-    glOrtho(-size*aspect, size*aspect, -size, size, -100000.0, 100000.0);s
+    glOrtho(-size*aspect, size*aspect, -size, size, -100000.0, 100000.0);
   }
 
   /* Make the world and window coordinates coincide so that 1.0 in */

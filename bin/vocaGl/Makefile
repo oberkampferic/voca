@@ -12,7 +12,7 @@ OBJS=$(subst .cpp,.o,$(SRCS))
 all: main
 
 main: $(OBJS)
-	$(CXX) $(LDFLAGS) -o main  $(OBJS) $(LDLIBS) -Wall -lglut -lGLU -lGL -lXmu -lX11 
+	$(CXX) $(LDFLAGS) -o main  $(OBJS) $(LDLIBS) -Wall -lglut -lGLU -lGL -lX11 
 
 main.o: main.cpp ../../lib/interfacetty/interfacetty.hpp ../../lib/gründ/parser.hpp ../../lib/gründ/preParser.hpp ../../lib/gründ/Head.hpp ../../lib/gründ/commun.hpp ../../lib/gründ/fichier.cpp ../../lib/gründ/lego.hpp glPrimitiv.hpp openGl.hpp 
 
