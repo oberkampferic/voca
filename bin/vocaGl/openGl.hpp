@@ -45,6 +45,30 @@ public:
   }
 };
 
+class bddBergsonHead:vector<tableBergsonHead> {
+public:
+  int flagVisible;
+  int flagQuestionVisible;
+  int flagMemoVisible;
+  double pos[2];
+  float color[4];
+  string filename;
+
+  static float  ratio[2];
+
+  bddBergsonHead(){
+   color[0]=1.0;		     
+   color[1]=1.0;		 
+   color[2]=0.0;		 
+   pos[0]=0.0;		 
+   pos[1]=0.0;		 
+   flagQuestionVisible=1;	 
+   flagMemoVisible=1;	 
+   flagVisible=1;		 
+   filename.assign("Nouveau");
+  }
+};
+
 class tableBergson: public tableBergsonHead, public TABLE {
 public:
     tableBergson(): tableBergsonHead(){};
@@ -66,7 +90,7 @@ public:
   static int    leftState, rightState;
   static int    nearestTableIndex; //le y est le plus proche
 
-  static vector<tableBergson > Bdd;
+  static vector<vector<tableBergson >> ServerBdd;
   static TABLE  maListeDeListe;
   static TABLE  monDico;
   static TABLE  monHauftisteWorte;
@@ -76,20 +100,27 @@ public:
   static TABLE  tmpHauftig;
   static TABLE  tmpDicoXhauftig;
 
+  //curseurs pour les menus
   static int posxCurseur;
+  static int posyCurseur;
+  //curseur pour quelle base de donnée dans le serveur
+  static int bddCurseur;
   static GLuint font_base;
+  static GLuint font_base2;
 
   char window_title[256];
   char font_name[256];
 
   static string s_Allemand;
   static string s_Francais;
+  static int idFont;
 
   //## QUINCAILLERIE #########################################
   void static attente (void);
-  void init_font(GLuint base, char* f);
+  void static init_font(GLuint base, char* f, int idFont);
   //## ELEMENTS WINDOWS ######################################
-  void static gestionListe_gestionCurseur(int Sens);
+  void static gestionListe_gestionCurseurX(int Sens);
+  void static gestionListe_gestionCurseurY(int Sens);
   void static gestionListe_affichageMenuHorizontal();
   void static gestionListe_affichageMenuVertical();
   //## GESTION INTERFACE SOURIS ##############################

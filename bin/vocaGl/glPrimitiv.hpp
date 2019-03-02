@@ -14,7 +14,7 @@ public:
   void static gestionListe_rectangle(double x1, double y1, double x2, double y2);
   void static gestionListe_rectanglePlein(double x1, double y1, double x2, double y2);
   //## TYPOGRAPHIE ###########################################
-  void static print_string(GLuint font_base, const char* s);
+  void static print_string(float x, float y, GLuint font_base, string * s);
 
 };
 

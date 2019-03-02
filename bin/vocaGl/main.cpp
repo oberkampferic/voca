@@ -7,7 +7,7 @@
 string openGlInterface::s_Allemand;
 string openGlInterface::s_Francais;
            
-vector<tableBergson> openGlInterface::Bdd;
+vector<vector< tableBergson>> openGlInterface::ServerBdd;
 TABLE                openGlInterface::maListeDeListe;
 TABLE                openGlInterface::monDico;
 TABLE                openGlInterface::monHauftisteWorte;
@@ -27,8 +27,11 @@ int                  openGlInterface::pause=false;
 int                  openGlInterface::leftState=0;
 int                  openGlInterface::rightState=0;
 int                  openGlInterface::nearestTableIndex=-1;
-int                  openGlInterface::posxCurseur;
-GLuint               openGlInterface::font_base = 0;
+int                  openGlInterface::posxCurseur=0;
+int                  openGlInterface::posyCurseur=0;
+int                  openGlInterface::bddCurseur=0;
+GLuint               openGlInterface::font_base=0;
+int                  openGlInterface::idFont=1;
 
 int main(int argc, char *argv[]) {
   openGlInterface monbergson(argc, argv);
