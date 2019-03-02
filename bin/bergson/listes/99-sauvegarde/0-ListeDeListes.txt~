@@ -1,7 +1,0 @@
-#KE1					STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	MEMO	SHOT
-listes/listeDesRoisDeFranceTest.txt		1.0	0.0	0.0	1.0	-700.0	true	true	true  	NULL	NULL
-listes/listeDesSouverainsGermaniques.txt	0.0	1.0	0.0	1.0	0.0	true	true	true	NULL	NULL
-listes/listePapes.txt				1.0	0.0	1.0	1.0	700.0	true	true	true	NULL	NULL
-listes/listeEvènements.txt			1.0	1.0	0.0	1.0	1400.0	true	true	true	NULL	NULL
-listes/listeSouverainsRomains.txt		1.0	1.0	1.0	1.0	2100.0	true	true	true	NULL	NULL
-listes/listeSouverainsDorient.txt		1.0	0.0	1.0	1.0	2100.0	true	true	true	NULL	NULL
