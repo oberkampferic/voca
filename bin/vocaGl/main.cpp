@@ -30,6 +30,8 @@ int                  openGlInterface::nearestTableIndex=-1;
 int                  openGlInterface::posxCurseur=0;
 int                  openGlInterface::posyCurseur=0;
 int                  openGlInterface::bddCurseur=0;
+unsigned int         openGlInterface::einfugemarkefarbe=0;
+unsigned int         openGlInterface::einfugemarkewort=0;
 GLuint               openGlInterface::font_base=0;
 int                  openGlInterface::idFont=1;
 

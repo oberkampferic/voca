@@ -101,18 +101,33 @@ openGlInterface::openGlInterface(int argc, char * argv[]){
   prefixe.importDriver          ("listes/prefixe.txt");
   suffixe.importDriver          ("listes/suffixes.txt");
   
-
-  glutInitDisplayMode(GLUT_SINGLE|GLUT_RGBA);
-
-  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-  glEnable( GL_BLEND );
-
   glutInitWindowSize(800, 700);
   glutInit(&argc, argv);
+  //  glutInitDisplayMode(GLUT_SINGLE|GLUT_RGBA);
+  glutInitDisplayMode(GLUT_RGBA|GLUT_DOUBLE|GLUT_DEPTH);
 
-  glutIdleFunc(attente);
+//  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+//  glEnable( GL_BLEND );
+//  glShadeModel( GL_SMOOTH);
+//  glDepthFunc(GL_LEQUAL);
+//  glEnable(GL_DEPTH_TEST);
+//
+//
+//   glMatrixMode(GL_MODELVIEW);
+//    glDepthFunc(GL_LEQUAL);
+//    glViewport(0,0,glutGet(GLUT_SCREEN_WIDTH), glutGet(GLUT_SCREEN_HEIGHT));
+//    glEnable(GL_DEPTH_TEST);
+//    glMatrixMode(GL_PROJECTION);
+//    glLoadIdentity();
+//    gluPerspective(60,glutGet(GLUT_SCREEN_WIDTH)/glutGet(GLUT_SCREEN_HEIGHT),0.1,100);
+//    glMatrixMode(GL_MODELVIEW);
+//    glLoadIdentity();
 
-  glutInitDisplayMode(GLUT_RGB|GLUT_DOUBLE);
+  
+
+
+  //  glutIdleFunc(attente);
+  glutTimerFunc(0, attente, 0);
 
   strcpy(window_title, "glxfont: ");
   strcpy(font_name, "fixed");
@@ -123,6 +138,7 @@ openGlInterface::openGlInterface(int argc, char * argv[]){
 
   glutReshapeFunc(my_reshape);
   glutMotionFunc(my_motionMouse);
+  glutPassiveMotionFunc(my_motionMousePassive);
   glutMouseFunc(my_mouse);
   glutKeyboardFunc(my_handle_key);
 }
@@ -201,25 +217,10 @@ void openGlInterface::my_reshape(int w, int h) {
   glLoadIdentity();
   
 }
-void openGlInterface::attente(void) {
-  // une variable pour memoriser le temps a attendre
-  static int nWaitUntil = glutGet(GLUT_ELAPSED_TIME);
-
-  // on recupere le temps présent
-  int nTimer = glutGet(GLUT_ELAPSED_TIME);
-  // et on le compare a l'instant qu'il faut attendre
-  if(nTimer >= nWaitUntil) {
-    // pour rafraichir l'affichage
-    glutPostRedisplay();
-    // 5 fois pas seconde
-    nWaitUntil = nTimer + (1000 / 30);
-  }
-}
 
 void openGlInterface::my_motionMouse(int x, int y) {
   float delta[2];
   
-
   if (leftState==1) {    //déplacement de l'ensemble de la map
     delta[X]=old[X]-x;
     delta[Y]=old[Y]-y;
@@ -234,7 +235,32 @@ void openGlInterface::my_motionMouse(int x, int y) {
       old[X]=x;
     }
     //  }
+    //        glutPostRedisplay();
+    //    interrogation();
 }
+
+void openGlInterface::my_motionMousePassive(int x, int y) {
+  float delta[2];
+  colonneConcernee(x, y);
+  einfugemarkewort=motConcerne(x,y);	//Identifier quel est le mot le plus proche.
+  if (leftState==1) {    //déplacement de l'ensemble de la map
+    delta[X]=old[X]-x;
+    delta[Y]=old[Y]-y;
+    pos[X]+=delta[X]/ratio[X];
+    pos[Y]-=delta[Y]/ratio[Y];
+    old[X]=x; old[Y]=y;
+  }
+  //    if (glutGetModifiers() & GLUT_ACTIVE_ALT) {
+    if (rightState==1) {   //déplacement de la colonne dont
+      delta[X]=old[X]-x;
+      ServerBdd[posyCurseur][nearestTableIndex].pos[X]-=delta[X]/ratio[X];
+      old[X]=x;
+    }
+    //  }
+//    glutPostRedisplay();
+//    interrogation();
+}
+
 
 double carreFunc(double x1) {
   return x1*x1;
@@ -244,15 +270,22 @@ void openGlInterface::colonneConcernee(int x, int y) {
   double monDeltaX, bestDeltaX;
   long widthSur2= glutGet(GLUT_WINDOW_WIDTH)/2;
 
+  nearestTableIndex = 0;
+  posxCurseur= 0;
+
   if (ServerBdd[posyCurseur].size()>0) { //besoin d'initialiser
-      bestDeltaX = carreFunc(ServerBdd[posyCurseur][0].pos[X] - ((((double) x - widthSur2 ) / ratio[X]) + pos[X]));
-      nearestTableIndex = 0;
-    }
-  for (int i=1; i< ServerBdd[posyCurseur].size(); i++) { 
-    monDeltaX =    carreFunc(ServerBdd[posyCurseur][i].pos[X] - ((((double) x - widthSur2 ) / ratio[X]) + pos[X]));
-    if (monDeltaX<bestDeltaX) {
-      bestDeltaX=monDeltaX;
-      nearestTableIndex = i;
+    bestDeltaX = carreFunc(ServerBdd[posyCurseur][0].pos[X] - ((((double) x - widthSur2 ) / ratio[X]) + pos[X]));
+    posxCurseur= 0;
+    nearestTableIndex = 0;
+  }
+  if (ServerBdd[posyCurseur].size()>1) { 
+    for (int i=1; i< ServerBdd[posyCurseur].size(); i++) { 
+      monDeltaX = carreFunc(ServerBdd[posyCurseur][i].pos[X] - ((((double) x - widthSur2 ) / ratio[X]) + pos[X]));
+      if (monDeltaX<bestDeltaX) {
+	bestDeltaX=monDeltaX;
+	posxCurseur= i;
+	nearestTableIndex = i;
+      }
     }
   }
 }
@@ -361,7 +394,7 @@ void openGlInterface::my_mouse(int button, int state, int x, int y) {
   int prochaineTableIndex;
   colonneConcernee(x, y);
   int projY=motConcerne(x,y);	//Identifier quel est le mot le plus proche.
-
+  cout << "eh oui..." << endl;
   //recherche Dico de ce mot
   if (state==GLUT_DOWN){
     if (projY!=-1) {  //Il y a bien un mot concerné? 
@@ -481,6 +514,7 @@ void openGlInterface::my_mouse(int button, int state, int x, int y) {
   default:
     break;
   }
+  //  interrogation();
 }
   
 
@@ -507,6 +541,8 @@ void openGlInterface::afficherListeDessin1(){
 		   (ServerBdd[posyCurseur][j].color[G] * ratioCoul) / 3,
 		   (ServerBdd[posyCurseur][j].color[B] * ratioCoul) / 3,
 		   ServerBdd[posyCurseur][j].color[A] * 0.2 );
+		  farbeTabelle meinFarbenTabelle3(ServerBdd[posyCurseur].size(), einfugemarkefarbe+1, 1.0);
+	  glColor4f(meinFarbenTabelle3[j][0],meinFarbenTabelle3[j][1],meinFarbenTabelle3[j][2],meinFarbenTabelle3[j][3]);
 	glBegin(GL_QUADS);{
 	  glVertex2f( (ServerBdd[posyCurseur][j].pos[X] + 010 - pos[X] )*ratio[X] ,( -(i*20) - pos[Y])*ratio[Y] );
 	  glVertex2f( (ServerBdd[posyCurseur][j].pos[X] + 600 - pos[X] )*ratio[X] ,( -(i*20) - pos[Y])*ratio[Y] );      
@@ -627,12 +663,26 @@ void openGlInterface::afficherListeTexte() {
 
   for (int j=0; j < ServerBdd[posyCurseur].size(); j++) {
     for (int i=0; i < ServerBdd[posyCurseur][j].size(); i++) {
+      farbeTabelle meinFarbenTabelle(ServerBdd[posyCurseur].size(), einfugemarkefarbe+1, 0.8);
+      glColor4f(meinFarbenTabelle[j][0],meinFarbenTabelle[j][1],meinFarbenTabelle[j][2],meinFarbenTabelle[j][3]);
+
+      if (j==posxCurseur) {
+	farbeTabelle meinFarbenTabelle2(ServerBdd[posyCurseur].size(), einfugemarkefarbe+1, 0.9);
+	glColor4f(meinFarbenTabelle2[j][0],meinFarbenTabelle2[j][1],meinFarbenTabelle2[j][2],meinFarbenTabelle2[j][3]);
+      }
+
+
       if (ServerBdd[posyCurseur][j].flagVisible==true) {
 	//## Récupère les données de l'enregistrement ############################
 	s_Allemand=ServerBdd[posyCurseur][j][i][0];
 	s_Francais=ServerBdd[posyCurseur][j][i][1];
-	
-	glColor4f(ServerBdd[posyCurseur][j].color[R] , ServerBdd[posyCurseur][j].color[G] , ServerBdd[posyCurseur][j].color[B] , ServerBdd[posyCurseur][j].color[A] );
+
+
+	//	if ((i==einfugemarkewort) && (j==posxCurseur)){
+	  if (i==einfugemarkewort) {
+	  farbeTabelle meinFarbenTabelle3(ServerBdd[posyCurseur].size(), einfugemarkefarbe+1, 1.0);
+	  glColor4f(meinFarbenTabelle3[j][0],meinFarbenTabelle3[j][1],meinFarbenTabelle3[j][2],meinFarbenTabelle3[j][3]);
+	}
 
 	//## Allemand ############################################################
 	if (ServerBdd[posyCurseur][j].flagQuestionVisible) {
@@ -648,8 +698,9 @@ void openGlInterface::afficherListeTexte() {
       } } } }
 
 void openGlInterface::afficherListe(){
-  afficherListeDessin1 ();
+    afficherListeDessin1 ();
   afficherListeDessin2 ();
+
   gestionListe_affichageMenuHorizontal();
   gestionListe_affichageMenuVertical(); //ServerBdd[posyCurseur].size());
   afficherListeTexte   ();
@@ -658,14 +709,34 @@ void openGlInterface::afficherListe(){
 void openGlInterface::interrogation(){
   /* Clear the window. */
   glClearColor(0.0,0.0,0.0,0.0);
-  glClear(GL_COLOR_BUFFER_BIT);
-
+  glClear(GL_COLOR_BUFFER_BIT); //?
+  glClearDepth(1);
+  glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+  glLoadIdentity();
   afficherListe();
   if(!pause) {
     glutSwapBuffers();
-    glutPostRedisplay();
+    //    glutPostRedisplay();
   }
 }
+
+void openGlInterface::attente(int value) {
+//  // une variable pour memoriser le temps a attendre
+//  static int nWaitUntil = glutGet(GLUT_ELAPSED_TIME);
+//
+//  // on recupere le temps présent
+//  int nTimer = glutGet(GLUT_ELAPSED_TIME);
+//  // et on le compare a l'instant qu'il faut attendre
+//  if(nTimer >= nWaitUntil) {
+//    // pour rafraichir l'affichage
+//    glutPostRedisplay();
+//    // 5 fois pas seconde
+//    nWaitUntil = nTimer + (1000 / 300);
+//  }
+  glutTimerFunc( 16, attente, 0 );
+  glutPostRedisplay();
+}
+
 
 void openGlInterface::my_handle_key(unsigned char key, int x, int y) {
   tableBergson maTableVide2;
@@ -684,20 +755,27 @@ void openGlInterface::my_handle_key(unsigned char key, int x, int y) {
     
   case 'e': case 'E': idFont--; init_font (font_base, "fixed", idFont); break;
   case 'r': case 'R': idFont++; init_font (font_base, "fixed", idFont); break;
+
+    
   case 'd': case 'D': idFont-=10; init_font (font_base, "fixed", idFont); break;
   case 'f': case 'F': idFont+=10; init_font (font_base, "fixed", idFont); break;
   case 't': case 'T': idFont-=100; init_font (font_base, "fixed", idFont); break;
   case 'y': case 'Y': idFont+=100; init_font (font_base, "fixed", idFont); break;
+
+  case 'o': case 'O': einfugemarkefarbe--; break;
+  case 'p': case 'P': einfugemarkefarbe++; break;
     
   case '-': offsety-=((glutGetModifiers()==GLUT_ACTIVE_SHIFT)?0.3:0.1);    break;
   case '+': offsety+=((glutGetModifiers()==GLUT_ACTIVE_SHIFT)?0.3:0.1);    break;
 
   case 27:              exit(1);           break;
-  case 'p': case 'P':   pause = !pause;    break;
+    //case 'p': case 'P':   pause = !pause;    break;
   case 's': case 'S':   saveMetaData();    break;
   case 'l': case 'L':   loadMetaData();    break;
   default:  break;
-} }
+  }
+  //  interrogation();
+}
 
 //#############################################
 //#############################################
@@ -714,12 +792,9 @@ int openGlInterface::loadMetaData() {
     RECORD   s_Lego;
     RECORD_F f_Lego;
     RECORD_I i_Lego;
-    cout << "breakpoint" << endl;
     f_Lego.loadBinaire(&in);
-    cout << "breakpoint" << endl;
     i_Lego.loadBinaire(&in);
     s_Lego.loadBinaire(&in);
-    cout << "breakpoint" << endl;
     pos[X]            = f_Lego[0];
     pos[Y]            = f_Lego[1];
     ratio[X]          = f_Lego[2];
@@ -727,27 +802,23 @@ int openGlInterface::loadMetaData() {
     old[X]            = f_Lego[4];
     old[Y]            = f_Lego[5];
     offsety           = f_Lego[6];
-    cout << "breakpoint" << endl;
     pause             = i_Lego[0];
     leftState         = i_Lego[1];
     rightState        = i_Lego[2];
     nearestTableIndex = i_Lego[3];
     posxCurseur       = i_Lego[4];
     tailleServerBdd         = i_Lego[5];
-    cout << "breakpoint" << endl;
     fileName2         = s_Lego[0];
     cout << "fileName:" << fileName << endl;
 
     //## LECTURE DES TABLES ###########
     for (int i=0; i< oldTailleServerBdd; i++) 
       ServerBdd[posyCurseur].erase(ServerBdd[posyCurseur].begin());
-    cout << "breakpoint" << endl;
     for (int i=0; i< tailleServerBdd; i++) {
       tableBergson maTableVide;
       maTableVide.loadBinaire(&in);
       ServerBdd[posyCurseur].push_back(maTableVide);
     }
-    cout << "breakpoint" << endl;
     //## LECTURE DES MÉTADONNÉES DES TABLES ######
     for (int i=0; i < ServerBdd[posyCurseur].size(); i++) {
       RECORD_F f_Liste;
@@ -875,23 +946,23 @@ void openGlInterface::gestionListe_affichageMenuHorizontal(){
   y_tailleFenetre = y_debut-y_fin;
 
   for (int i=0; i < ServerBdd[posyCurseur].size(); i++) {
-    if (posxCurseur==i)
-      glColor4f(ServerBdd[posyCurseur][i].color[0]/1.5, ServerBdd[posyCurseur][i].color[1]/1.5, ServerBdd[posyCurseur][i].color[2]/1.5, ServerBdd[posyCurseur][i].color[3]);
-    else
-      glColor4f(ServerBdd[posyCurseur][i].color[0]/2, ServerBdd[posyCurseur][i].color[1]/2, ServerBdd[posyCurseur][i].color[2]/2, ServerBdd[posyCurseur][i].color[3]);
+    if (posxCurseur==i) {
+      farbeTabelle meinFarbenTabelle(ServerBdd[posyCurseur].size(), einfugemarkefarbe+1, 0.5);
+      glColor4f(meinFarbenTabelle[i][0],meinFarbenTabelle[i][1],meinFarbenTabelle[i][2],meinFarbenTabelle[i][3]);
+      gestionListe_rectangle(x_debut+x_tailleFenetre*i, y_debut, x_debut+x_tailleFenetre*(i+1), y_fin);
+      farbeTabelle meinFarbenTabelle2(ServerBdd[posyCurseur].size(), einfugemarkefarbe+1, 0.66);
+      glColor4f(meinFarbenTabelle2[i][0],meinFarbenTabelle2[i][1],meinFarbenTabelle2[i][2],meinFarbenTabelle2[i][3]);
+    } else {
+      farbeTabelle meinFarbenTabelle(ServerBdd[posyCurseur].size(), einfugemarkefarbe+1, 0.5);
+      glColor4f(meinFarbenTabelle[i][0],meinFarbenTabelle[i][1],meinFarbenTabelle[i][2],meinFarbenTabelle[i][3]);
+    }
 
     gestionListe_rectanglePlein(x_debut+x_tailleFenetre*i, y_debut, x_debut+x_tailleFenetre*(i+1), y_fin);
 
-    glColor4f(ServerBdd[posyCurseur][i].color[0], ServerBdd[posyCurseur][i].color[1], ServerBdd[posyCurseur][i].color[2], ServerBdd[posyCurseur][i].color[3]);
+    farbeTabelle meinFarbenTabelle(ServerBdd[posyCurseur].size(), einfugemarkefarbe+1, 1.0);
+    glColor4f(meinFarbenTabelle[i][0],meinFarbenTabelle[i][1],meinFarbenTabelle[i][2],meinFarbenTabelle[i][3]);
     print_string ( x_debut+x_tailleFenetre*i+10, (y_debut + y_fin)/2, 
 		   font_base, &ServerBdd[posyCurseur][i].filename );
-  }
-
-  for (int i=0; i < ServerBdd[posyCurseur].size(); i++) {
-    if (posxCurseur==i) {
-      glColor4f(ServerBdd[posyCurseur][i].color[0]/2, ServerBdd[posyCurseur][i].color[1]/2, ServerBdd[posyCurseur][i].color[2]/2, ServerBdd[posyCurseur][i].color[3]);
-      gestionListe_rectangle(x_debut+x_tailleFenetre*i, y_debut, x_debut+x_tailleFenetre*(i+1), y_fin);
-    }
   }
 }
 
@@ -899,30 +970,27 @@ void openGlInterface::gestionListe_affichageMenuVertical(){
   double x_debut,x_fin, x_delta, y_debut, y_fin, y_delta;
   double x_tailleFenetre, y_tailleFenetre;
 
+  
+
   x_delta=glutGet(GLUT_WINDOW_WIDTH)-10;   x_debut=-(x_delta/2);      x_fin=-(x_delta/2)+30;    
   y_delta=glutGet(GLUT_WINDOW_HEIGHT)-10;    y_debut=(y_delta/2);      y_fin=-y_delta/2;
   
   x_tailleFenetre = x_debut-x_fin;
   y_tailleFenetre = (y_delta / ServerBdd.size());
-
-  for (int i=0; i < ServerBdd.size(); i++) {
-    if (posyCurseur==i);
-      //      glColor4f(ServerBdd[posyCurseur][i].color[0]/1.5, ServerBdd[posyCurseur][i].color[1]/1.5, ServerBdd[posyCurseur][i].color[2]/1.5, ServerBdd[posyCurseur][i].color[3]);
-    else;
-      //      glColor4f(ServerBdd[posyCurseur][i].color[0]/2, ServerBdd[posyCurseur][i].color[1]/2, ServerBdd[posyCurseur][i].color[2]/2, ServerBdd[posyCurseur][i].color[3]);
-
-    gestionListe_rectanglePlein(x_debut, y_debut-y_tailleFenetre*i, x_fin, y_debut-y_tailleFenetre*(i+1));
-
-    //    glColor4f(ServerBdd[posyCurseur][i].color[0], ServerBdd[posyCurseur][i].color[1], ServerBdd[posyCurseur][i].color[2], ServerBdd[posyCurseur][i].color[3]);
-    print_string ( x_debut+10, y_debut-(y_tailleFenetre*(i+0.5)), 
-    		   font_base, &ServerBdd[i][0].filename );
-  }
-
+  
   for (int i=0; i < ServerBdd.size(); i++) {
     if (posyCurseur==i) {
-      //      glColor4f(ServerBdd[posyCurseur][i].color[0]/2, ServerBdd[posyCurseur][i].color[1]/2, ServerBdd[posyCurseur][i].color[2]/2, ServerBdd[posyCurseur][i].color[3]);
+      farbeTabelle meinFarbenTabelle(ServerBdd.size(), einfugemarkefarbe, 1.0);
+      glColor4f(meinFarbenTabelle[i][0],meinFarbenTabelle[i][1],meinFarbenTabelle[i][2],meinFarbenTabelle[i][3]);
       gestionListe_rectangle(x_debut, y_debut-y_tailleFenetre*i, x_fin, y_debut-y_tailleFenetre*(i+1));
     }
+    else{
+      farbeTabelle meinFarbenTabelle(ServerBdd.size(), einfugemarkefarbe, 0.5);
+      glColor4f(meinFarbenTabelle[i][0],meinFarbenTabelle[i][1],meinFarbenTabelle[i][2],meinFarbenTabelle[i][3]);
+    }
+    gestionListe_rectanglePlein(x_debut, y_debut-y_tailleFenetre*i, x_fin, y_debut-y_tailleFenetre*(i+1));
+    print_string ( x_debut+10, y_debut-(y_tailleFenetre*(i+0.5)), 
+    		   font_base, &ServerBdd[i][0].filename );
   }
 }
 

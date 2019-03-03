@@ -8,9 +8,12 @@
 #include <GL/glut.h>
 #include <X11/Intrinsic.h>    /* Display, Window */
 #include <GL/glx.h>           /* GLXContext */
+#include <math.h>
+
 #include "../../lib/gründ/commun.hpp"
 #include "../../lib/gründ/fichier.hpp"
 #include "glPrimitiv.hpp"
+
 
 #define X 0
 #define Y 1
@@ -103,6 +106,8 @@ public:
   //curseurs pour les menus
   static int posxCurseur;
   static int posyCurseur;
+  static unsigned int einfugemarkewort;
+  static unsigned int einfugemarkefarbe;
   //curseur pour quelle base de donnée dans le serveur
   static int bddCurseur;
   static GLuint font_base;
@@ -116,7 +121,7 @@ public:
   static int idFont;
 
   //## QUINCAILLERIE #########################################
-  void static attente (void);
+  void static attente (int value);
   void static init_font(GLuint base, char* f, int idFont);
   //## ELEMENTS WINDOWS ######################################
   void static gestionListe_gestionCurseurX(int Sens);
@@ -136,6 +141,7 @@ public:
   void my_init(char* f);
   void static my_reshape(int w, int h);
   void static my_motionMouse(int x, int y);
+  void static my_motionMousePassive(int x, int y);
   void static my_mouse(int button, int state, int x, int y);
   void static afficherListeDessin1();
   void static afficherListeDessin2();
@@ -149,6 +155,66 @@ public:
   int static loadMetaData();
   int static saveMetaData();
   openGlInterface(int argc, char* argv[]);
+};
+
+class farbe: public vector<float> {
+  typename vector<float>::iterator it;
+public:
+  farbe() {
+    float meineLeerSchwimmend = 0.0;
+    for (int i=0; i<4; i++) this->push_back (meineLeerSchwimmend);
+  }
+  void print() {
+    for (it=this->begin(); it!=this->end(); ++it) cout << *it << endl;
+  }
+  void print(unsigned int index) { cout << (*(this->begin()+index)); }
+  float& operator [](int idx) {
+    return vector<float>::data()[idx];
+  }
+
+};
+
+class farbeTabelle: public vector<farbe> {
+  typename vector<farbe>::iterator it;
+public:
+  farbe& operator [](int idx) {
+    return vector<farbe>::data()[idx];
+  }
+
+  farbeTabelle(int taille, unsigned int typeAlgo, float ratio) {
+    farbe meineLeereFarbe;
+    for (int i=0; i< taille; i++) {
+      //      meineLeereFarbe.print();
+      switch (typeAlgo%3) {
+      case 0:
+	meineLeereFarbe[0]=abs( sin( ((M_PI/3)*0) + ((M_PI / taille) * i ) ) );
+	meineLeereFarbe[1]=abs( sin( ((M_PI/3)*1) + ((M_PI / taille) * i ) ) );
+	meineLeereFarbe[2]=abs( sin( ((M_PI/3)*2) + ((M_PI / taille) * i ) ) );
+	break;
+      case 1:
+	meineLeereFarbe[0]=( 1 + sin( ((M_PI/3)*0) + ((M_PI / taille) * i ) )) / 2;
+	meineLeereFarbe[1]=( 1 + sin( ((M_PI/3)*1) + ((M_PI / taille) * i ) )) / 2;
+	meineLeereFarbe[2]=( 1 + sin( ((M_PI/3)*2) + ((M_PI / taille) * i ) )) / 2;
+	break;
+      case 2:
+	meineLeereFarbe[0]=( 1 + sin( (((M_PI/3)*0) + ((M_PI / taille) * i ) )*2 )) / 2;
+	meineLeereFarbe[1]=( 1 + sin( (((M_PI/3)*1) + ((M_PI / taille) * i ) )*2 )) / 2;
+	meineLeereFarbe[2]=( 1 + sin( (((M_PI/3)*2) + ((M_PI / taille) * i ) )*2 )) / 2;
+	break;
+      }
+      meineLeereFarbe[0]*= ratio;
+      meineLeereFarbe[1]*= ratio;
+      meineLeereFarbe[2]*= ratio;
+      
+      meineLeereFarbe[3]= 0.5;
+      push_back( meineLeereFarbe );
+    }
+  }
+  int print() {
+    for (it=this->begin(); it != this->end(); ++it)
+      for (unsigned int j=0; j<4; j++)
+	cout << "couleur" << "[" << j << "]:" << it->data()[j] << endl;
+  }
 };
 
 #endif
