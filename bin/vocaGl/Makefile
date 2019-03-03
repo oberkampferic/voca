@@ -26,7 +26,7 @@ fichier.o:		../../lib/gründ/fichier.cpp
 lego.o:                 ../../lib/gründ/lego.hpp
 
 glPrimitiv.o: 		glPrimitiv.cpp			
-openGl.o:		openGl.cpp
+openGl.o:		openGl.cpp	openGl.hpp
 
 clean:
 	$(RM) *.o ../../lib/gründ/*.o ../../lib/interfacetty/*.o
