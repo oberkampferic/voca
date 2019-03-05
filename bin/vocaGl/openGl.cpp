@@ -713,40 +713,10 @@ void openGlInterface::interrogation(){
 
 void openGlInterface::my_handle_key(unsigned char key, int x, int y) {
   tableBergson maTableVide2;
-  switch (key) {
-    cout << "clavier" << endl;
-  case 'a': case 'A': gestionListe_gestionCurseurX(-1); break;
-  case 'z': case 'Z': gestionListe_gestionCurseurX(+1); break;
-  case 'w': case 'W': gestionListe_gestionCurseurY(-1); break;
-  case 'x': case 'X': gestionListe_gestionCurseurY(+1); break;
-    
-  case 'v': case 'V': ServerBdd[posyCurseur][posxCurseur].flagVisible         = !ServerBdd[posyCurseur][posxCurseur].flagVisible; break;
-  case 'c': case 'C': ServerBdd[posyCurseur][posxCurseur].flagQuestionVisible = !ServerBdd[posyCurseur][posxCurseur].flagQuestionVisible; break;
-  case 'n': case 'N': ServerBdd[posyCurseur].push_back(maTableVide2);
-    break;
-  case 'b': case 'B': ServerBdd[posyCurseur][posxCurseur].flagMemoVisible     = !ServerBdd[posyCurseur][posxCurseur].flagMemoVisible; break;
-    
-  case 'e': case 'E': idFont--; init_font (font_base, "fixed", idFont); break;
-  case 'r': case 'R': idFont++; init_font (font_base, "fixed", idFont); break;
 
-    
-  case 'd': case 'D': idFont-=10; init_font (font_base, "fixed", idFont); break;
-  case 'f': case 'F': idFont+=10; init_font (font_base, "fixed", idFont); break;
-  case 't': case 'T': idFont-=100; init_font (font_base, "fixed", idFont); break;
-  case 'y': case 'Y': idFont+=100; init_font (font_base, "fixed", idFont); break;
+  #include "keyboard.cpp"
 
-  case 'o': case 'O': einfugemarkefarbe--; break;
-  case 'p': case 'P': einfugemarkefarbe++; break;
-    
-  case '-': offsety-=((glutGetModifiers()==GLUT_ACTIVE_SHIFT)?0.3:0.1);    break;
-  case '+': offsety+=((glutGetModifiers()==GLUT_ACTIVE_SHIFT)?0.3:0.1);    break;
-
-  case 27:              exit(1);           break;
-  case 's': case 'S':   saveMetaData();    break;
-  case 'l': case 'L':   loadMetaData();    break;
-  default:  break;
-  }
-    activerAffichage=true; 
+  activerAffichage=true; 
 }
 
 //#############################################

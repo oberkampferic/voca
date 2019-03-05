@@ -1,6 +1,9 @@
 #ifndef OPENGL_HPP
 #define OPENGL_HPP
 
+#define TASTATUR_DEUTSCH 0
+#define TASTATUR_FRANCAIS 1
+
 #include <boost/algorithm/string.hpp>
 #include <iostream>
 #include <cstdlib> //system
@@ -81,6 +84,7 @@ public:
 class openGlInterface: public glPrimitiv, public tableBergsonHead{
 public:
   int flagShot=false, flagBlitz=true;
+  static int tastatur;
   static Uint32 start_time;
   static Uint32 last_time;
   static Uint32 current_time,ellapsed_time;
