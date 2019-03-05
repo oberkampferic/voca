@@ -1,5 +1,5 @@
 #include "openGl.hpp"
-#include "openGlWindows.cpp"
+//#include "openGlWindows.cpp"
 
 openGlInterface::openGlInterface(int argc, char * argv[]){
     //C'est ici que l'on s'occupe du chargement des fichiers.
@@ -88,8 +88,6 @@ openGlInterface::openGlInterface(int argc, char * argv[]){
   else   if (extension.compare(".bin")==0){
     loadMetaData();
   }
-  //########################################################
-
   //pour la sauvegarde binaire.
   // Attention, loadMetaData se sert de ce nom.
   fileName = fileName + ".save";
@@ -101,33 +99,16 @@ openGlInterface::openGlInterface(int argc, char * argv[]){
   prefixe.importDriver          ("listes/prefixe.txt");
   suffixe.importDriver          ("listes/suffixes.txt");
   
-  glutInitWindowSize(800, 700);
-  glutInit(&argc, argv);
-  //  glutInitDisplayMode(GLUT_SINGLE|GLUT_RGBA);
-  glutInitDisplayMode(GLUT_RGBA|GLUT_DOUBLE|GLUT_DEPTH);
+  //########################################################
+  //## INITIALISATION OPENGL SDL ###########################
 
-//  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-//  glEnable( GL_BLEND );
-//  glShadeModel( GL_SMOOTH);
-//  glDepthFunc(GL_LEQUAL);
-//  glEnable(GL_DEPTH_TEST);
-//
-//
-//   glMatrixMode(GL_MODELVIEW);
-//    glDepthFunc(GL_LEQUAL);
-//    glViewport(0,0,glutGet(GLUT_SCREEN_WIDTH), glutGet(GLUT_SCREEN_HEIGHT));
-//    glEnable(GL_DEPTH_TEST);
-//    glMatrixMode(GL_PROJECTION);
-//    glLoadIdentity();
-//    gluPerspective(60,glutGet(GLUT_SCREEN_WIDTH)/glutGet(GLUT_SCREEN_HEIGHT),0.1,100);
-//    glMatrixMode(GL_MODELVIEW);
-//    glLoadIdentity();
-
+  SDL_Init(SDL_INIT_VIDEO);
+  last_time = SDL_GetTicks();
   
+  glutInit(&argc, argv);
+  glutInitWindowSize(800, 700);
 
-
-  //  glutIdleFunc(attente);
-  glutTimerFunc(0, attente, 0);
+  glutInitDisplayMode(GLUT_RGBA|GLUT_DOUBLE|GLUT_DEPTH);
 
   strcpy(window_title, "glxfont: ");
   strcpy(font_name, "fixed");
@@ -151,8 +132,6 @@ void openGlInterface::init_font(GLuint base, char * f, int idFont) {
   int argc=0;
   char * argv[]={""};
 
-  //  for (int i=5; i< 2737; i++) cout << i << ":" << endl;
-  
   /* Need an X Display before calling any Xlib routines. */
   display = XOpenDisplay(0);
   if (display == 0) {
@@ -194,7 +173,7 @@ void openGlInterface::my_reshape(int w, int h) {
 
   /* Use the whole window. */
   glViewport(0, 0, w, h);
-
+  
   /* We are going to do some 2-D orthographic drawing. */
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity();
@@ -213,9 +192,10 @@ void openGlInterface::my_reshape(int w, int h) {
   glScaled(aspect, aspect, 1.0);
 
   /* Now determine where to draw things. */
+
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
-  
+  activerAffichage=true;
 }
 
 void openGlInterface::my_motionMouse(int x, int y) {
@@ -235,8 +215,7 @@ void openGlInterface::my_motionMouse(int x, int y) {
       old[X]=x;
     }
     //  }
-    //        glutPostRedisplay();
-    //    interrogation();
+    activerAffichage=true; 
 }
 
 void openGlInterface::my_motionMousePassive(int x, int y) {
@@ -257,8 +236,7 @@ void openGlInterface::my_motionMousePassive(int x, int y) {
       old[X]=x;
     }
     //  }
-//    glutPostRedisplay();
-//    interrogation();
+    activerAffichage=true; 
 }
 
 
@@ -394,7 +372,6 @@ void openGlInterface::my_mouse(int button, int state, int x, int y) {
   int prochaineTableIndex;
   colonneConcernee(x, y);
   int projY=motConcerne(x,y);	//Identifier quel est le mot le plus proche.
-  cout << "eh oui..." << endl;
   //recherche Dico de ce mot
   if (state==GLUT_DOWN){
     if (projY!=-1) {  //Il y a bien un mot concerné? 
@@ -514,15 +491,11 @@ void openGlInterface::my_mouse(int button, int state, int x, int y) {
   default:
     break;
   }
-  //  interrogation();
+  activerAffichage=true; 
 }
   
-
-//double openGlInterface::monX(double offset) { return (ServerBdd[posyCurseur][j].pos[X] + offset - pos[X] ) * ratio[X] };
-	  
-
 void openGlInterface::afficherListeDessin1(){
-  double ratioCoul=0.1;
+  double ratioCoul=1;
   for (int j=0; j <ServerBdd[posyCurseur].size(); j++) {
     for (int i=0; i< ServerBdd[posyCurseur][j].size(); i++) {
       if (ServerBdd[posyCurseur][j].flagVisible==true) {
@@ -698,45 +671,45 @@ void openGlInterface::afficherListeTexte() {
       } } } }
 
 void openGlInterface::afficherListe(){
-    afficherListeDessin1 ();
+  afficherListeDessin1 ();
   afficherListeDessin2 ();
 
   gestionListe_affichageMenuHorizontal();
-  gestionListe_affichageMenuVertical(); //ServerBdd[posyCurseur].size());
+  gestionListe_affichageMenuVertical(); 
   afficherListeTexte   ();
 }
 
 void openGlInterface::interrogation(){
-  /* Clear the window. */
-  glClearColor(0.0,0.0,0.0,0.0);
-  glClear(GL_COLOR_BUFFER_BIT); //?
-  glClearDepth(1);
-  glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-  glLoadIdentity();
-  afficherListe();
-  if(!pause) {
+  start_time = SDL_GetTicks(); 
+
+  current_time = SDL_GetTicks();
+  ellapsed_time = current_time - last_time;
+  last_time = current_time;
+
+    /* Clear the window. */
+  if (activerAffichage==true) {
+    glClearColor(0.0,0.0,0.0,0.0);
+    glClear(GL_COLOR_BUFFER_BIT); 
+
+    glLoadIdentity();
+
+    afficherListe();
+
+    glFlush();
     glutSwapBuffers();
-    //    glutPostRedisplay();
+
+    activerAffichage=false;
   }
-}
+    glutPostRedisplay();
+    
+  ellapsed_time = SDL_GetTicks() - start_time;
+  if (ellapsed_time < 20) {
+    int delay = 20 - ellapsed_time;
+    // cout << "Temps:" << ellapsed_time << " : " << delay << endl;
+    SDL_Delay(delay);
+  }
 
-void openGlInterface::attente(int value) {
-//  // une variable pour memoriser le temps a attendre
-//  static int nWaitUntil = glutGet(GLUT_ELAPSED_TIME);
-//
-//  // on recupere le temps présent
-//  int nTimer = glutGet(GLUT_ELAPSED_TIME);
-//  // et on le compare a l'instant qu'il faut attendre
-//  if(nTimer >= nWaitUntil) {
-//    // pour rafraichir l'affichage
-//    glutPostRedisplay();
-//    // 5 fois pas seconde
-//    nWaitUntil = nTimer + (1000 / 300);
-//  }
-  glutTimerFunc( 16, attente, 0 );
-  glutPostRedisplay();
 }
-
 
 void openGlInterface::my_handle_key(unsigned char key, int x, int y) {
   tableBergson maTableVide2;
@@ -769,12 +742,11 @@ void openGlInterface::my_handle_key(unsigned char key, int x, int y) {
   case '+': offsety+=((glutGetModifiers()==GLUT_ACTIVE_SHIFT)?0.3:0.1);    break;
 
   case 27:              exit(1);           break;
-    //case 'p': case 'P':   pause = !pause;    break;
   case 's': case 'S':   saveMetaData();    break;
   case 'l': case 'L':   loadMetaData();    break;
   default:  break;
   }
-  //  interrogation();
+    activerAffichage=true; 
 }
 
 //#############################################

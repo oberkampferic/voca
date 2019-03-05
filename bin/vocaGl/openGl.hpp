@@ -4,6 +4,7 @@
 #include <boost/algorithm/string.hpp>
 #include <iostream>
 #include <cstdlib> //system
+#include <SDL/SDL.h>
 #include <GL/gl.h>
 #include <GL/glut.h>
 #include <X11/Intrinsic.h>    /* Display, Window */
@@ -80,7 +81,10 @@ public:
 class openGlInterface: public glPrimitiv, public tableBergsonHead{
 public:
   int flagShot=false, flagBlitz=true;
-  
+  static Uint32 start_time;
+  static Uint32 last_time;
+  static Uint32 current_time,ellapsed_time;
+  //  static SDL_Event event;
   static string fileName;
   static string fileName2;
   static string fileNameListe;
@@ -115,13 +119,12 @@ public:
 
   char window_title[256];
   char font_name[256];
-
+  static int activerAffichage;
   static string s_Allemand;
   static string s_Francais;
   static int idFont;
 
   //## QUINCAILLERIE #########################################
-  void static attente (int value);
   void static init_font(GLuint base, char* f, int idFont);
   //## ELEMENTS WINDOWS ######################################
   void static gestionListe_gestionCurseurX(int Sens);

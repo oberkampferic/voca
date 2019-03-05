@@ -2,7 +2,12 @@
 //#include "bergson.hpp"
 #include "openGl.hpp"
 
-
+int openGlInterface::activerAffichage=true;
+Uint32 openGlInterface::start_time;
+Uint32 openGlInterface::last_time;
+Uint32 openGlInterface::current_time;
+Uint32 openGlInterface::ellapsed_time;
+//SDL_Event openGlInterface::event;
 //tableBergson openGlInterface::maTableVide; 
 string openGlInterface::s_Allemand;
 string openGlInterface::s_Francais;
