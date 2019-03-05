@@ -3,6 +3,8 @@
 
 #define TASTATUR_DEUTSCH 0
 #define TASTATUR_FRANCAIS 1
+#define RECHTS 0
+#define LINKS 1
 
 #include <boost/algorithm/string.hpp>
 #include <iostream>
@@ -97,10 +99,14 @@ public:
 
   static float  old[2];
   static float  offsety;
+  static int    modeEco;
   static int    pause;
-  static int    leftState, rightState;
+  static int    Kartebewegung, Spaltebewegung, Wortreihebewegung;
   static int    nearestTableIndex; //le y est le plus proche
 
+  static unsigned int indexErstWort;
+  static unsigned int indexLetztWort;
+  
   static vector<vector<tableBergson >> ServerBdd;
   static TABLE  maListeDeListe;
   static TABLE  monDico;
@@ -130,6 +136,7 @@ public:
 
   //## QUINCAILLERIE #########################################
   void static init_font(GLuint base, char* f, int idFont);
+  void static wortVerlagerung(int sens);
   //## ELEMENTS WINDOWS ######################################
   void static gestionListe_gestionCurseurX(int Sens);
   void static gestionListe_gestionCurseurY(int Sens);

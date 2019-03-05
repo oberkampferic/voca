@@ -1,8 +1,8 @@
 #include "openGl.hpp"
-//#include "openGlWindows.cpp"
 
+#include "gestionSouris.cpp"
 openGlInterface::openGlInterface(int argc, char * argv[]){
-    //C'est ici que l'on s'occupe du chargement des fichiers.
+  //C'est ici que l'on s'occupe du chargement des fichiers.
   if (argc!=2) {
     cout << "usage: " << argv[0]
 	 << " [fichier.lst | fichier.bin | fichier.txt]" << endl;
@@ -198,48 +198,8 @@ void openGlInterface::my_reshape(int w, int h) {
   activerAffichage=true;
 }
 
-void openGlInterface::my_motionMouse(int x, int y) {
-  float delta[2];
+
   
-  if (leftState==1) {    //déplacement de l'ensemble de la map
-    delta[X]=old[X]-x;
-    delta[Y]=old[Y]-y;
-    pos[X]+=delta[X]/ratio[X];
-    pos[Y]-=delta[Y]/ratio[Y];
-    old[X]=x; old[Y]=y;
-  }
-  //    if (glutGetModifiers() & GLUT_ACTIVE_ALT) {
-    if (rightState==1) {   //déplacement de la colonne dont
-      delta[X]=old[X]-x;
-      ServerBdd[posyCurseur][nearestTableIndex].pos[X]-=delta[X]/ratio[X];
-      old[X]=x;
-    }
-    //  }
-    activerAffichage=true; 
-}
-
-void openGlInterface::my_motionMousePassive(int x, int y) {
-  float delta[2];
-  colonneConcernee(x, y);
-  einfugemarkewort=motConcerne(x,y);	//Identifier quel est le mot le plus proche.
-  if (leftState==1) {    //déplacement de l'ensemble de la map
-    delta[X]=old[X]-x;
-    delta[Y]=old[Y]-y;
-    pos[X]+=delta[X]/ratio[X];
-    pos[Y]-=delta[Y]/ratio[Y];
-    old[X]=x; old[Y]=y;
-  }
-  //    if (glutGetModifiers() & GLUT_ACTIVE_ALT) {
-    if (rightState==1) {   //déplacement de la colonne dont
-      delta[X]=old[X]-x;
-      ServerBdd[posyCurseur][nearestTableIndex].pos[X]-=delta[X]/ratio[X];
-      old[X]=x;
-    }
-    //  }
-    activerAffichage=true; 
-}
-
-
 double carreFunc(double x1) {
   return x1*x1;
 }
@@ -269,6 +229,7 @@ void openGlInterface::colonneConcernee(int x, int y) {
 }
 
 int openGlInterface::motConcerne(int x, int y) {
+  //sort l'index du mot concerné dans la colonne concernée
   long heightSur2= glutGet(GLUT_WINDOW_HEIGHT)/2;
   double projY= (((double) y - (double) heightSur2 ) / ratio[Y])- pos[Y];
   projY/=20; 
@@ -364,136 +325,6 @@ int openGlInterface::radical2(string &mot, string &s_radical) {
   return false;
 }
 
-void openGlInterface::my_mouse(int button, int state, int x, int y) {
-  string s_radical;
-  int mod=glutGetModifiers();
-  long widthSur2= glutGet(GLUT_WINDOW_WIDTH)/2;
-  long heightSur2= glutGet(GLUT_WINDOW_HEIGHT)/2;
-  int prochaineTableIndex;
-  colonneConcernee(x, y);
-  int projY=motConcerne(x,y);	//Identifier quel est le mot le plus proche.
-  //recherche Dico de ce mot
-  if (state==GLUT_DOWN){
-    if (projY!=-1) {  //Il y a bien un mot concerné? 
-      cout << ServerBdd[posyCurseur][nearestTableIndex][(int) projY][0] << " <=> "
-	   << ServerBdd[posyCurseur][nearestTableIndex][(int) projY][1] << "##################" << endl;
-
-      //### PARTIE RECHERCHE DU RADICAL ############################################
-      radical(ServerBdd[posyCurseur][nearestTableIndex][(int) projY][0], s_radical);
-      cout << "radical: " << s_radical << endl;
-
-      string tampon;
-      //recherche des mots apparentés
-      tmpDico.clear();
-      if(s_radical.size()>2) { //éviter l'amballement avec les radicaux de une lettre
-	for (int i=0; i<monDico.size(); i++) {
-	  tampon=monDico[i][0];
-	  boost::algorithm::to_lower(tampon);
-
-	  if ( tampon.find( s_radical ) != string::npos ){
-	    cout << "Dico:" << monDico[i][0]
-		 << ":"     << monDico[i][1] << endl;
-	    RECORD  temp;
-	    temp.push_back( monDico[i][0] );
-	    temp.push_back( monDico[i][1] );
-	    tmpDico.push_back(temp);
-	  }
-	}
-	tmpDicoXhauftig.clear();
-	tmpHauftig.clear();
-	for (int i=0; i<monHauftisteWorte.size(); i++) {
-	  tampon=monHauftisteWorte[i][0];
-	  boost::algorithm::to_lower(tampon);
-	  if (tampon.find( s_radical )  != string::npos){
-	    cout << "Häuftig:" << monHauftisteWorte[i][1]
-		 << ": "       << monHauftisteWorte[i][0] << endl;
-	    RECORD  temp;
-	    temp.push_back(monHauftisteWorte[i][0]);
-	    temp.push_back(monHauftisteWorte[i][1]);
-	    tmpHauftig.push_back(temp);
-	    RECORD  temp2;
-	    for (int j=0; j<tmpDico.size(); j++) {
-	      if (tmpDico[j][0].compare(temp[0])==0) {
-		temp2.push_back(tmpDico[j][0]);
-		temp2.push_back(tmpDico[j][1]);
-		tmpDicoXhauftig.push_back(temp2);
-	      }
-	    }
-	  }
-	}
-      }
-    }
-  }
-  //### ~PARTIE RECHERCHE DU RADICAL ###########################################
-  switch(button) {
-  case GLUT_LEFT_BUTTON: //########################################
-    if (state==GLUT_UP) //Désenclenchement du déplacement de la map
-      leftState=0;
-    if (state==GLUT_DOWN) {
-      if (!(glutGetModifiers() & GLUT_ACTIVE_ALT)) {    //Déplacement d'un mot
-	if (projY!=-1) {  //Il y a bien un mot concerné?
-	  //Identifier quelle est la colonne de destination
-	  if (ServerBdd[posyCurseur].size()>1) { //une seule table?
-	    if (nearestTableIndex == 0)       prochaineTableIndex=  (ServerBdd[posyCurseur].size()-1);
-	    else                   	    prochaineTableIndex = nearestTableIndex-1;
-	    ServerBdd[posyCurseur][prochaineTableIndex].push_back( ServerBdd[posyCurseur][nearestTableIndex][(int) projY] );
-	    ServerBdd[posyCurseur][nearestTableIndex].erase(ServerBdd[posyCurseur][nearestTableIndex].begin()+(int) projY);
-	  } } }
-      leftState=1;         //Enclenchement du déplacement de la map
-      old[X]=x; old[Y]=y;
-    }
-    break;
-    
-  case GLUT_RIGHT_BUTTON://########################################
-    if (state==GLUT_UP) //Désenclenchement du déplacement d'une colonne
-      rightState=0;
-    if (state==GLUT_DOWN) {
-        if (!(glutGetModifiers() & GLUT_ACTIVE_ALT)) {      //Déplacement d'un mot
-	  if (projY!=-1) { // il y a bien un mot concerné?
-	    //Identifier quelle est la colonne de destination
-	    if (ServerBdd[posyCurseur].size()>1) { //une seule table?
-	      if ((nearestTableIndex) < (ServerBdd[posyCurseur].size()-1)) prochaineTableIndex = nearestTableIndex+1;
-	      else                            	    prochaineTableIndex = 0;
-	      ServerBdd[posyCurseur][prochaineTableIndex].push_back( ServerBdd[posyCurseur][nearestTableIndex][(int) projY] );
-	      ServerBdd[posyCurseur][nearestTableIndex].erase(ServerBdd[posyCurseur][nearestTableIndex].begin()+(int) projY);
-	    } } }
-	rightState=1;     //Enclenchement du déplacement d'une colonne
-    }
-    old[X]=x; old[Y]=y;
-    break;
-
-  case 3://####################################################
-    //Zoom
-    // Adaptation de posx pour zoomer à partir de la position de la souris
-    if (glutGetModifiers() & GLUT_ACTIVE_CTRL) {
-      double oldRatiox=ratio[X];
-      
-      ratio[X]/= ((glutGetModifiers() & GLUT_ACTIVE_SHIFT)?0.97:0.8);
-      pos[X] -= offsetPositionMondeCurseurSouris_X( oldRatiox, x, y );
-    } else {
-      double oldRatioy=ratio[Y];
-      ratio[Y]/= ((glutGetModifiers() & GLUT_ACTIVE_SHIFT)?0.97:0.8);
-      pos[Y] += offsetPositionMondeCurseurSouris_Y( oldRatioy, x, y );
-    }
-    break;
-  case 4://######################################################
-    if (glutGetModifiers() & GLUT_ACTIVE_CTRL){//Dézoomage
-      double oldRatiox=ratio[X];
-      ratio[X]*= ((glutGetModifiers() & GLUT_ACTIVE_SHIFT)?0.97:0.8);
-      pos[X] -= offsetPositionMondeCurseurSouris_X( oldRatiox, x, y);
-    }
-    else {
-      double oldRatioy=ratio[Y];
-      ratio[Y]*= ((glutGetModifiers() & GLUT_ACTIVE_SHIFT)?0.97:0.8);
-      pos[Y] += offsetPositionMondeCurseurSouris_Y( oldRatioy, x, y);
-    }
-    break;
-  default:
-    break;
-  }
-  activerAffichage=true; 
-}
-  
 void openGlInterface::afficherListeDessin1(){
   double ratioCoul=1;
   for (int j=0; j <ServerBdd[posyCurseur].size(); j++) {
@@ -556,6 +387,7 @@ void openGlInterface::afficherListeDessin2(){
 }
 
 void openGlInterface::afficherListeTexte() {
+  if (!modeEco) {
   //############################################################################
   //## DICTIONNAIRE ############################################################
   //############################################################################
@@ -628,6 +460,7 @@ void openGlInterface::afficherListeTexte() {
     print_string (200-glutGet(GLUT_WINDOW_WIDTH)/4, -(i*20+15)-60 +glutGet(GLUT_WINDOW_HEIGHT)/2,
 		  font_base, &s_Francais);
     //      }
+  }
   }
   //}
   //############################################################################
@@ -745,8 +578,8 @@ int openGlInterface::loadMetaData() {
     old[Y]            = f_Lego[5];
     offsety           = f_Lego[6];
     pause             = i_Lego[0];
-    leftState         = i_Lego[1];
-    rightState        = i_Lego[2];
+//    leftState         = i_Lego[1];
+//    rightState        = i_Lego[2];
     nearestTableIndex = i_Lego[3];
     posxCurseur       = i_Lego[4];
     tailleServerBdd         = i_Lego[5];
@@ -818,8 +651,8 @@ int openGlInterface::saveMetaData() {
     f_Lego.saveBinaire(&out);
   
     i_Lego.push_back(pause);
-    i_Lego.push_back(leftState);
-    i_Lego.push_back(rightState);
+    i_Lego.push_back(0);
+    i_Lego.push_back(0);
     i_Lego.push_back(nearestTableIndex);
     i_Lego.push_back(posxCurseur);
     i_Lego.push_back(ServerBdd[posyCurseur].size());
