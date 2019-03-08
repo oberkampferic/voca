@@ -1,6 +1,22 @@
 #include "openGl.hpp"
-
 #include "gestionSouris.cpp"
+
+tableVocaHead::tableVocaHead() {
+  color[0]=1.0;		     
+  color[1]=1.0;		 
+  color[2]=0.0;		 
+  pos[0]=0.0;		 
+  pos[1]=0.0;		 
+  flagQuestionVisible=1;	 
+  flagMemoVisible=1;	 
+  flagVisible=1;		 
+  filename.assign("Nouveau");
+}
+
+//############################################################
+//############################################################
+//############################################################
+
 openGlInterface::openGlInterface(int argc, char * argv[]){
   //C'est ici que l'on s'occupe du chargement des fichiers.
   if (argc!=2) {
@@ -16,8 +32,8 @@ openGlInterface::openGlInterface(int argc, char * argv[]){
   posxCurseur=0;
 
   
-  vector<tableBergson > maBddVide;
-  tableBergson maTableVide;
+  vector<tableVoca > maBddVide;
+  tableVoca maTableVide;
 
   //pour la sauvegarde binaire
   fileName = argv[1];
@@ -200,57 +216,6 @@ void openGlInterface::my_reshape(int w, int h) {
 
 
   
-double carreFunc(double x1) {
-  return x1*x1;
-}
-
-void openGlInterface::colonneConcernee(int x, int y) {
-  double monDeltaX, bestDeltaX;
-  long widthSur2= glutGet(GLUT_WINDOW_WIDTH)/2;
-
-  nearestTableIndex = 0;
-  posxCurseur= 0;
-
-  if (ServerBdd[posyCurseur].size()>0) { //besoin d'initialiser
-    bestDeltaX = carreFunc(ServerBdd[posyCurseur][0].pos[X] - ((((double) x - widthSur2 ) / ratio[X]) + pos[X]));
-    posxCurseur= 0;
-    nearestTableIndex = 0;
-  }
-  if (ServerBdd[posyCurseur].size()>1) { 
-    for (int i=1; i< ServerBdd[posyCurseur].size(); i++) { 
-      monDeltaX = carreFunc(ServerBdd[posyCurseur][i].pos[X] - ((((double) x - widthSur2 ) / ratio[X]) + pos[X]));
-      if (monDeltaX<bestDeltaX) {
-	bestDeltaX=monDeltaX;
-	posxCurseur= i;
-	nearestTableIndex = i;
-      }
-    }
-  }
-}
-
-int openGlInterface::motConcerne(int x, int y) {
-  //sort l'index du mot concerné dans la colonne concernée
-  long heightSur2= glutGet(GLUT_WINDOW_HEIGHT)/2;
-  double projY= (((double) y - (double) heightSur2 ) / ratio[Y])- pos[Y];
-  projY/=20; 
-  if ((projY<ServerBdd[posyCurseur][nearestTableIndex].size()) && (projY>=0))
-    return (int) projY;
-  else
-    return -1;
-}
-
-double openGlInterface::offsetPositionMondeCurseurSouris_X(double oldRatiox, int x, int y){
-  long widthSur2= glutGet(GLUT_WINDOW_WIDTH)/2;
-  return  ( ((((double) x - widthSur2 ) /  ratio[X]) + pos[X]) -
-	    ((((double) x - widthSur2 ) / oldRatiox) + pos[X])     );
-}
-
-double openGlInterface::offsetPositionMondeCurseurSouris_Y(double oldRatioy, int x, int y){
-  long heightSur2= glutGet(GLUT_WINDOW_HEIGHT)/2;
-  return  ( ((((double) y - heightSur2 ) /  ratio[Y]) + pos[Y]) -
-	    ((((double) y - heightSur2 ) / oldRatioy) + pos[Y])    );
-}
-
 //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 int openGlInterface::radical(string &mot, string &s_radical) {
@@ -485,9 +450,25 @@ void openGlInterface::afficherListeTexte() {
 
 
 	//	if ((i==einfugemarkewort) && (j==posxCurseur)){
-	  if (i==einfugemarkewort) {
+	//	  if (i==einfugemarkewort) {
+	if ( j==posxCurseur ){
 	  farbeTabelle meinFarbenTabelle3(ServerBdd[posyCurseur].size(), einfugemarkefarbe+1, 1.0);
-	  glColor4f(meinFarbenTabelle3[j][0],meinFarbenTabelle3[j][1],meinFarbenTabelle3[j][2],meinFarbenTabelle3[j][3]);
+	  if ( indexErstWort != -1 ){
+	    if ( (i >= indexErstWort) and (i<=einfugemarkewort))
+		 //glColor4f(meinFarbenTabelle3[j][0],meinFarbenTabelle3[j][1],meinFarbenTabelle3[j][2],meinFarbenTabelle3[j][3]);
+	      glColor4f(1.0,1.0,1.0,1.0); 
+	    if ( (i >= einfugemarkewort) and (i<=indexErstWort))
+	      //glColor4f(meinFarbenTabelle3[j][0],meinFarbenTabelle3[j][1],meinFarbenTabelle3[j][2],meinFarbenTabelle3[j][3]);
+	      glColor4f(1.0,1.0,1.0,1.0); 
+	  }
+	  if (i==einfugemarkewort) {
+	    //glColor4f(meinFarbenTabelle3[j][0],meinFarbenTabelle3[j][1],meinFarbenTabelle3[j][2],meinFarbenTabelle3[j][3]);
+	    glColor4f(1.0,1.0,1.0,1.0); 
+	  }
+	  if (i==indexErstWort) {
+	    //glColor4f(meinFarbenTabelle3[j][0],meinFarbenTabelle3[j][1],meinFarbenTabelle3[j][2],meinFarbenTabelle3[j][3]);
+	    glColor4f(1.0,1.0,1.0,1.0); 
+	  }
 	}
 
 	//## Allemand ############################################################
@@ -545,7 +526,7 @@ void openGlInterface::interrogation(){
 }
 
 void openGlInterface::my_handle_key(unsigned char key, int x, int y) {
-  tableBergson maTableVide2;
+  tableVoca maTableVide2;
 
   #include "keyboard.cpp"
 
@@ -590,7 +571,7 @@ int openGlInterface::loadMetaData() {
     for (int i=0; i< oldTailleServerBdd; i++) 
       ServerBdd[posyCurseur].erase(ServerBdd[posyCurseur].begin());
     for (int i=0; i< tailleServerBdd; i++) {
-      tableBergson maTableVide;
+      tableVoca maTableVide;
       maTableVide.loadBinaire(&in);
       ServerBdd[posyCurseur].push_back(maTableVide);
     }

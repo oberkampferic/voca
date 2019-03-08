@@ -1,0 +1,224 @@
+fangen		attraper				
+an/fangen	commencer				
+empfangen	acceuillir, recevoir			
+hängen		pendre, être suspendu			
+schlafen	dormir					
+ein/schlafen	s’endormir				
+fallen		tomber					
+gefallen	plaire					
+halten		tenir					
+erhalten	obtenir					
+unterhalten	entretenir				
+blasen		souffler (très fort)			
+lassen		laisser					
+verlassen	quitter, abandonner			
+braten		faire rôtir				
+graben		creuser					
+backen		cuire au four				
+ein/laden	inviter					
+laden		charger					
+schlagen	frapper					
+vor/schlagen	proposer				
+tragen		porter					
+ertragen	supporter				
+fahren		aller (en véhicule)			
+geben		donner					
+aus/geben	dépenser				
+lesen		lire					
+essen		manger					
+vergessen	oublier					
+fressen		dévorer					
+bitten		prier qn				
+brechen		casser,briser				
+sprechen	parler					
+versprechen	promettre				
+stechen		piquer					
+erschrecken	s'effrayer				
+treffen		rencontrer, atteindre			
+nehmen		prendre					
+benehmen	se conduire 				
+mit/nehmen	emporter				
+helfen		aider					
+mit/helfen	donner un coup de main			
+gelten		valoir, passer pour			
+schelten	injurier				
+werben		recruter, briguer, faire la pub		
+bewerben	poser sa candidature			
+verderben	pourrir					
+verderben	gâter, gacer				
+sterben		mourir					
+werfen		jeter					
+bergen		se cacher				
+bersten		éclater					
+binden		lier					
+finden		trouver					
+verschwinden	disparaître				
+schwinden	disparaître				
+stinken		empester				
+winden		tordre, tresser				
+dringen		pénétrer				
+dingen		soudoyer, louer				
+singen		chanter					
+zwingen		forcer, obliger				
+gelingen	réussir					
+klingen		tinter, sonner				
+ringen		lutter					
+schwingen	brandir, balancer			
+sinken		sombrer					
+wringen		tordre, essorer				
+trinken		boire					
+springen	sauter					
+beginnen	commencer				
+gewinnen	gagner					
+spinnen		filer					
+sinnen		réfléchir				
+rinnen		couler					
+schwimmen	nager					
+klimmen		grimper					
+glimmen		jeter une faible lueur			
+schwellen	enfler, gonfler				
+quellen		sourdre, jaillir			
+schmelzen	fondre					
+dreschen	battre au fléau				
+____________________________________________
+speien		cracher					
+schreien	crier					
+treiben		pratiquer, pousser			
+übertreiben	exagérer				
+schreiben	écrire					
+beschreiben	décrire					
+bleiben		rester					
+scheiden	séparer					
+entscheiden	décider					
+unterscheiden	distinguer, différencier		
+meiden		éviter					
+schweigen	se taire				
+steigen		monter					
+gedeihen	prospérer				
+leihen		prêter					
+verleihen	perdre					
+verzeihen	pardonner				
+scheinen	sembler, briller			
+erscheinen	apparaître, paraître			
+weisen		montrer					
+preisen		vanter					
+streichen	rayer					
+weichen		céder le pas				
+schleichen	se glisser				
+vergleichen	comparer				
+gleichen	ressembler				
+pfeifen		siffler					
+schleifen	aiguiser				
+kneifen		pincer					
+greifen		saisir					
+begreifen	comprendre, saisir			
+schneiden	couper					
+reiten		aller à cheval				
+schreiten	marcher					
+sich streiten	se disputer				
+gleiten		glisser					
+sich befleißen	s'appliquer				
+beißen		mordre					
+schmeißen	lancer					
+spleißen	fendre					
+verschleißen	s'user prématurément			
+verschleißen	user prématurément			
+sehen		voir					
+aus/sehen	avoir l’air, sembler			
+fern/sehen	regarder la télé			
+geschehen	se passer				
+liegen		être couché				
+befehlen	ordonner				
+empfehlen	recommander				
+stieben		voler en poussière			
+schieben	pousser, déplacer			
+kriechen	ramper					
+riechen		sentir(odeur)				
+sieden		bouillir				
+biegen		plier					
+fliegen		voler					
+wiegen		peser					
+ziehen		tirer					
+ziehen		partir en groupde			
+fliehen		fuir					
+verlieren	perdre					
+frieren		frire					
+verdrießen	contrarier				
+sprießen	germer, éclore				
+schießen	tirer(arme)				
+fließen		couler					
+schließen	fermer					
+beschließen	décider					
+gießen		verser					
+genessen	jouir de				
+(an)bieten	offrir, proposer			
+(er)wägen	peser, considérer			
+gären		fermenter				
+erlöschen	s'éteindre				
+(be)trügen	tromper					
+lügen		mentir					
+küren		élire					
+lügen		mentir					
+(er)schallen	résonner, retentir			
+heben		soulever  				
+gebären		mettre au monde				
+hauen		frapper					
+schnauben	s'ébrouer, haleter			
+saufen		boire(animaux)				
+saugen		sucer					
+wachsen		croître					
+aufwachsen	grandir					
+schaffen	créer					
+raten		conseiller				
+schlafen	dormir					
+waschen		laver					
+laufen		courir					
+weben		tisser					
+bewegen		inciter à				
+melken		er hat gemolken				
+pflegen		avoir coutume de			
+scheren		tondre					
+fechten		se battre en duel			
+flechten	tresser					
+gehen		aller					
+vergehen	passer					
+senden		envoyer					
+denken		penser					
+stehen		être debout				
+verstehen	comprendre				
+nennen		appeler					
+kennen		connaître				
+erkennen	reconnaître				
+brennen		bruler					
+stehlen		dérober					
+leiden		souffrir				
+sein		être					
+heißen		appeler					
+messen		mesurer					
+treten		poser le pied				
+an/ziehen	mettre (un habit)			
+verbieten	interdire				
+ziehen		tirer, partir, déménager		
+schlingen	avaler, embrasser			
+bringen		apporter				
+verbringen	passer (du temps)			
+schinden	écorcher				
+wissen		savoir					
+sitzen		être assis				
+besitzen	posseder				
+rufen		appeler					
+an/rufen	appeler (au tél.)			
+kommen		venir					
+an/kommen	arriver					
+bekommen	recevoir, obtenir			
+entkommen	s'échapper				
+schwören	jurer					
+stoßen		heurter					
+tun		faire					
+dürfen		avoir la permission de, pouvoir		
+haben		avoir 	 	    			
+können		pouvoir					
+müssen		être obligé, falloir, devoir		
+sollen		devoir	     	      			
+werden		devenir					
+wollen		vouloir					
