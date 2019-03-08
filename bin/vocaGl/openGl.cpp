@@ -48,7 +48,8 @@ openGlInterface::openGlInterface(int argc, char * argv[]){
     ServerBdd.back()[0].color[G]	    = 1.0; 
     ServerBdd.back()[0].color[B]	    = 1.0; 
     ServerBdd.back()[0].color[A]            = 1.0; 
-    ServerBdd.back()[0].pos[X]	            = 0.0; 
+    ServerBdd.back()[0].pos[X]	            = 0.0;
+    ServerBdd.back()[0].pos[Y]	            = 0.0; 
     ServerBdd.back()[0].flagVisible         = 1;   
     ServerBdd.back()[0].flagQuestionVisible = 1;   
     ServerBdd.back()[0].flagMemoVisible     = 1;   
@@ -72,6 +73,7 @@ openGlInterface::openGlInterface(int argc, char * argv[]){
       ServerBdd.back()[i].color[B]	           = stof(maListeDeListe[i][3]);
       ServerBdd.back()[i].color[A]            = stof(maListeDeListe[i][4]);
       ServerBdd.back()[i].pos[X]	           = stod(maListeDeListe[i][5]);
+      ServerBdd.back()[i].pos[Y]	           = 0.0;
       ServerBdd.back()[i].flagVisible         = stoi(maListeDeListe[i][6]);
       ServerBdd.back()[i].flagQuestionVisible = stoi(maListeDeListe[i][7]);
       ServerBdd.back()[i].flagMemoVisible     = stoi(maListeDeListe[i][8]);
@@ -93,7 +95,8 @@ openGlInterface::openGlInterface(int argc, char * argv[]){
       ServerBdd.back().back().color[G]	           = 1.0; 
       ServerBdd.back().back().color[B]	           = 1.0; 
       ServerBdd.back().back().color[A]            = 1.0; 
-      ServerBdd.back().back().pos[X]	           = 0.0; 
+      ServerBdd.back().back().pos[X]	           = 0.0;
+      ServerBdd.back().back().pos[Y]	           = 0.0; 
       ServerBdd.back().back().flagVisible         = 1;   
       ServerBdd.back().back().flagQuestionVisible = 1;   
       ServerBdd.back().back().flagMemoVisible     = 1;
@@ -448,7 +451,7 @@ void openGlInterface::afficherListeTexte() {
 	s_Allemand=ServerBdd[posyCurseur][j][i][0];
 	s_Francais=ServerBdd[posyCurseur][j][i][1];
 
-
+	//## Gestion de la couleur ###############################################
 	//	if ((i==einfugemarkewort) && (j==posxCurseur)){
 	//	  if (i==einfugemarkewort) {
 	if ( j==posxCurseur ){
@@ -463,6 +466,8 @@ void openGlInterface::afficherListeTexte() {
 	  }
 	  if (i==einfugemarkewort) {
 	    //glColor4f(meinFarbenTabelle3[j][0],meinFarbenTabelle3[j][1],meinFarbenTabelle3[j][2],meinFarbenTabelle3[j][3]);
+	    //	    glColorMelange4f(meinFarbenTabelle3[j][0],meinFarbenTabelle3[j][1],meinFarbenTabelle3[j][2],meinFarbenTabelle3[j][3],
+	    //			     1.0, 1.0, 1.0, 1.0); 
 	    glColor4f(1.0,1.0,1.0,1.0); 
 	  }
 	  if (i==indexErstWort) {
@@ -473,12 +478,14 @@ void openGlInterface::afficherListeTexte() {
 
 	//## Allemand ############################################################
 	if (ServerBdd[posyCurseur][j].flagQuestionVisible) {
-	  print_string ((ServerBdd[posyCurseur][j].pos[X] + 10.0 -300 - pos[X])*ratio[X], (-(i*20+10) - pos[Y] - offsety)*ratio[Y], 
+	  print_string ((ServerBdd[posyCurseur][j].pos[X] + 10.0 -300 - pos[X]          ) * ratio[X],
+			(ServerBdd[posyCurseur][j].pos[Y] - (i*20+10) - pos[Y] - offsety) * ratio[Y], //(-(i*20+10) - pos[Y] - offsety)*ratio[Y], 
 			font_base, &s_Allemand);
 	}
 	//## Francais ############################################################
 	if (ServerBdd[posyCurseur][j].flagMemoVisible) {
-	  print_string ((ServerBdd[posyCurseur][j].pos[X] + 10.0 + 300 - pos[X])*ratio[X], (-(i*20+10) - pos[Y] - offsety)*ratio[Y], 
+	  print_string ((ServerBdd[posyCurseur][j].pos[X] + 10.0 + 300 - pos[X]         ) * ratio[X],
+			(ServerBdd[posyCurseur][j].pos[Y] - (i*20+10) - pos[Y] - offsety) * ratio[Y], //(-(i*20+10) - pos[Y] - offsety)*ratio[Y], 
 			font_base, &s_Francais);
 	}
 	

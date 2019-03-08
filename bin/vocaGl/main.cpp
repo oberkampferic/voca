@@ -10,7 +10,7 @@ Uint32 openGlInterface::ellapsed_time;
 string openGlInterface::s_Allemand;
 string openGlInterface::s_Francais;
            
-vector<vector< tableBergson>> openGlInterface::ServerBdd;
+vector<vector< tableVoca>> openGlInterface::ServerBdd;
 TABLE                openGlInterface::maListeDeListe;
 TABLE                openGlInterface::monDico;
 TABLE                openGlInterface::monHauftisteWorte;
@@ -25,7 +25,7 @@ string               openGlInterface::fileName2;
 string               openGlInterface::fileNameListe;
 
 float                openGlInterface::pos[]= {0.0 , 0.0};
-float                tableBergsonHead::ratio[]= {1.0, 1.0};
+float                tableVocaHead::ratio[]= {1.0, 1.0};
 float                openGlInterface::old[]={0.0, 0.0};
 float                openGlInterface::offsety=0.0;
 
@@ -34,13 +34,15 @@ int                  openGlInterface::pause=false;
 int                  openGlInterface::Kartebewegung=0;
 int                  openGlInterface::Spaltebewegung=0;
 int                  openGlInterface::Wortreihebewegung=0;
+int                  openGlInterface::nachsteTabelleAmLinks=0;
+int                  openGlInterface::nachsteTabelleAmRechts=0;
 int                  openGlInterface::nearestTableIndex=-1;
 int                  openGlInterface::posxCurseur=0;
 int                  openGlInterface::posyCurseur=0;
 int                  openGlInterface::bddCurseur=0;
 
-unsigned int openGlInterface::indexErstWort;
-unsigned int openGlInterface::indexLetztWort;
+unsigned int openGlInterface::indexErstWort=-1;
+unsigned int openGlInterface::indexLetztWort=-1;
 
 unsigned int         openGlInterface::einfugemarkefarbe=0;
 unsigned int         openGlInterface::einfugemarkewort=0;

@@ -1,26 +1,9 @@
 void openGlInterface::my_motionMouse(int x, int y) {
   float delta[2];
   
-  if (Kartebewegung==1) {    //déplacement de l'ensemble de la map
-    delta[X]=old[X]-x;
-    delta[Y]=old[Y]-y;
-    pos[X]+=delta[X]/ratio[X];
-    pos[Y]-=delta[Y]/ratio[Y];
-    old[X]=x; old[Y]=y;
-  }
-  if (Spaltebewegung==1) {   //déplacement de la colonne dont
-    delta[X]=old[X]-x;
-    ServerBdd[posyCurseur][nearestTableIndex].pos[X]-=delta[X]/ratio[X];
-    old[X]=x;
-  }
 
-  activerAffichage=true; 
-}
-
-void openGlInterface::my_motionMousePassive(int x, int y) {
-  float delta[2];
-  colonneConcernee(x, y);
   einfugemarkewort=motConcerne(x,y);	//Identifier quel est le mot le plus proche.
+
   if (Kartebewegung==1) {    //déplacement de l'ensemble de la map
     delta[X]=old[X]-x;
     delta[Y]=old[Y]-y;
@@ -30,30 +13,106 @@ void openGlInterface::my_motionMousePassive(int x, int y) {
   }
   if (Spaltebewegung==1) {   //déplacement de la colonne dont
     delta[X]=old[X]-x;
+    delta[Y]=old[Y]-y;
     ServerBdd[posyCurseur][nearestTableIndex].pos[X]-=delta[X]/ratio[X];
+    ServerBdd[posyCurseur][nearestTableIndex].pos[Y]+=delta[Y]/ratio[Y];
     old[X]=x;
+    old[Y]=y;
   }
+
   if (!modeEco) activerAffichage=true; 
 }
 
+void openGlInterface::my_motionMousePassive(int x, int y) {
+  colonneConcernee(x, y);
+  //Mann muß nicht diese Funktion im der letzen untätigen Funktion zu stellen,
+  //um der zugverhalten zu empfehlen.
+  //Bei dem begriff "zugverhalten" beschreibe Ich diese Bewegung der Tabelle, die wann so einandere so näher ist, ihre Focus aufgreift.
+  my_motionMouse(x,y);
+}
+
+double carreFunc(double x1) {
+  return x1*x1;
+}
+
+void openGlInterface::colonneConcernee(int x, int y) {
+  double monDeltaX, bestDeltaX=40000000000.0;
+  long widthSur2= glutGet(GLUT_WINDOW_WIDTH)/2;
+
+  nearestTableIndex = 0;
+  nachsteTabelleAmLinks = 0;
+  nachsteTabelleAmRechts = 0; 
+  posxCurseur= 0;
+
+  // Erst, die erste- und letzte TabelleVerzeichnisse erkennen
+  int erstesTabelleVerzeichnis=0, letztesTabelleVerzeichnis=0;
+  for (int i=1; i< ServerBdd[posyCurseur].size(); i++) {
+    if ( ServerBdd[posyCurseur][i].pos[X] < ServerBdd[posyCurseur][erstesTabelleVerzeichnis].pos[X] )  erstesTabelleVerzeichnis  = i;
+    if ( ServerBdd[posyCurseur][i].pos[X] > ServerBdd[posyCurseur][letztesTabelleVerzeichnis].pos[X] ) letztesTabelleVerzeichnis = i;
+  }
+  nachsteTabelleAmLinks = erstesTabelleVerzeichnis;
+  nachsteTabelleAmRechts = letztesTabelleVerzeichnis;
+  // Zwei, das nachste TabelleVerzeichnis finden
+  for (int i=0; i< ServerBdd[posyCurseur].size(); i++) { 
+      monDeltaX = carreFunc(ServerBdd[posyCurseur][i].pos[X] - ((((double) x - widthSur2 ) / ratio[X]) + pos[X]));
+      if (monDeltaX<bestDeltaX) {
+	bestDeltaX=monDeltaX;
+	posxCurseur= i;
+	nearestTableIndex = i;
+      }
+  }
+  // Drei, die nachsten rechts- und links- TabelleVerzeichnisse finden
+  for (int i=0; i< ServerBdd[posyCurseur].size(); i++) {
+    if ( i != nearestTableIndex ) {
+      if ( ( ServerBdd[posyCurseur][i].pos[X] > ServerBdd[posyCurseur][nachsteTabelleAmLinks].pos[X] ) &&
+	   ( ServerBdd[posyCurseur][i].pos[X] < ServerBdd[posyCurseur][nearestTableIndex].pos[X]     ) ) 
+	nachsteTabelleAmLinks = i;
+      if ( ( ServerBdd[posyCurseur][i].pos[X] < ServerBdd[posyCurseur][nachsteTabelleAmRechts].pos[X] ) &&
+	   ( ServerBdd[posyCurseur][i].pos[X] > ServerBdd[posyCurseur][nearestTableIndex].pos[X]      ) ) 
+	nachsteTabelleAmRechts = i;
+    }
+  }
+  //Endlich, der Fall des erste- und letzte TabelleVerzeichnisse berichtigen
+  if ( nachsteTabelleAmLinks == nearestTableIndex )      nachsteTabelleAmLinks = letztesTabelleVerzeichnis;
+  if ( nachsteTabelleAmRechts == nearestTableIndex )     nachsteTabelleAmRechts = erstesTabelleVerzeichnis;
+}
+
+int openGlInterface::motConcerne(int x, int y) {
+  //sort l'index du mot concerné dans la colonne concernée
+  long heightSur2= glutGet(GLUT_WINDOW_HEIGHT)/2;
+  double projY= (((double) y - (double) heightSur2 ) / ratio[Y])- pos[Y] + ServerBdd[posyCurseur][nearestTableIndex].pos[Y];
+  
+  projY/=20; 
+  if ( (projY>=0) && (projY<ServerBdd[posyCurseur][nearestTableIndex].size()) )
+    return (int) projY;
+  else
+    return -1;
+}
+
+double openGlInterface::offsetPositionMondeCurseurSouris_X(double oldRatiox, int x, int y){
+  long widthSur2= glutGet(GLUT_WINDOW_WIDTH)/2;
+  return  ( ((((double) x - widthSur2 ) /  ratio[X]) + pos[X]) -
+	    ((((double) x - widthSur2 ) / oldRatiox) + pos[X])     );
+}
+
+double openGlInterface::offsetPositionMondeCurseurSouris_Y(double oldRatioy, int x, int y){
+  long heightSur2= glutGet(GLUT_WINDOW_HEIGHT)/2;
+  return  ( ((((double) y - heightSur2 ) /  ratio[Y]) + pos[Y]) -
+	    ((((double) y - heightSur2 ) / oldRatioy) + pos[Y])    );
+}
 
 void openGlInterface::wortVerlagerung(int sens) {
   int prochaineTableIndex;
-    if ( (indexErstWort != -1) && (indexLetztWort != -1) ) {
-      if (ServerBdd[posyCurseur].size()>1) { //une seule table?
-	if (sens==0) {
-	  if ((nearestTableIndex) < (ServerBdd[posyCurseur].size()-1)) prochaineTableIndex = nearestTableIndex+1;
-	  else                                                         prochaineTableIndex = 0;
-	} else {
-	  if (nearestTableIndex == 0)       prochaineTableIndex=  (ServerBdd[posyCurseur].size()-1);
-	  else                   	    prochaineTableIndex = nearestTableIndex-1;
-	}
-	for (int i= indexErstWort; i<= indexLetztWort; i++) {
-	  ServerBdd[posyCurseur][prochaineTableIndex].push_back( ServerBdd[posyCurseur][nearestTableIndex][(int) indexErstWort] );
-	  ServerBdd[posyCurseur][nearestTableIndex].erase(ServerBdd[posyCurseur][nearestTableIndex].begin()+(int) indexErstWort);
-	}
-      }
+  if ( (indexErstWort != -1) && (indexLetztWort != -1) ) {
+    prochaineTableIndex = (sens==RECHTS) ? nachsteTabelleAmRechts:nachsteTabelleAmLinks;
+      
+    if ( indexErstWort >= indexLetztWort ) swap (indexErstWort, indexLetztWort);
+    for (int i= indexErstWort; i<= indexLetztWort; i++) {
+      ServerBdd[posyCurseur][prochaineTableIndex].push_back( ServerBdd[posyCurseur][nearestTableIndex][(int) indexErstWort] );
+      ServerBdd[posyCurseur][nearestTableIndex].erase(ServerBdd[posyCurseur][nearestTableIndex].begin()+(int) indexErstWort);
     }
+  }
+  indexErstWort = -1; indexLetztWort = -1;
 }
 
 void openGlInterface::my_mouse(int button, int state, int x, int y) {
@@ -145,6 +204,7 @@ void openGlInterface::my_mouse(int button, int state, int x, int y) {
       indexLetztWort=projY;  //Verlagung eines Wortreihe: Bestimmung des letzen wortes
       if ( (projY!=-1) && !(glutGetModifiers() & GLUT_ACTIVE_ALT) ) 
 	wortVerlagerung(LINKS);
+      
       Wortreihebewegung=0;
       Spaltebewegung=0;
       Kartebewegung=0;     //Aufschaltung der Kartebewegung
@@ -157,17 +217,17 @@ void openGlInterface::my_mouse(int button, int state, int x, int y) {
       indexErstWort=projY;   //Verlagung eines Wortreihe: Bestimmung des ersten wortes
       if (glutGetModifiers() & GLUT_ACTIVE_ALT) {    // Alt aktiv.
 	Wortreihebewegung=0;  //Ya.
-	Spaltebewegung=1; cout << "Spaltebewegung=1" << endl;
+	Spaltebewegung=1; 
 	Kartebewegung=0;
       } else {
 	if (projY!=-1) {       //Ist ein wort betrifft?
 	  Wortreihebewegung=1;  //Ya.
-	  Spaltebewegung=0;cout << "Spaltebewegung=0"<< endl;
+	  Spaltebewegung=0;
 	  Kartebewegung=0;
 	} else {
 	  Wortreihebewegung=0;  //Nein.
 	  Spaltebewegung=1;     //So verlagern wir eine spalte.
-	  Kartebewegung=0;  cout << "Spaltebewegung=1"<< endl;
+	  Kartebewegung=0;
 	}
       }
     }
@@ -177,7 +237,7 @@ void openGlInterface::my_mouse(int button, int state, int x, int y) {
 	wortVerlagerung(RECHTS);
 
       Wortreihebewegung=0;
-      Spaltebewegung=0;cout << "Spaltebewegung=0"<< endl;
+      Spaltebewegung=0;
       Kartebewegung=0;
     }
     old[X]=x; old[Y]=y;
